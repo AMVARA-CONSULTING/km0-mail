@@ -10,12 +10,13 @@ Self-hosted mail stack for **KM0 Digital** — Postfix, Dovecot, Rspamd, Roundcu
 
 ## Status
 
-**Phase 1 implementation in repo.** Docker Compose, configs, Nginx template, SQL schema, and ops scripts are ready for operator deploy on the VPS. DNS, TLS, UFW, and mailbox provisioning are documented in [`docs/runbook.md`](docs/runbook.md).
+**Webmail (live):** https://mail.km0digital.com
+
+Docker stack running on the VPS. **You still need DNS at Joker + PTR at Hetzner** for mail from Gmail/Outlook — see [`docs/joker-dns-checklist.md`](docs/joker-dns-checklist.md).
 
 ```bash
-cp .env.example .env && chmod 600 .env
-docker compose up -d
 ./scripts/verify-mail-stack.sh
+./scripts/km0-mail-admin list-mailboxes
 ```
 
 ---
