@@ -11,6 +11,9 @@ echo "Account: Luipy56 (yoelberjaga@gmail.com)"
 echo "Repo:    ${GH_REPO}"
 echo ""
 
+"${REPO_ROOT}/scripts/setup-git-author.sh"
+echo ""
+
 if [[ -f "$ENV_FILE" ]]; then
   # shellcheck disable=SC1090
   set -a && source "$ENV_FILE" && set +a

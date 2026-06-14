@@ -14,7 +14,7 @@ You commit **km0-mail** changes on **`main`**. You do **not** edit application r
 
 - Work on **`main`**.
 - **`git push origin main`** after commit.
-- Author: Luipy56 / yoelberjaga@gmail.com (repo-local config).
+- Author: **Luipy56** / **yoelberjaga@gmail.com** — repo-local (`./scripts/setup-git-author.sh`); do not rely on global git config.
 
 ### Always
 

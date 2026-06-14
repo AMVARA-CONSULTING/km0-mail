@@ -40,6 +40,7 @@ Related repos:
 ```bash
 git clone git@github.com:AMVARA-CONSULTING/km0-mail.git /opt/km0-mail
 cd /opt/km0-mail
+./scripts/setup-git-author.sh          # Luipy56 <yoelberjaga@gmail.com> (repo-local)
 cp autoagents/.env.example autoagents/.env   # GH_TOKEN, optional Redmine #7605
 ./scripts/setup-autoagents-gh.sh
 ./autoagents/autoagents-loop.sh 001
