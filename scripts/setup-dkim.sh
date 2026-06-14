@@ -9,6 +9,7 @@ DOMAIN="${MAIL_DOMAIN:-km0digital.com}"
 SELECTOR="${DKIM_SELECTOR:-mail}"
 
 echo "Generating DKIM key for ${DOMAIN} (selector: ${SELECTOR})..."
+docker compose exec -T rspamd mkdir -p /var/lib/rspamd/dkim
 docker compose exec -T rspamd rspamadm dkim_keygen \
     -d "$DOMAIN" -s "$SELECTOR" -k "/var/lib/rspamd/dkim/${DOMAIN}.${SELECTOR}.key" \
     > /tmp/dkim-dns.txt
