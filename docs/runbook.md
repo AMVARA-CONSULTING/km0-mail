@@ -130,6 +130,12 @@ docker compose up -d dovecot
 
 Mail passwords are **independent** from OpenCloud (phase 1). `opencloud_uuid` remains NULL until a future sync job.
 
+`km0-mail-admin` creates Maildir `cur/new/tmp` and reloads Postfix hash maps automatically. To rebuild maps manually:
+
+```bash
+docker compose exec postfix build-hash-maps.sh
+```
+
 ---
 
 ## Localhost SMTP relay (OpenCloud / apps)
@@ -209,6 +215,8 @@ sudo fail2ban-client status
 | Roundcube 502 | `curl -sI http://127.0.0.1:8080/`, Nginx error log |
 | Queue growth | `docker compose exec postfix mailq` |
 | Auth failure | `./scripts/km0-mail-admin list-mailboxes`, Dovecot logs |
+| 451 recipient lookup failure | `docker compose exec postfix build-hash-maps.sh`, check `postmap -q user@domain hash:/etc/postfix/virtual-mailbox-maps` |
+| Mail stuck in queue (LMTP) | `docker compose exec postfix mailq`, verify Dovecot user: `doveadm user -f home user@km0digital.com` |
 
 ```bash
 cd /opt/km0-mail

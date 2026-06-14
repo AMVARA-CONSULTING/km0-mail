@@ -27,16 +27,27 @@ for f in /etc/postfix/sql-templates/*.cf; do
     render_map "$f" "/etc/postfix/sql/${base}"
 done
 
+/usr/local/bin/build-hash-maps.sh
+
+# Chrooted Postfix processes need host resolver files for LMTP/SASL lookups.
+mkdir -p /var/spool/postfix/etc
+for f in hosts resolv.conf nsswitch.conf services; do
+    if [ -f "/etc/${f}" ]; then
+        cp "/etc/${f}" "/var/spool/postfix/etc/${f}"
+    fi
+done
+
 postconf -e "myhostname = ${MAIL_HOSTNAME}"
 postconf -e "mydomain = ${MAIL_DOMAIN}"
 postconf -e "myorigin = \$mydomain"
 postconf -e "mydestination ="
 postconf -e "local_recipient_maps ="
 postconf -e "relay_domains ="
-postconf -e "virtual_mailbox_domains = pgsql:/etc/postfix/sql/virtual-mailbox-domains.cf"
-postconf -e "virtual_mailbox_maps = pgsql:/etc/postfix/sql/virtual-mailbox-maps.cf"
-postconf -e "virtual_alias_maps = pgsql:/etc/postfix/sql/virtual-alias-maps.cf"
-postconf -e "virtual_transport = lmtp:dovecot:24"
+postconf -e "virtual_mailbox_domains = hash:/etc/postfix/virtual-mailbox-domains"
+postconf -e "virtual_mailbox_maps = hash:/etc/postfix/virtual-mailbox-maps"
+postconf -e "virtual_alias_maps = hash:/etc/postfix/virtual-alias-maps"
+postconf -e "virtual_transport = lmtp:inet:dovecot:24"
+postconf -e "inet_protocols = ipv4"
 postconf -e "smtpd_milters = inet:rspamd:11332"
 postconf -e "non_smtpd_milters = inet:rspamd:11332"
 postconf -e "milter_default_action = accept"

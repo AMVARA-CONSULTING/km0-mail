@@ -1,5 +1,6 @@
-smtp      inet  n       -       y       -       -       smtpd
-submission inet n       -       y       -       -       smtpd
+# chroot disabled: pgsql map lookups fail inside smtpd chroot (451 tempfail)
+smtp      inet  n       -       n       -       -       smtpd
+submission inet n       -       n       -       -       smtpd
   -o syslog_name=postfix/submission
   -o smtpd_tls_security_level=encrypt
   -o smtpd_sasl_auth_enable=yes
@@ -27,7 +28,7 @@ retry     unix  -       -       y       -       -       error
 discard   unix  -       -       y       -       -       discard
 local     unix  -       n       n       -       -       local
 virtual   unix  -       n       n       -       -       virtual
-lmtp      unix  -       -       y       -       -       lmtp
+lmtp      unix  -       -       n       -       -       lmtp
 anvil     unix  -       -       y       -       1       anvil
 scache    unix  -       -       y       -       1       scache
 postlog   unix-dgram n  -       n       -       1       postlog

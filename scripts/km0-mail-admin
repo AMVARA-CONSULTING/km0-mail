@@ -52,6 +52,10 @@ psql_exec() {
     $COMPOSE exec -T postgres psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" "$@"
 }
 
+reload_postfix_maps() {
+    $COMPOSE exec -T postfix build-hash-maps.sh >/dev/null
+}
+
 cmd_create_mailbox() {
     local email="$1"
     local password="${2:-$(gen_password)}"
@@ -64,10 +68,13 @@ cmd_create_mailbox() {
         "INSERT INTO mail_accounts (email, password_hash) VALUES ('${email}', '${hash}')
          ON CONFLICT (email) DO UPDATE SET password_hash=EXCLUDED.password_hash, active=TRUE, updated_at=NOW();"
 
-    local local_part domain
+    local local_part domain maildir
     local_part="${email%@*}"
     domain="${email#*@}"
-    $COMPOSE exec -T dovecot sh -c "mkdir -p /var/mail/vhosts/${domain}/${local_part} && chown -R vmail:vmail /var/mail/vhosts/${domain}/${local_part}"
+    maildir="/var/mail/vhosts/${domain}/${local_part}"
+    $COMPOSE exec -T dovecot sh -c "mkdir -p ${maildir}/{cur,new,tmp} && chown -R vmail:vmail ${maildir}"
+
+    reload_postfix_maps
 
     echo "mailbox: ${email}"
     if [[ -z "${2:-}" ]]; then
@@ -100,6 +107,7 @@ cmd_create_alias() {
     psql_exec -c \
         "INSERT INTO mail_aliases (alias_address, target_email) VALUES ('${alias}', '${target}')
          ON CONFLICT (alias_address) DO UPDATE SET target_email=EXCLUDED.target_email;"
+    reload_postfix_maps
     echo "alias: ${alias} -> ${target}"
 }
 

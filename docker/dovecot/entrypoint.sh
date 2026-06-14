@@ -19,7 +19,7 @@ render_sql() {
 }
 
 mkdir -p /run/dovecot/ssl /var/mail/vhosts
-render_sql /etc/dovecot/dovecot-sql.conf.ext.template /etc/dovecot/dovecot-sql.conf.ext
+render_sql /etc/dovecot/dovecot-sql.conf.ext.template /run/dovecot/dovecot-sql.conf.ext
 
 if [ ! -f /run/dovecot/ssl/dovecot.pem ] || [ ! -f /run/dovecot/ssl/dovecot.key ]; then
     openssl req -new -x509 -days 3650 -nodes \

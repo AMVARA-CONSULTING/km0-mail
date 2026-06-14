@@ -9,7 +9,7 @@ password_query = \
 
 user_query = \
   SELECT \
-    CONCAT(SPLIT_PART(email,'@',2),'/',SPLIT_PART(email,'@',1)) AS home, \
+    CONCAT('/var/mail/vhosts/', SPLIT_PART(email,'@',2), '/', SPLIT_PART(email,'@',1)) AS home, \
     5000 AS uid, \
     5000 AS gid, \
     CONCAT('maildir:/var/mail/vhosts/', SPLIT_PART(email,'@',2), '/', SPLIT_PART(email,'@',1)) AS mail \
