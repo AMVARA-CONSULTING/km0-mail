@@ -1,0 +1,5 @@
+hosts = @POSTGRES_HOST@
+user = @MAIL_DB_USER@
+password = @MAIL_DB_PASSWORD@
+dbname = @POSTGRES_DB@
+query = SELECT target_email FROM mail_aliases WHERE alias_address='%s'

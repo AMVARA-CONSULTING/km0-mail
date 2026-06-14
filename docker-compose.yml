@@ -1,0 +1,129 @@
+name: km0-mail
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mail}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD required}
+      POSTGRES_DB: ${POSTGRES_DB:-mail}
+      ROUNDCUBE_DB_NAME: ${ROUNDCUBE_DB_NAME:-roundcube}
+      ROUNDCUBE_DB_USER: ${ROUNDCUBE_DB_USER:-roundcube}
+      ROUNDCUBE_DB_PASSWORD: ${ROUNDCUBE_DB_PASSWORD:?ROUNDCUBE_DB_PASSWORD required}
+      MAIL_DB_USER: ${MAIL_DB_USER:-mail}
+      MAIL_DB_PASSWORD: ${MAIL_DB_PASSWORD:?MAIL_DB_PASSWORD required}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./sql/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mail} -d ${POSTGRES_DB:-mail}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mailnet
+
+  rspamd:
+    image: rspamd/rspamd:3.8
+    restart: unless-stopped
+    volumes:
+      - ./config/rspamd/local.d:/etc/rspamd/local.d:ro
+      - rspamd-data:/var/lib/rspamd
+    networks:
+      - mailnet
+
+  dovecot:
+    build:
+      context: ./docker/dovecot
+    restart: unless-stopped
+    hostname: dovecot
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: ${POSTGRES_DB:-mail}
+      MAIL_DB_USER: ${MAIL_DB_USER:-mail}
+      MAIL_DB_PASSWORD: ${MAIL_DB_PASSWORD:?MAIL_DB_PASSWORD required}
+      MAIL_DOMAIN: ${MAIL_DOMAIN:-km0digital.com}
+    ports:
+      - "993:993"
+    volumes:
+      - mail-data:/var/mail/vhosts
+      - ./config/dovecot/dovecot.conf:/etc/dovecot/dovecot.conf:ro
+      - ./config/dovecot/dovecot-sql.conf.ext.template:/etc/dovecot/dovecot-sql.conf.ext.template:ro
+      # Optional: mount host LE certs for IMAPS (see docs/runbook.md)
+      # - /etc/letsencrypt/live/mail.km0digital.com/fullchain.pem:/run/dovecot/ssl/dovecot.pem:ro
+      # - /etc/letsencrypt/live/mail.km0digital.com/privkey.pem:/run/dovecot/ssl/dovecot.key:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - mailnet
+
+  postfix:
+    build:
+      context: ./docker/postfix
+    restart: unless-stopped
+    hostname: ${MAIL_HOSTNAME:-mail.km0digital.com}
+    environment:
+      MAIL_HOSTNAME: ${MAIL_HOSTNAME:-mail.km0digital.com}
+      MAIL_DOMAIN: ${MAIL_DOMAIN:-km0digital.com}
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: ${POSTGRES_DB:-mail}
+      MAIL_DB_USER: ${MAIL_DB_USER:-mail}
+      MAIL_DB_PASSWORD: ${MAIL_DB_PASSWORD:?MAIL_DB_PASSWORD required}
+    ports:
+      - "25:25"
+      - "587:587"
+    volumes:
+      - ./config/postfix/main.cf:/etc/postfix-templates/main.cf:ro
+      - ./config/postfix/master.cf:/etc/postfix/master.cf:ro
+      - ./config/postfix/sql-templates:/etc/postfix/sql-templates:ro
+      - postfix-spool:/var/spool/postfix
+    depends_on:
+      postgres:
+        condition: service_healthy
+      dovecot:
+        condition: service_started
+      rspamd:
+        condition: service_started
+    networks:
+      - mailnet
+
+  roundcube:
+    image: roundcube/roundcubemail:1.6.9-apache
+    restart: unless-stopped
+    environment:
+      ROUNDCUBEMAIL_DEFAULT_HOST: ssl://dovecot
+      ROUNDCUBEMAIL_DEFAULT_PORT: 993
+      ROUNDCUBEMAIL_SMTP_SERVER: tls://postfix
+      ROUNDCUBEMAIL_SMTP_PORT: 587
+      ROUNDCUBEMAIL_UPLOAD_MAX_FILESIZE: 25M
+      ROUNDCUBEMAIL_DB_TYPE: pgsql
+      ROUNDCUBEMAIL_DB_HOST: postgres
+      ROUNDCUBEMAIL_DB_NAME: ${ROUNDCUBE_DB_NAME:-roundcube}
+      ROUNDCUBEMAIL_DB_USER: ${ROUNDCUBE_DB_USER:-roundcube}
+      ROUNDCUBEMAIL_DB_PASSWORD: ${ROUNDCUBE_DB_PASSWORD:?ROUNDCUBE_DB_PASSWORD required}
+      ROUNDCUBEMAIL_DES_KEY: ${ROUNDCUBE_DES_KEY:?ROUNDCUBE_DES_KEY required}
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./config/roundcube/config.inc.php:/var/roundcube/config/config.inc.php:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      dovecot:
+        condition: service_started
+      postfix:
+        condition: service_started
+    networks:
+      - mailnet
+
+volumes:
+  postgres-data:
+  mail-data:
+  rspamd-data:
+  postfix-spool:
+
+networks:
+  mailnet:
+    driver: bridge

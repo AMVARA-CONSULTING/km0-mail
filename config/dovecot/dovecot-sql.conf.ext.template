@@ -1,0 +1,17 @@
+driver = pgsql
+connect = host=@POSTGRES_HOST@ dbname=@POSTGRES_DB@ user=@MAIL_DB_USER@ password=@MAIL_DB_PASSWORD@
+default_pass_scheme = BLF-CRYPT
+
+password_query = \
+  SELECT email AS user, password_hash AS password \
+  FROM mail_accounts \
+  WHERE email='%u' AND active=TRUE
+
+user_query = \
+  SELECT \
+    CONCAT(SPLIT_PART(email,'@',2),'/',SPLIT_PART(email,'@',1)) AS home, \
+    5000 AS uid, \
+    5000 AS gid, \
+    CONCAT('maildir:/var/mail/vhosts/', SPLIT_PART(email,'@',2), '/', SPLIT_PART(email,'@',1)) AS mail \
+  FROM mail_accounts \
+  WHERE email='%u' AND active=TRUE

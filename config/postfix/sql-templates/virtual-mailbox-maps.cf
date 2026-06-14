@@ -1,0 +1,5 @@
+hosts = @POSTGRES_HOST@
+user = @MAIL_DB_USER@
+password = @MAIL_DB_PASSWORD@
+dbname = @POSTGRES_DB@
+query = SELECT CONCAT(SPLIT_PART(email,'@',2),'/',SPLIT_PART(email,'@',1),'/') FROM mail_accounts WHERE email='%s' AND active=TRUE

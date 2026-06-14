@@ -1,0 +1,146 @@
+#!/usr/bin/env bash
+# km0-mail-admin — provision mailboxes and aliases for @km0digital.com
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+if [[ ! -f .env ]]; then
+    echo "error: .env missing — copy .env.example and set secrets" >&2
+    exit 1
+fi
+
+# shellcheck disable=SC1091
+source .env
+
+MAIL_DOMAIN="${MAIL_DOMAIN:-km0digital.com}"
+COMPOSE="docker compose"
+
+usage() {
+    cat <<EOF
+Usage: $0 <command> [args]
+
+Commands:
+  create-mailbox <user@km0digital.com> [password]
+  create-alias <alias@km0digital.com> <target@km0digital.com>
+  list-mailboxes
+  list-aliases
+  set-password <user@km0digital.com> [password]
+
+If password is omitted, a random password is generated and printed once.
+EOF
+}
+
+require_email() {
+    local email="$1"
+    if [[ ! "$email" =~ @${MAIL_DOMAIN}$ ]]; then
+        echo "error: address must end with @${MAIL_DOMAIN}" >&2
+        exit 1
+    fi
+}
+
+gen_password() {
+    openssl rand -base64 18 | tr -d '/+=' | head -c 16
+}
+
+hash_password() {
+    local plain="$1"
+    $COMPOSE exec -T dovecot doveadm pw -s BLF-CRYPT -p "$plain" | tr -d '\r'
+}
+
+psql_exec() {
+    $COMPOSE exec -T postgres psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" "$@"
+}
+
+cmd_create_mailbox() {
+    local email="$1"
+    local password="${2:-$(gen_password)}"
+    require_email "$email"
+
+    local hash
+    hash="$(hash_password "$password")"
+
+    psql_exec -c \
+        "INSERT INTO mail_accounts (email, password_hash) VALUES ('${email}', '${hash}')
+         ON CONFLICT (email) DO UPDATE SET password_hash=EXCLUDED.password_hash, active=TRUE, updated_at=NOW();"
+
+    local local_part domain
+    local_part="${email%@*}"
+    domain="${email#*@}"
+    $COMPOSE exec -T dovecot sh -c "mkdir -p /var/mail/vhosts/${domain}/${local_part} && chown -R vmail:vmail /var/mail/vhosts/${domain}/${local_part}"
+
+    echo "mailbox: ${email}"
+    if [[ -z "${2:-}" ]]; then
+        echo "password: ${password}"
+    fi
+}
+
+cmd_set_password() {
+    local email="$1"
+    local password="${2:-$(gen_password)}"
+    require_email "$email"
+
+    local hash
+    hash="$(hash_password "$password")"
+    psql_exec -c \
+        "UPDATE mail_accounts SET password_hash='${hash}', updated_at=NOW() WHERE email='${email}';"
+
+    echo "password updated: ${email}"
+    if [[ -z "${2:-}" ]]; then
+        echo "password: ${password}"
+    fi
+}
+
+cmd_create_alias() {
+    local alias="$1"
+    local target="$2"
+    require_email "$alias"
+    require_email "$target"
+
+    psql_exec -c \
+        "INSERT INTO mail_aliases (alias_address, target_email) VALUES ('${alias}', '${target}')
+         ON CONFLICT (alias_address) DO UPDATE SET target_email=EXCLUDED.target_email;"
+    echo "alias: ${alias} -> ${target}"
+}
+
+cmd_list_mailboxes() {
+    psql_exec -c "SELECT email, active, quota_bytes, opencloud_uuid, created_at FROM mail_accounts ORDER BY email;"
+}
+
+cmd_list_aliases() {
+    psql_exec -c "SELECT alias_address, target_email, created_at FROM mail_aliases ORDER BY alias_address;"
+}
+
+main() {
+    local cmd="${1:-}"
+    case "$cmd" in
+        create-mailbox)
+            [[ $# -ge 2 ]] || { usage; exit 1; }
+            cmd_create_mailbox "$2" "${3:-}"
+            ;;
+        set-password)
+            [[ $# -ge 2 ]] || { usage; exit 1; }
+            cmd_set_password "$2" "${3:-}"
+            ;;
+        create-alias)
+            [[ $# -ge 3 ]] || { usage; exit 1; }
+            cmd_create_alias "$2" "$3"
+            ;;
+        list-mailboxes)
+            cmd_list_mailboxes
+            ;;
+        list-aliases)
+            cmd_list_aliases
+            ;;
+        -h|--help|help|"")
+            usage
+            ;;
+        *)
+            echo "error: unknown command: $cmd" >&2
+            usage
+            exit 1
+            ;;
+    esac
+}
+
+main "$@"

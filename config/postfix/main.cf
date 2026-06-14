@@ -1,0 +1,33 @@
+# km0-mail Postfix — base settings (overridden at runtime by entrypoint.sh)
+smtpd_banner = $myhostname ESMTP
+biff = no
+append_dot_mydomain = no
+readme_directory = no
+compatibility_level = 3.6
+
+# Queue / performance (scale target >1000 mailboxes)
+default_process_limit = 100
+smtpd_client_connection_count_limit = 50
+smtpd_client_connection_rate_limit = 100
+
+# Message size 50 MB
+message_size_limit = 52428800
+mailbox_size_limit = 0
+
+# TLS
+smtp_tls_CApath = /etc/ssl/certs
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+# Virtual delivery
+virtual_mailbox_base = /var/mail/vhosts
+virtual_minimum_uid = 5000
+virtual_uid_maps = static:5000
+virtual_gid_maps = static:5000
+
+# SASL / relay
+broken_sasl_auth_clients = yes
+smtpd_tls_auth_only = yes
+
+# Header hygiene
+disable_vrfy_command = yes
+strict_rfc821_envelopes = yes

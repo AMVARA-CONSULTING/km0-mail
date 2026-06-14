@@ -1,0 +1,22 @@
+# Fail2ban jails for km0-mail — copy to host /etc/fail2ban/jail.d/
+# Adjust log paths if Docker logging driver differs.
+
+[postfix-sasl]
+enabled = true
+port = smtp,submission,imap,imaps
+filter = postfix[mode=auth]
+logpath = /var/lib/docker/containers/*/*-json.log
+backend = auto
+maxretry = 5
+findtime = 600
+bantime = 3600
+
+[dovecot]
+enabled = true
+port = imap,imaps,pop3,pop3s
+filter = dovecot
+logpath = /var/lib/docker/containers/*/*-json.log
+backend = auto
+maxretry = 5
+findtime = 600
+bantime = 3600

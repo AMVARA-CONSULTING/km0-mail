@@ -10,7 +10,13 @@ Self-hosted mail stack for **KM0 Digital** — Postfix, Dovecot, Rspamd, Roundcu
 
 ## Status
 
-**Pre-implementation.** This repository holds the pre-plan, autoagents workflow, and (during implementation) Docker Compose, configs, and Nginx templates. The mail stack is not deployed yet.
+**Phase 1 implementation in repo.** Docker Compose, configs, Nginx template, SQL schema, and ops scripts are ready for operator deploy on the VPS. DNS, TLS, UFW, and mailbox provisioning are documented in [`docs/runbook.md`](docs/runbook.md).
+
+```bash
+cp .env.example .env && chmod 600 .env
+docker compose up -d
+./scripts/verify-mail-stack.sh
+```
 
 ---
 
@@ -18,12 +24,16 @@ Self-hosted mail stack for **KM0 Digital** — Postfix, Dovecot, Rspamd, Roundcu
 
 ```
 /opt/km0-mail/
+├── docker-compose.yml   # Postfix, Dovecot, Rspamd, Roundcube, PostgreSQL
+├── config/              # postfix, dovecot, rspamd, roundcube, fail2ban
+├── nginx/               # Host vhost template (mail.km0digital.com)
+├── sql/init/            # PostgreSQL schema bootstrap
+├── scripts/             # km0-mail-admin, backup, verify, git-sync
 ├── autoagents/          # Cursor agent loop (GitHub Issues → FEAT tasks)
-├── docs/
-│   ├── issue-mail-preplan.md
-│   └── agent-loop.md
-├── scripts/             # git-sync, setup-autoagents-gh, move-agent-task-to-done
-└── (implementation)     # docker-compose.yml, config/, nginx/, sql/ — coming in FEAT work
+└── docs/
+    ├── issue-mail-preplan.md
+    ├── runbook.md
+    └── agent-loop.md
 ```
 
 Related repos:
