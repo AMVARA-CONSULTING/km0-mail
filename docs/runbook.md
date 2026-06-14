@@ -142,17 +142,20 @@ docker compose exec postfix build-hash-maps.sh
 
 Apps on the same host send via `127.0.0.1:587` **without auth** (restricted by Postfix `mynetworks`).
 
-Example OpenCloud `.env` (after stack is live):
+Example OpenCloud `.env` (after stack is live; OpenCloud runs in Docker — use `host.docker.internal`, not `127.0.0.1`):
 
 ```env
-NOTIFICATIONS_SMTP_HOST=127.0.0.1
-NOTIFICATIONS_SMTP_PORT=587
-NOTIFICATIONS_SMTP_SENDER=OpenCloud Notifications <noreply@km0digital.com>
-NOTIFICATIONS_SMTP_USERNAME=
-NOTIFICATIONS_SMTP_PASSWORD=
-NOTIFICATIONS_SMTP_INSECURE=true
-NOTIFICATIONS_SMTP_AUTHENTICATION=none
+SMTP_HOST=host.docker.internal
+SMTP_PORT=587
+SMTP_SENDER=OpenCloud Notifications <noreply@km0digital.com>
+SMTP_USERNAME=
+SMTP_PASSWORD=
+SMTP_INSECURE=true
+SMTP_AUTHENTICATION=none
+SMTP_TRANSPORT_ENCRYPTION=none
 ```
+
+Also add to OpenCloud `external-proxy/opencloud.yml` `extra_hosts`: `host.docker.internal:host-gateway` (see km0-opencloud overrides).
 
 Test relay from host:
 
