@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+### Deployed (server 2026-06-14)
+
+- Nginx vhost + Let's Encrypt TLS for `https://mail.km0digital.com` (Roundcube via `127.0.0.1:8080`)
+- UFW: ports 25, 587, 993 open
+- DKIM key generated in Rspamd; DNS checklist: `docs/joker-dns-checklist.md`
+- Fail2ban jail `km0-mail.local` installed on host
+
 ### Fixed
 
 - Postfix recipient validation: rebuild hash maps from PostgreSQL at startup (`docker/postfix/build-hash-maps.sh`) instead of live `pgsql:` lookups that returned 451 tempfail under smtpd
@@ -18,5 +25,6 @@
 - Provisioning CLI: `scripts/km0-mail-admin` (mailbox, alias, list, set-password)
 - Ops scripts: `scripts/backup-maildir.sh`, `scripts/verify-mail-stack.sh`, `scripts/setup-dkim.sh`
 - Operations runbook: `docs/runbook.md`
+- DNS operator checklist: `docs/joker-dns-checklist.md`
 - Fail2ban jail template: `config/fail2ban/jail.d/km0-mail.local`
 - Secrets template: `.env.example`
