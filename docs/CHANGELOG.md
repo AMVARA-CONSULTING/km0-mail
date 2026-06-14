@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Runbook: OpenCloud SMTP example uses `host.docker.internal` (not `127.0.0.1`), current `SMTP_*` env var names, and `extra_hosts: host.docker.internal:host-gateway` for Docker relay to km0-mail on the host
+
 ### Deployed (server 2026-06-14)
 
 - Nginx vhost + Let's Encrypt TLS for `https://mail.km0digital.com` (Roundcube via `127.0.0.1:8080`)
