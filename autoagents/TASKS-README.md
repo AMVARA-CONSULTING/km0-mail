@@ -8,7 +8,7 @@ Tasks move through a single pipeline. See **`docs/agent-loop.md`** for roles and
 
 For **NEW-** tasks without an issue number, use `NEW-0-` or omit issue segment: `NEW-YYYYMMDD-HHMM-<slug>.md`.
 
-Examples: `FEAT-7605-20260614-1200-self-hosted-mail-stack.md`, `CLOSED-7605-20260620-1200-self-hosted-mail-stack.md`
+Examples: `FEAT-1-20260614-1200-self-hosted-mail-stack.md`, `CLOSED-1-20260620-1200-self-hosted-mail-stack.md`
 
 The **`<YYYYMMDD>`** segment places archived tasks under **`done/YYYY/MM/DD/`**.
 
@@ -36,10 +36,10 @@ On test failure: **testing → wip**, then **wip → untested** when ready.
 ## Archiving
 
 ```bash
-./scripts/move-agent-task-to-done.sh autoagents/tasks/CLOSED-7605-20260620-1200-example.md
+./scripts/move-agent-task-to-done.sh autoagents/tasks/CLOSED-1-20260620-1200-example.md
 ```
 
-→ **`autoagents/tasks/done/2026/06/20/CLOSED-7605-20260620-1200-example.md`**
+→ **`autoagents/tasks/done/2026/06/20/CLOSED-1-20260620-1200-example.md`**
 
 When Redmine is configured (`REDMINE_URL`, `REDMINE_API_KEY`, `REDMINE_ISSUE_ID` in `autoagents/.env`), the move script also posts an English Textile (`.red`) closing summary to the Redmine issue via `autoagents/redmine_sync.py`.
 

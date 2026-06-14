@@ -1,1 +1,1 @@
-2026-06-14T12:00:00Z UTC | km0-mail autoagents bootstrap | FEAT: 1 (7605) | NEW: 0 | Redmine #7605
+2026-06-14T12:00:00Z UTC | km0-mail autoagents bootstrap | FEAT: 1 (GH #1, Redmine #7605) | NEW: 0

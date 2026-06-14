@@ -1,11 +1,11 @@
 # Self-hosted mail stack (Postfix + Dovecot + Rspamd + Roundcube)
 
 ## GitHub Issue
-- **Issue:** https://github.com/AMVARA-CONSULTING/km0-mail/issues/7605
-- **Number:** #7605
-- **Labels:** (set on GitHub when created)
+- **Issue:** https://github.com/AMVARA-CONSULTING/km0-mail/issues/1
+- **Number:** #1
+- **Labels:** agent:planned
 - **Created:** 2026-06-14
-- **Redmine:** #7605
+- **Redmine tracking:** #7605
 
 ## Problem / goal
 
