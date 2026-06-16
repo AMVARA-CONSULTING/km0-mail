@@ -28,6 +28,8 @@
 
 ### Fixed
 
+- Roundcube SSO: mount `km0_sso_provision` plugin at `/var/www/html/plugins/` (Roundcube load path; was `/var/roundcube/plugins/`)
+- `mail-provision-api`: reload Postfix maps via `docker exec` on the postfix container (compose CLI unavailable inside API container)
 - Postfix recipient validation: rebuild hash maps from PostgreSQL at startup (`docker/postfix/build-hash-maps.sh`) instead of live `pgsql:` lookups that returned 451 tempfail under smtpd
 - Postfix LMTP delivery: IPv4-only transport, chroot DNS (`resolv.conf` in queue dir), LMTP/smtpd chroot disabled
 - Dovecot LMTP: SQL config path (`/run/dovecot/dovecot-sql.conf.ext`), absolute `home` in user_query
