@@ -44,12 +44,16 @@ services:
       MAIL_DB_USER: ${MAIL_DB_USER:-mail}
       MAIL_DB_PASSWORD: ${MAIL_DB_PASSWORD:?MAIL_DB_PASSWORD required}
       MAIL_DOMAIN: ${MAIL_DOMAIN:-km0digital.com}
+      DEX_INTROSPECTION_URL: ${DEX_INTROSPECTION_URL:-https://cloud.km0digital.com/dex/token/introspect}
+      DOVECOT_OAUTH_CLIENT_ID: ${DOVECOT_OAUTH_CLIENT_ID:-km0-mail-dovecot}
+      DOVECOT_OAUTH_CLIENT_SECRET: ${DOVECOT_OAUTH_CLIENT_SECRET:?DOVECOT_OAUTH_CLIENT_SECRET required}
     ports:
       - "993:993"
     volumes:
       - mail-data:/var/mail/vhosts
       - ./config/dovecot/dovecot.conf:/etc/dovecot/dovecot.conf:ro
       - ./config/dovecot/dovecot-sql.conf.ext.template:/etc/dovecot/dovecot-sql.conf.ext.template:ro
+      - ./config/dovecot/dovecot-oauth2.conf.ext.template:/etc/dovecot/dovecot-oauth2.conf.ext.template:ro
       # Optional: mount host LE certs for IMAPS (see docs/runbook.md)
       # - /etc/letsencrypt/live/mail.km0digital.com/fullchain.pem:/run/dovecot/ssl/dovecot.pem:ro
       # - /etc/letsencrypt/live/mail.km0digital.com/privkey.pem:/run/dovecot/ssl/dovecot.key:ro
@@ -104,15 +108,49 @@ services:
       ROUNDCUBEMAIL_DB_USER: ${ROUNDCUBE_DB_USER:-roundcube}
       ROUNDCUBEMAIL_DB_PASSWORD: ${ROUNDCUBE_DB_PASSWORD:?ROUNDCUBE_DB_PASSWORD required}
       ROUNDCUBEMAIL_DES_KEY: ${ROUNDCUBE_DES_KEY:?ROUNDCUBE_DES_KEY required}
+      ROUNDCUBE_OAUTH_CLIENT_ID: ${ROUNDCUBE_OAUTH_CLIENT_ID:-km0-mail-web}
+      ROUNDCUBE_OAUTH_CLIENT_SECRET: ${ROUNDCUBE_OAUTH_CLIENT_SECRET:?ROUNDCUBE_OAUTH_CLIENT_SECRET required}
+      MAIL_DOMAIN: ${MAIL_DOMAIN:-km0digital.com}
+      KM0_PROVISION_API_URL: http://mail-provision-api:8092
+      MAIL_PROVISION_API_TOKEN: ${MAIL_PROVISION_API_TOKEN:?MAIL_PROVISION_API_TOKEN required}
     ports:
       - "127.0.0.1:8080:80"
     volumes:
       - ./config/roundcube/config.inc.php:/var/roundcube/config/config.inc.php:ro
+      - ./config/roundcube/plugins/km0_sso_provision:/var/roundcube/plugins/km0_sso_provision:ro
     depends_on:
       postgres:
         condition: service_healthy
       dovecot:
         condition: service_started
+      postfix:
+        condition: service_started
+      mail-provision-api:
+        condition: service_started
+    networks:
+      - mailnet
+
+  mail-provision-api:
+    build:
+      context: ./docker/mail-provision-api
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: ${POSTGRES_DB:-mail}
+      MAIL_DB_USER: ${MAIL_DB_USER:-mail}
+      MAIL_DB_PASSWORD: ${MAIL_DB_PASSWORD:?MAIL_DB_PASSWORD required}
+      MAIL_DOMAIN: ${MAIL_DOMAIN:-km0digital.com}
+      MAIL_PROVISION_API_TOKEN: ${MAIL_PROVISION_API_TOKEN:?MAIL_PROVISION_API_TOKEN required}
+      COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME:-km0-mail}
+      RELOAD_POSTFIX_MAPS: "true"
+    ports:
+      - "127.0.0.1:8092:8092"
+    volumes:
+      - mail-data:/var/mail/vhosts
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      postgres:
+        condition: service_healthy
       postfix:
         condition: service_started
     networks:

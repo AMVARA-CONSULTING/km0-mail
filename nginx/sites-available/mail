@@ -1,5 +1,12 @@
-# Roundcube webmail — TLS termination on host Nginx
+# Roundcube webmail + KM0 SSO auth pages — TLS termination on host Nginx
 # Production: https://mail.km0digital.com
+#
+# Deploy static auth pages:
+#   sudo rsync -a host-www/mail-auth/ /var/www/mail-auth/
+#
+# Register API proxy expects register-api on host :8091 (same as OpenCloud).
+# Optional rate limit: add to http {} in nginx.conf (shared with OpenCloud):
+#   limit_req_zone $binary_remote_addr zone=km0_register:10m rate=5r/m;
 
 server {
     listen 80;
@@ -31,6 +38,75 @@ server {
 
     client_max_body_size 25M;
 
+    # Branded SSO login / register (host-www/mail-auth → /var/www/mail-auth/)
+    location = / {
+        return 302 /login.html;
+    }
+
+    location = /login.html {
+        alias /var/www/mail-auth/login.html;
+        default_type text/html;
+    }
+
+    location = /register {
+        alias /var/www/mail-auth/register.html;
+        default_type text/html;
+    }
+
+    location = /register.html {
+        return 301 /register$is_args$args;
+    }
+
+    location = /dex-auth.js {
+        alias /var/www/mail-auth/dex-auth.js;
+        default_type application/javascript;
+        expires 1h;
+        add_header Cache-Control "public";
+    }
+
+    location = /logo.svg {
+        alias /var/www/mail-auth/logo.svg;
+        default_type image/svg+xml;
+        expires 7d;
+        add_header Cache-Control "public";
+        access_log off;
+    }
+
+    location = /favicon.svg {
+        alias /var/www/mail-auth/favicon.svg;
+        default_type image/svg+xml;
+        expires 7d;
+        add_header Cache-Control "public";
+        access_log off;
+    }
+
+    # Shared Dex i18n + Google icon (issuer on cloud.km0digital.com)
+    location = /dex/theme/i18n.js {
+        proxy_pass https://cloud.km0digital.com/dex/theme/i18n.js;
+        proxy_ssl_server_name on;
+        expires 1h;
+    }
+
+    location = /dex/static/img/google-icon.svg {
+        proxy_pass https://cloud.km0digital.com/dex/static/img/google-icon.svg;
+        proxy_ssl_server_name on;
+        expires 7d;
+        access_log off;
+    }
+
+    # Self-registration → OpenCloud register-api (creates IDM user; mailbox via provision hook)
+    location = /api/register {
+        # limit_req zone=km0_register burst=2 nodelay;
+        proxy_pass http://127.0.0.1:8091/register;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+    }
+
+    # Roundcube webmail (OAuth callback at /index.php/login/oauth)
     location / {
         proxy_pass http://127.0.0.1:8080;
         proxy_set_header Host $host;

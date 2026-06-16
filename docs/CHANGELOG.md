@@ -2,8 +2,21 @@
 
 ## [Unreleased]
 
+### Added
+
+- Webmail SSO via shared Dex OIDC: branded login/register pages (`/login.html`, `/register`), Roundcube OAuth, Dovecot XOAUTH2
+- `mail-provision-api` service for SSO mailbox auto-provisioning (localhost `:8092`)
+- Roundcube `km0_sso_provision` plugin (silent provision on OAuth login)
+- `km0-mail-admin provision-sso-mailbox` CLI wrapper for the provision API
+- OpenCloud cross-repo SSO guide: `docs/opencloud-sso-integration.md`
+
 ### Changed
 
+- Nginx vhost: root redirects to `/login.html`; static auth pages, Dex theme assets, and register-api proxy
+- Dovecot: OAuth2 passdb alongside SQL (legacy plain/login for CLI-provisioned mailboxes)
+- `.env.example`: `ROUNDCUBE_OAUTH_*`, `DOVECOT_OAUTH_*`, `MAIL_PROVISION_API_TOKEN`, `DEX_INTROSPECTION_URL`
+- Runbook: SSO deployment, provision API smoke tests, and OpenCloud integration steps
+- README: notes SSO via Dex and links OpenCloud integration doc
 - Runbook: OpenCloud SMTP example uses `host.docker.internal` (not `127.0.0.1`), current `SMTP_*` env var names, and `extra_hosts: host.docker.internal:host-gateway` for Docker relay to km0-mail on the host
 
 ### Deployed (server 2026-06-14)
