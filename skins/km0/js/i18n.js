@@ -137,6 +137,12 @@
     updateLangSwitcher(locale);
   }
 
+  function stripBootstrapFromLangButtons() {
+    document.querySelectorAll('.km0-lang-switch button').forEach(function (btn) {
+      btn.classList.remove('btn', 'btn-secondary', 'btn-primary', 'btn-link');
+    });
+  }
+
   function bindLangSwitcher() {
     document.querySelectorAll('.km0-lang-switch [data-lang]').forEach(function (btn) {
       btn.addEventListener('click', function (ev) {
@@ -149,9 +155,13 @@
 
   function init() {
     var locale = getLocale();
+    stripBootstrapFromLangButtons();
     applyLocale(locale);
     updateLangSwitcher(locale);
     bindLangSwitcher();
+    stripBootstrapFromLangButtons();
+    window.setTimeout(stripBootstrapFromLangButtons, 0);
+    window.setTimeout(stripBootstrapFromLangButtons, 100);
   }
 
   if (document.readyState === 'loading') {
