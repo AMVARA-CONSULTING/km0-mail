@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Roundcube KM0 login branding: custom `km0` skin (extends Elastic) with logo, favicon, and styled login page; mounted via Docker Compose; inbox UI unchanged
+
 ### Reverted (2026-06-16)
 
 - Rolled back experimental webmail SSO (issue #3): external `/login.html` wrapper, Roundcube OAuth, Dovecot XOAUTH2, `mail-provision-api`, and register proxy. Nginx restored to direct Roundcube proxy. SSO redesign deferred — see `docs/github-issue-mail-sso.md`.

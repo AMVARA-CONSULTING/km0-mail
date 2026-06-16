@@ -108,6 +108,7 @@ services:
       - "127.0.0.1:8080:80"
     volumes:
       - ./config/roundcube/config.inc.php:/var/roundcube/config/config.inc.php:ro
+      - ./skins/km0:/var/www/html/skins/km0:ro
     depends_on:
       postgres:
         condition: service_healthy

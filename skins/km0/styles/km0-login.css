@@ -1,0 +1,206 @@
+/**
+ * KM0 Mail — login page branding (extends Elastic skin)
+ * Visual tokens from OpenCloud auth: navy #0b1220, Inter, gradient accent
+ */
+
+:root {
+  --km0-navy: #0b1220;
+  --km0-gradient: linear-gradient(135deg, #ff5f2e 0%, #e040a0 35%, #7b3fe4 65%, #007bff 100%);
+}
+
+html.dark-mode body.task-login,
+body.task-login {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--km0-navy) !important;
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(123, 63, 228, 0.18) 0%, transparent 70%) !important;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.task-login #layout {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: transparent !important;
+}
+
+body.task-login #layout-content.km0-login-card {
+  position: relative;
+  width: min(440px, 92vw);
+  padding: 2.5rem 2rem 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  top: auto !important;
+  margin: 1rem auto;
+}
+
+body.task-login #layout-content {
+  text-align: center;
+  width: auto !important;
+  display: block;
+}
+
+body.task-login #logo {
+  display: block;
+  position: static !important;
+  top: auto !important;
+  width: min(192px, 44vw);
+  height: auto;
+  max-height: none !important;
+  margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 0 24px rgba(123, 63, 228, 0.35));
+}
+
+.km0-login-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 0.75rem;
+}
+
+.km0-login-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  background: var(--km0-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.km0-login-tagline {
+  margin: 0 0 1.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.task-login #login-form {
+  margin: 0 auto;
+  top: auto !important;
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+}
+
+body.task-login #login-form table,
+body.task-login #login-form tbody {
+  display: block;
+  width: 100%;
+}
+
+body.task-login #login-form tr {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+body.task-login #login-form td.title {
+  display: block;
+  text-align: left;
+  padding: 0 0 0.35rem;
+  width: 100%;
+}
+
+body.task-login #login-form td.title label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.task-login #login-form td.input {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+body.task-login #login-form .form-control {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+body.task-login #login-form .form-control:focus {
+  outline: none;
+  border-color: #7b3fe4;
+  box-shadow: 0 0 0 3px rgba(123, 63, 228, 0.25);
+}
+
+body.task-login #login-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+body.task-login #rcmloginsubmit {
+  width: 100%;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--km0-gradient);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.task-login #rcmloginsubmit:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(123, 63, 228, 0.35);
+}
+
+body.task-login #rcmloginsubmit:before {
+  display: none !important;
+}
+
+body.task-login #login-footer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+body.task-login #login-footer .support-link {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+}
+
+body.task-login #login-footer .support-link:hover {
+  color: #7b3fe4;
+}
+
+body.task-login #messagestack .warning,
+body.task-login #messagestack .error,
+body.task-login #messagestack .notice {
+  background: rgba(220, 53, 69, 0.15);
+  border: 1px solid rgba(220, 53, 69, 0.35);
+  color: #ffb3b3;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+body.task-error-login #layout-content > .header {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  body.task-login #layout-content.km0-login-card {
+    padding: 2rem 1.25rem 1.5rem;
+    border-radius: 16px;
+  }
+}
