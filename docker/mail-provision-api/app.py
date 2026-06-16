@@ -78,18 +78,10 @@ def ensure_maildir(email: str) -> None:
 def reload_postfix_maps() -> None:
     if not RELOAD_POSTFIX_MAPS:
         return
+    container = os.environ.get("POSTFIX_CONTAINER", f"{COMPOSE_PROJECT}-postfix-1")
     try:
         subprocess.run(
-            [
-                "docker",
-                "compose",
-                "-p",
-                COMPOSE_PROJECT,
-                "exec",
-                "-T",
-                "postfix",
-                "build-hash-maps.sh",
-            ],
+            ["docker", "exec", container, "build-hash-maps.sh"],
             check=True,
             timeout=60,
             capture_output=True,
