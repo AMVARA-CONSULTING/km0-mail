@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="registerPageTitle">Kilómetro 0 Digital — Crear cuenta de correo</title>
+  <meta name="description" content="Registro en KM0 Mail — Kilómetro 0 Digital" data-i18n-meta="registerMetaDescription" />
+  <link rel="canonical" href="https://mail.km0digital.com/register" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0b1220;
+      --gradient: linear-gradient(135deg, #ff5f2e 0%, #e040a0 35%, #7b3fe4 65%, #007bff 100%);
+      --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--navy);
+      background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(123, 63, 228, 0.18) 0%, transparent 70%);
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card {
+      position: relative;
+      width: min(440px, 92vw);
+      padding: 2.5rem 2rem 2rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+    .km0-lang-switch {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 2px;
+      padding: 3px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .km0-lang-switch__btn {
+      border: 0;
+      border-radius: 9999px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      font: inherit;
+      padding: 6px 10px;
+    }
+    .km0-lang-switch__btn--active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+    .logo {
+      width: min(192px, 44vw);
+      height: auto;
+      margin: 0 auto 1.5rem;
+      display: block;
+      filter: drop-shadow(0 0 24px rgba(123, 63, 228, 0.35));
+    }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin: 0 0 0.75rem;
+    }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .tagline {
+      margin: 0 0 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .intro {
+      margin: 0 0 1.25rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .pricing-notice {
+      margin: 0 0 1.25rem;
+      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      background: rgba(123, 63, 228, 0.12);
+      border: 1px solid rgba(123, 63, 228, 0.25);
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.82rem;
+      line-height: 1.5;
+      text-align: left;
+    }
+    .pricing-notice a { color: #b794f6; text-decoration: none; font-weight: 500; }
+    .register-form { text-align: left; max-width: 320px; margin: 0 auto; }
+    .field { margin-bottom: 0.85rem; }
+    .field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.35rem;
+    }
+    .field input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font: inherit;
+      font-size: 0.9rem;
+    }
+    .field input:focus { outline: none; border-color: #7b3fe4; }
+    .form-error {
+      display: none;
+      margin: 0 0 0.85rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 10px;
+      background: rgba(255, 80, 80, 0.12);
+      border: 1px solid rgba(255, 80, 80, 0.3);
+      color: #ffb4b4;
+      font-size: 0.82rem;
+    }
+    .form-error--visible { display: block; }
+    .btn-submit {
+      width: 100%;
+      margin-top: 0.25rem;
+      padding: 0.85rem 2rem;
+      border: 0;
+      border-radius: 9999px;
+      background: #fff;
+      color: #0b1220;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .signin-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+    }
+    .signin-link:hover { color: #7b3fe4; }
+    footer { margin-top: 1.5rem; font-size: 0.75rem; color: rgba(255, 255, 255, 0.35); }
+    footer a { color: rgba(255, 255, 255, 0.55); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <nav class="km0-lang-switch" role="navigation" aria-label="Idioma">
+      <button type="button" class="km0-lang-switch__btn" data-lang="ca">CA</button>
+      <button type="button" class="km0-lang-switch__btn km0-lang-switch__btn--active" data-lang="es">ES</button>
+      <button type="button" class="km0-lang-switch__btn" data-lang="en">EN</button>
+      <button type="button" class="km0-lang-switch__btn" data-lang="de">DE</button>
+    </nav>
+    <img class="logo" src="/logo.svg" alt="Kilómetro 0 Digital" width="192" height="192" />
+    <p class="eyebrow" data-i18n="loginEyebrow">Kilómetro 0 Digital</p>
+    <h1 data-i18n="registerSubmit">Crear cuenta</h1>
+    <p class="tagline" data-i18n="landingTagline">Origen local · Impacto digital</p>
+    <p class="intro">Crea tu cuenta @km0digital.com con acceso a OpenCloud y correo web.</p>
+
+    <div class="pricing-notice" data-i18n-html="registerPricingNotice"></div>
+
+    <form class="register-form" id="km0-register-form" novalidate>
+      <div class="form-error" id="km0-register-error" role="alert"></div>
+      <div class="field">
+        <label for="km0-email" data-i18n="registerEmailLabel">Correo electrónico</label>
+        <input type="email" id="km0-email" name="email" autocomplete="email" required
+               placeholder="usuario@km0digital.com" data-i18n-placeholder="registerEmailPlaceholder" />
+      </div>
+      <div class="field">
+        <label for="km0-password" data-i18n="registerPasswordLabel">Contraseña</label>
+        <input type="password" id="km0-password" name="password" autocomplete="new-password" required minlength="8"
+               data-i18n-placeholder="registerPasswordPlaceholder" />
+      </div>
+      <div class="field">
+        <label for="km0-password-confirm" data-i18n="registerConfirmPasswordLabel">Confirmar contraseña</label>
+        <input type="password" id="km0-password-confirm" name="password_confirm" autocomplete="new-password" required
+               data-i18n-placeholder="registerConfirmPasswordPlaceholder" />
+      </div>
+      <button type="submit" class="btn-submit" id="km0-register-submit" data-i18n="registerSubmit">Crear cuenta</button>
+    </form>
+
+    <a class="signin-link" href="/login.html" data-i18n="registerSignInLink">¿Ya tienes cuenta? Inicia sesión</a>
+
+    <footer>
+      <a href="https://km0digital.com/" target="_blank" rel="noopener">km0digital.com</a>
+    </footer>
+  </div>
+  <script src="/dex/theme/i18n.js"></script>
+  <script src="/dex-auth.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var EMAIL_RE = /^[a-zA-Z0-9._%+-]+@km0digital\.com$/;
+      var SPECIAL_RE = /[!@#$%^&*(),.?":{}|<>\[\]\\/_+=\-~`]/;
+      var form = document.getElementById('km0-register-form');
+      var errorEl = document.getElementById('km0-register-error');
+      var submitBtn = document.getElementById('km0-register-submit');
+      var redirecting = false;
+
+      function t(key) {
+        return (window.KM0LoginI18n && window.KM0LoginI18n.t) ? window.KM0LoginI18n.t(key) : key;
+      }
+
+      function showError(key) {
+        errorEl.textContent = t(key);
+        errorEl.classList.add('form-error--visible');
+      }
+
+      function hideError() {
+        errorEl.textContent = '';
+        errorEl.classList.remove('form-error--visible');
+      }
+
+      function validateClient(email, password, confirm) {
+        if (!EMAIL_RE.test(email)) return 'registerErrorEmailInvalid';
+        if (password !== confirm) return 'registerErrorPasswordMismatch';
+        if (password.length < 8 || !SPECIAL_RE.test(password)) return 'registerErrorPasswordWeak';
+        return null;
+      }
+
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        hideError();
+        var email = document.getElementById('km0-email').value.trim().toLowerCase();
+        var password = document.getElementById('km0-password').value;
+        var confirm = document.getElementById('km0-password-confirm').value;
+        var clientErr = validateClient(email, password, confirm);
+        if (clientErr) { showError(clientErr); return; }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = t('registerSubmitting');
+
+        fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, password: password }),
+        })
+          .then(function (resp) {
+            return resp.json().catch(function () { return {}; }).then(function (body) {
+              return { status: resp.status, body: body };
+            });
+          })
+          .then(function (result) {
+            if (result.status === 201) {
+              redirecting = true;
+              submitBtn.textContent = t('registerSigningIn');
+              window.KM0DexAuth.storePendingLogin(email, password);
+              window.KM0DexAuth.clearOidcBrowserState();
+              window.KM0DexAuth.startDexLogin('ldap');
+              return;
+            }
+            if (result.status === 409) { showError('registerErrorDuplicate'); return; }
+            if (result.status === 400) { showError('registerErrorGeneric'); return; }
+            showError('registerErrorGeneric');
+          })
+          .catch(function () { showError('registerErrorGeneric'); })
+          .finally(function () {
+            if (!redirecting) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = t('registerSubmit');
+            }
+          });
+      });
+    })();
+  </script>
+</body>
+</html>

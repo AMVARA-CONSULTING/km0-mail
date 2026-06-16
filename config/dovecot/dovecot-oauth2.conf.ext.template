@@ -1,0 +1,6 @@
+# Dex OIDC token introspection (RFC 7662) — rendered at container start
+introspection_url = @DEX_INTROSPECTION_URL@
+introspection_mode = post
+client_id = @DOVECOT_OAUTH_CLIENT_ID@
+client_secret = @DOVECOT_OAUTH_CLIENT_SECRET@
+username_attribute = email
