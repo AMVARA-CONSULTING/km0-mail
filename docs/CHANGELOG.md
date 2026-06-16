@@ -5,6 +5,16 @@
 ### Added
 
 - Roundcube KM0 login branding: custom `km0` skin (extends Elastic) with logo, favicon, and styled login page; mounted via Docker Compose; inbox UI unchanged
+- KM0 login page language switch (CA/ES/EN/DE) with client-side i18n (`skins/km0/js/i18n.js`); browser/query/localStorage locale detection
+
+### Fixed
+
+- KM0 login form: hide Elastic `input-group-prepend` icons so username/password fields match OpenCloud-style plain inputs
+
+### Changed
+
+- Roundcube default locale set to `en_US` in `config/roundcube/config.inc.php`
+- Runbook: Dovecot image rebuild steps after SSO revert; login skin file list includes `i18n.js`
 
 ### Reverted (2026-06-16)
 

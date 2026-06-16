@@ -37,6 +37,45 @@ body.task-login #layout-content.km0-login-card {
   margin: 1rem auto;
 }
 
+.km0-lang-switch {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.km0-lang-switch__btn {
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font: inherit;
+  padding: 6px 10px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.km0-lang-switch__btn:hover {
+  color: #fff;
+}
+
+.km0-lang-switch__btn--active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.km0-lang-switch__btn:focus-visible {
+  outline: 2px solid #7b3fe4;
+  outline-offset: 2px;
+}
+
 body.task-login #layout-content {
   text-align: center;
   width: auto !important;
@@ -120,6 +159,17 @@ body.task-login #login-form td.input {
   display: block;
   width: 100%;
   padding: 0;
+}
+
+/* Hide Elastic prepend icons — OpenCloud uses plain inputs */
+body.task-login #login-form .input-group-prepend,
+body.task-login #login-form .input-group-text {
+  display: none !important;
+}
+
+body.task-login #login-form .input-group .form-control {
+  border-radius: 12px;
+  width: 100%;
 }
 
 body.task-login #login-form .form-control {
