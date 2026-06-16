@@ -1,6 +1,10 @@
 # GitHub issue draft — KM0 Mail SSO (Dex OIDC + branded login/register)
 
-Create this issue on **AMVARA-CONSULTING/km0-mail**.
+> **Status: DEFERRED / REVERTED (2026-06-16)**  
+> Issue #3 was implemented and rolled back. The external `/login.html` wrapper did not replace Roundcube’s login UI; register returned 403 (register-api CORS). Do **not** re-implement from this draft without a revised plan.  
+> **Next step:** [`github-issue-roundcube-login-ui.md`](github-issue-roundcube-login-ui.md) — style Roundcube’s native login first.
+
+Create this issue on **AMVARA-CONSULTING/km0-mail** only when revisiting full SSO.
 
 Cross-repo work also touches **AMVARA-CONSULTING/km0-opencloud** (Dex static clients, register-api). Link both issues when implementing.
 
