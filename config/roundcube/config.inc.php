@@ -32,6 +32,7 @@ $config['smtp_conn_options'] = [
 ];
 
 $config['skin'] = 'km0';
+$config['language'] = 'en_US';
 $config['support_url'] = 'https://km0digital.com/';
 $config['product_name'] = 'KM0 Mail';
 $config['des_key'] = getenv('ROUNDCUBEMAIL_DES_KEY') ?: 'change-me';

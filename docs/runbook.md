@@ -221,7 +221,27 @@ curl -sI http://127.0.0.1:8080/ | head -5
 # Hard-refresh browser cache when verifying login CSS/logo
 ```
 
-Skin files: `skins/km0/templates/login.html`, `skins/km0/styles/km0-login.css`, `skins/km0/images/logo.svg`, `skins/km0/images/favicon.svg`.
+Skin files: `skins/km0/templates/login.html`, `skins/km0/styles/km0-login.css`, `skins/km0/js/i18n.js`, `skins/km0/images/logo.svg`, `skins/km0/images/favicon.svg`.
+
+Login page language switch (CA/ES/EN/DE) uses client-side i18n; default Roundcube locale is `en_US` in `config/roundcube/config.inc.php`.
+
+---
+
+## Dovecot image rebuild
+
+After changing `docker/dovecot/entrypoint.sh`, `Dockerfile`, or reverting SSO/OAuth env requirements, **rebuild the Dovecot image** — a stale image keeps the old entrypoint and the container will restart-loop:
+
+```bash
+cd /opt/km0-mail
+git pull
+docker compose build dovecot --no-cache
+docker compose up -d dovecot
+docker compose logs --tail=20 dovecot   # must NOT show DOVECOT_OAUTH_CLIENT_SECRET
+nc -vz 127.0.0.1 993
+docker compose exec dovecot doveadm auth test postmaster@km0digital.com '<password>'
+```
+
+Symptom: `docker compose ps` shows Dovecot **Restarting**; Roundcube login returns 401 / *IMAP connection error*.
 
 ---
 
