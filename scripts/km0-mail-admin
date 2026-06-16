@@ -26,10 +26,8 @@ Commands:
   list-mailboxes
   list-aliases
   set-password <user@km0digital.com> [password]
-  provision-sso-mailbox <user@km0digital.com> [opencloud_uuid] [password]
 
 If password is omitted, a random password is generated and printed once.
-provision-sso-mailbox calls the localhost provision API (SSO / register hook).
 EOF
 }
 
@@ -121,46 +119,6 @@ cmd_list_aliases() {
     psql_exec -c "SELECT alias_address, target_email, created_at FROM mail_aliases ORDER BY alias_address;"
 }
 
-cmd_provision_sso_mailbox() {
-    local email="$1"
-    local opencloud_uuid="${2:-}"
-    local password="${3:-}"
-    require_email "$email"
-
-    : "${MAIL_PROVISION_API_TOKEN:?MAIL_PROVISION_API_TOKEN required in .env}"
-    local api_url="${KM0_PROVISION_API_URL:-http://127.0.0.1:8092}"
-
-    local payload
-    if [[ -n "$opencloud_uuid" && -n "$password" ]]; then
-        payload=$(printf '{"email":"%s","opencloud_uuid":"%s","password":"%s"}' "$email" "$opencloud_uuid" "$password")
-    elif [[ -n "$opencloud_uuid" ]]; then
-        payload=$(printf '{"email":"%s","opencloud_uuid":"%s"}' "$email" "$opencloud_uuid")
-    elif [[ -n "$password" ]]; then
-        payload=$(printf '{"email":"%s","password":"%s"}' "$email" "$password")
-    else
-        payload=$(printf '{"email":"%s"}' "$email")
-    fi
-
-    local http_code
-    http_code=$(curl -sf -o /tmp/km0-provision.json -w '%{http_code}' \
-        -X POST "${api_url}/provision" \
-        -H "Authorization: Bearer ${MAIL_PROVISION_API_TOKEN}" \
-        -H "Content-Type: application/json" \
-        -d "$payload") || {
-        echo "error: provision API request failed" >&2
-        exit 1
-    }
-
-    if [[ "$http_code" != "200" && "$http_code" != "201" ]]; then
-        echo "error: provision API returned HTTP ${http_code}" >&2
-        cat /tmp/km0-provision.json >&2 2>/dev/null || true
-        exit 1
-    fi
-
-    echo "provisioned: ${email} (HTTP ${http_code})"
-    cat /tmp/km0-provision.json
-}
-
 main() {
     local cmd="${1:-}"
     case "$cmd" in
@@ -181,10 +139,6 @@ main() {
             ;;
         list-aliases)
             cmd_list_aliases
-            ;;
-        provision-sso-mailbox)
-            [[ $# -ge 2 ]] || { usage; exit 1; }
-            cmd_provision_sso_mailbox "$2" "${3:-}" "${4:-}"
             ;;
         -h|--help|help|"")
             usage

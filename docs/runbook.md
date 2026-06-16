@@ -128,60 +128,7 @@ docker compose up -d dovecot
 ./scripts/km0-mail-admin list-aliases
 ```
 
-Mail passwords are **independent** from OpenCloud for CLI-provisioned mailboxes. SSO users authenticate via Dex OAuth; `opencloud_uuid` is set on register or first webmail login.
-
----
-
-## Webmail SSO (Dex OIDC)
-
-Shared issuer: `https://cloud.km0digital.com/dex` — **no second Dex on mail hostname**.
-
-### Secrets (`.env`)
-
-```bash
-ROUNDCUBE_OAUTH_CLIENT_ID=km0-mail-web
-ROUNDCUBE_OAUTH_CLIENT_SECRET=<match Dex static client>
-DOVECOT_OAUTH_CLIENT_ID=km0-mail-dovecot
-DOVECOT_OAUTH_CLIENT_SECRET=<match Dex static client>
-MAIL_PROVISION_API_TOKEN=<openssl rand -hex 32>
-```
-
-### Deploy auth pages + nginx
-
-```bash
-sudo rsync -a /opt/km0-mail/host-www/mail-auth/ /var/www/mail-auth/
-sudo cp /opt/km0-mail/nginx/sites-available/mail /etc/nginx/sites-available/mail
-sudo nginx -t && sudo systemctl reload nginx
-```
-
-Branded login: `https://mail.km0digital.com/login.html`  
-Register: `https://mail.km0digital.com/register`  
-Legacy password webmail: `https://mail.km0digital.com/index.php?_task=login`
-
-### Provision API (localhost)
-
-```bash
-curl -s http://127.0.0.1:8092/health
-curl -s -X POST http://127.0.0.1:8092/provision \
-  -H "Authorization: Bearer $MAIL_PROVISION_API_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"email":"user@km0digital.com"}'
-```
-
-CLI wrapper: `./scripts/km0-mail-admin provision-sso-mailbox user@km0digital.com`
-
-### Cross-repo (OpenCloud)
-
-Dex clients, register-api mailbox hook, and CORS: [`opencloud-sso-integration.md`](opencloud-sso-integration.md)
-
-### SSO smoke tests
-
-```bash
-curl -s https://cloud.km0digital.com/dex/.well-known/openid-configuration | jq .introspection_endpoint
-curl -sI https://mail.km0digital.com/login.html | head
-curl -sI https://mail.km0digital.com/register | head
-docker compose logs --tail=30 dovecot roundcube mail-provision-api
-```
+Mail passwords are **independent** from OpenCloud (phase 1). Future SSO/register: see deferred draft [`github-issue-mail-sso.md`](github-issue-mail-sso.md).
 
 `km0-mail-admin` creates Maildir `cur/new/tmp` and reloads Postfix hash maps automatically. To rebuild maps manually:
 

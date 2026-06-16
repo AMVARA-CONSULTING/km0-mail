@@ -10,9 +10,9 @@ Self-hosted mail stack for **KM0 Digital** — Postfix, Dovecot, Rspamd, Roundcu
 
 ## Status
 
-**Webmail (live):** https://mail.km0digital.com — SSO via shared Dex (`/login.html`)
+**Webmail (live):** https://mail.km0digital.com
 
-Docker stack running on the VPS. **You still need DNS at Joker + PTR at Hetzner** for mail from Gmail/Outlook — see [`docs/joker-dns-checklist.md`](docs/joker-dns-checklist.md). **SSO** requires Dex clients in km0-opencloud — see [`docs/opencloud-sso-integration.md`](docs/opencloud-sso-integration.md).
+Docker stack running on the VPS. **You still need DNS at Joker + PTR at Hetzner** for mail from Gmail/Outlook — see [`docs/joker-dns-checklist.md`](docs/joker-dns-checklist.md).
 
 ```bash
 ./scripts/verify-mail-stack.sh
@@ -33,6 +33,7 @@ Docker stack running on the VPS. **You still need DNS at Joker + PTR at Hetzner*
 ├── autoagents/          # Cursor agent loop (GitHub Issues → FEAT tasks)
 └── docs/
     ├── issue-mail-preplan.md
+    ├── github-issue-roundcube-login-ui.md
     ├── runbook.md
     └── agent-loop.md
 ```

@@ -2,21 +2,13 @@
 
 ## [Unreleased]
 
-### Added
+### Reverted (2026-06-16)
 
-- Webmail SSO via shared Dex OIDC: branded login/register pages (`/login.html`, `/register`), Roundcube OAuth, Dovecot XOAUTH2
-- `mail-provision-api` service for SSO mailbox auto-provisioning (localhost `:8092`)
-- Roundcube `km0_sso_provision` plugin (silent provision on OAuth login)
-- `km0-mail-admin provision-sso-mailbox` CLI wrapper for the provision API
-- OpenCloud cross-repo SSO guide: `docs/opencloud-sso-integration.md`
+- Rolled back experimental webmail SSO (issue #3): external `/login.html` wrapper, Roundcube OAuth, Dovecot XOAUTH2, `mail-provision-api`, and register proxy. Nginx restored to direct Roundcube proxy. SSO redesign deferred — see `docs/github-issue-mail-sso.md`.
 
 ### Changed
 
-- Nginx vhost: root redirects to `/login.html`; static auth pages, Dex theme assets, and register-api proxy
-- Dovecot: OAuth2 passdb alongside SQL (legacy plain/login for CLI-provisioned mailboxes)
-- `.env.example`: `ROUNDCUBE_OAUTH_*`, `DOVECOT_OAUTH_*`, `MAIL_PROVISION_API_TOKEN`, `DEX_INTROSPECTION_URL`
-- Runbook: SSO deployment, provision API smoke tests, and OpenCloud integration steps
-- README: notes SSO via Dex and links OpenCloud integration doc
+- Nginx vhost: polished TLS proxy to Roundcube (`127.0.0.1:8080`) with security headers; no auth-page redirect layer
 - Runbook: OpenCloud SMTP example uses `host.docker.internal` (not `127.0.0.1`), current `SMTP_*` env var names, and `extra_hosts: host.docker.internal:host-gateway` for Docker relay to km0-mail on the host
 
 ### Deployed (server 2026-06-14)
@@ -28,8 +20,6 @@
 
 ### Fixed
 
-- Roundcube SSO: mount `km0_sso_provision` plugin at `/var/www/html/plugins/` (Roundcube load path; was `/var/roundcube/plugins/`)
-- `mail-provision-api`: reload Postfix maps via `docker exec` on the postfix container (compose CLI unavailable inside API container)
 - Postfix recipient validation: rebuild hash maps from PostgreSQL at startup (`docker/postfix/build-hash-maps.sh`) instead of live `pgsql:` lookups that returned 451 tempfail under smtpd
 - Postfix LMTP delivery: IPv4-only transport, chroot DNS (`resolv.conf` in queue dir), LMTP/smtpd chroot disabled
 - Dovecot LMTP: SQL config path (`/run/dovecot/dovecot-sql.conf.ext`), absolute `home` in user_query
