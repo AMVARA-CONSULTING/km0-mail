@@ -208,6 +208,23 @@ sudo fail2ban-client status
 
 ---
 
+## Roundcube branding (KM0 skin)
+
+Webmail login uses a custom **`km0`** skin (extends Elastic) mounted from `skins/km0/`. Inbox UI remains standard Elastic; only the login page is KM0-branded.
+
+After changing skin assets or `config/roundcube/config.inc.php`:
+
+```bash
+cd /opt/km0-mail
+docker compose up -d roundcube
+curl -sI http://127.0.0.1:8080/ | head -5
+# Hard-refresh browser cache when verifying login CSS/logo
+```
+
+Skin files: `skins/km0/templates/login.html`, `skins/km0/styles/km0-login.css`, `skins/km0/images/logo.svg`, `skins/km0/images/favicon.svg`.
+
+---
+
 ## Troubleshooting
 
 | Symptom | Checks |
