@@ -41,6 +41,7 @@ body.task-login #layout-content.km0-login-card {
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 10;
   display: flex;
   gap: 2px;
   padding: 3px;
@@ -49,31 +50,66 @@ body.task-login #layout-content.km0-login-card {
   background: rgba(255, 255, 255, 0.05);
   font-size: 0.75rem;
   font-weight: 500;
+  line-height: 1;
 }
 
-.km0-lang-switch__btn {
-  border: 0;
-  border-radius: 9999px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.6);
+/* Override Elastic/Bootstrap .btn.btn-secondary on language pills (OpenCloud style) */
+body.task-login nav.km0-lang-switch button.km0-lang-switch__btn,
+body.task-login nav.km0-lang-switch button.btn {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  width: auto;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  margin: 0;
+  box-shadow: none !important;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: baseline;
+  border: 0 !important;
+  border-radius: 9999px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   cursor: pointer;
   font: inherit;
-  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 6px 10px !important;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
-.km0-lang-switch__btn:hover {
-  color: #fff;
+body.task-login nav.km0-lang-switch button.km0-lang-switch__btn:hover,
+body.task-login nav.km0-lang-switch button.btn:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-.km0-lang-switch__btn--active {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+body.task-login nav.km0-lang-switch button.km0-lang-switch__btn--active,
+body.task-login nav.km0-lang-switch button.km0-lang-switch__btn--active.btn {
+  background: rgba(255, 255, 255, 0.15) !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
 }
 
-.km0-lang-switch__btn:focus-visible {
+body.task-login nav.km0-lang-switch button.km0-lang-switch__btn--active:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+}
+
+body.task-login nav.km0-lang-switch button.km0-lang-switch__btn:focus,
+body.task-login nav.km0-lang-switch button.km0-lang-switch__btn:focus-visible,
+body.task-login nav.km0-lang-switch button.btn:focus {
   outline: 2px solid #7b3fe4;
   outline-offset: 2px;
+  box-shadow: none !important;
 }
 
 body.task-login #layout-content {
