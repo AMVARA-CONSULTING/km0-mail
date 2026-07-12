@@ -179,6 +179,19 @@ footer a:hover { color: #7b3fe4; }
   color: #ffb4b4;
 }
 .register-form { text-align: left; max-width: 360px; margin: 0 auto; }
+.register-form .btn-primary {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0.75rem 0 0;
+}
+.ldap-hint {
+  margin: 0.5rem auto 0;
+  max-width: 320px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.45);
+}
 .field { margin-bottom: 0.85rem; }
 .field label {
   display: block;

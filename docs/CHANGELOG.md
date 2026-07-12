@@ -2,8 +2,16 @@
 
 ## [Unreleased]
 
+### Added
+
+- Branded login landing: mailbox password primary, OpenCloud / LDAP secondary with redirect hint (en/es/ca/de)
+- Registration: password confirmation field, client-side validation, and localized API error messages
+- Roundcube login skin: links to self-registration and branded landing (`/login.html`)
+
 ### Fixed
 
+- Nginx: `/` redirects to `/login.html`; Roundcube task URLs with query args still route to `/index.php`
+- Branded auth pages: register submit button alignment; OpenCloud / LDAP wording (replacing generic “KM0 LDAP”)
 - Dovecot auth: OAuth2 passdb enabled only when driver and `DOVECOT_OAUTH_CLIENT_SECRET` are present (fixes *Auth process broken* on Debian Bookworm)
 - mail-provision-api: STARTTLS on SMTP submission for verification emails
 - verify-mail-stack: Dovecot auth worker and Postfix sender-verification checks

@@ -11,8 +11,8 @@
       loginEyebrow: 'Kilometer 0 Digital',
       landingTagline: 'Local origin · Digital impact',
       loginTitle: 'KM0 Mail',
-      loginIntro: 'Sign in with your KM0 LDAP account or mailbox password.',
-      ldapButton: 'Sign in with KM0 LDAP',
+      loginIntro: 'Sign in with your mailbox password or OpenCloud LDAP account.',
+      ldapButton: 'Sign in with OpenCloud / LDAP',
       passwordButton: 'Sign in with email and password',
       landingDividerOr: 'or',
       registerLink: 'Create a free account',
@@ -25,9 +25,23 @@
       usernameLabel: 'Username',
       usernameSuffix: '@km0digital.com',
       passwordLabel: 'Password',
+      passwordConfirmLabel: 'Confirm password',
       contactLabel: 'Contact email (optional)',
       submitRegister: 'Create account',
       signInLink: 'Already have an account?',
+      ldapHint: 'Uses your OpenCloud / LDAP account (brief redirect to cloud.km0digital.com).',
+      errorUsernameRequired: 'Username is required.',
+      errorEmailRequired: 'Email address is required.',
+      registerErrorPasswordMismatch: 'Passwords do not match.',
+      registerErrorPasswordWeak: 'Password must be at least 8 characters and include a special character.',
+      registerErrorEmailInvalid: 'Enter a valid email address.',
+      registerErrorDuplicate: 'This address is already registered. Sign in instead.',
+      registerErrorValidation: 'Could not validate your details. Check the fields and try again.',
+      registerErrorServiceUnavailable: 'Registration is temporarily unavailable. Try again later.',
+      registerErrorRateLimit: 'Too many attempts. Wait a minute and try again.',
+      registerErrorGeneric: 'Could not create account. Please try again later.',
+      registerErrorFreemailMailbox: 'KM0 Mail cannot use Gmail, Outlook, or other freemail domains as a mailbox. Use @km0digital.com or your own domain.',
+      registerErrorInvalidDomain: 'Invalid domain for this registration mode.',
       pricingNotice: 'KM0 Mail is free during the trial phase. Pricing may change; see km0digital.com for updates.',
       domainTitle: 'Verify your domain',
       domainIntro: 'Add these DNS records at your registrar, then click Check again.',
@@ -42,8 +56,8 @@
       loginEyebrow: 'Kilómetro 0 Digital',
       landingTagline: 'Origen local · Impacto digital',
       loginTitle: 'KM0 Mail',
-      loginIntro: 'Inicia sesión con LDAP de KM0 o con la contraseña del buzón.',
-      ldapButton: 'Iniciar sesión con LDAP KM0',
+      loginIntro: 'Inicia sesión con la contraseña del buzón o con OpenCloud / LDAP.',
+      ldapButton: 'Iniciar sesión con OpenCloud / LDAP',
       passwordButton: 'Iniciar sesión con correo y contraseña',
       landingDividerOr: 'o',
       registerLink: 'Crear cuenta gratuita',
@@ -56,9 +70,23 @@
       usernameLabel: 'Usuario',
       usernameSuffix: '@km0digital.com',
       passwordLabel: 'Contraseña',
+      passwordConfirmLabel: 'Confirmar contraseña',
       contactLabel: 'Correo de contacto (opcional)',
       submitRegister: 'Crear cuenta',
       signInLink: '¿Ya tienes cuenta?',
+      ldapHint: 'Usa tu cuenta OpenCloud / LDAP (redirección breve a cloud.km0digital.com).',
+      errorUsernameRequired: 'El usuario es obligatorio.',
+      errorEmailRequired: 'El correo electrónico es obligatorio.',
+      registerErrorPasswordMismatch: 'Las contraseñas no coinciden.',
+      registerErrorPasswordWeak: 'La contraseña debe tener al menos 8 caracteres e incluir un carácter especial.',
+      registerErrorEmailInvalid: 'Introduce un correo electrónico válido.',
+      registerErrorDuplicate: 'Esta dirección ya está registrada. Inicia sesión.',
+      registerErrorValidation: 'No se pudieron validar los datos. Comprueba los campos.',
+      registerErrorServiceUnavailable: 'El registro no está disponible temporalmente. Inténtalo más tarde.',
+      registerErrorRateLimit: 'Demasiados intentos. Espera un minuto e inténtalo de nuevo.',
+      registerErrorGeneric: 'No se pudo crear la cuenta. Inténtalo de nuevo más tarde.',
+      registerErrorFreemailMailbox: 'KM0 Mail no admite Gmail, Outlook u otros correos gratuitos como buzón. Usa @km0digital.com o tu dominio propio.',
+      registerErrorInvalidDomain: 'Dominio no válido para este modo de registro.',
       pricingNotice: 'KM0 Mail es gratuito en la fase de prueba. El precio puede cambiar; consulta km0digital.com.',
       domainTitle: 'Verifica tu dominio',
       domainIntro: 'Añade estos registros DNS en tu registrador y pulsa Comprobar de nuevo.',
@@ -73,8 +101,8 @@
       loginEyebrow: 'Kilòmetre 0 Digital',
       landingTagline: 'Origen local · Impacte digital',
       loginTitle: 'KM0 Mail',
-      loginIntro: 'Inicia sessió amb LDAP KM0 o amb la contrasenya de la bústia.',
-      ldapButton: 'Iniciar sessió amb LDAP KM0',
+      loginIntro: 'Inicia sessió amb la contrasenya de la bústia o amb OpenCloud / LDAP.',
+      ldapButton: 'Iniciar sessió amb OpenCloud / LDAP',
       passwordButton: 'Iniciar sessió amb correu i contrasenya',
       landingDividerOr: 'o',
       registerLink: 'Crear compte gratuït',
@@ -87,9 +115,23 @@
       usernameLabel: 'Usuari',
       usernameSuffix: '@km0digital.com',
       passwordLabel: 'Contrasenya',
+      passwordConfirmLabel: 'Confirmar contrasenya',
       contactLabel: 'Correu de contacte (opcional)',
       submitRegister: 'Crear compte',
       signInLink: 'Ja tens compte?',
+      ldapHint: 'Fes servir el compte OpenCloud / LDAP (redirecció breu a cloud.km0digital.com).',
+      errorUsernameRequired: 'L\'usuari és obligatori.',
+      errorEmailRequired: 'El correu electrònic és obligatori.',
+      registerErrorPasswordMismatch: 'Les contrasenyes no coincideixen.',
+      registerErrorPasswordWeak: 'La contrasenya ha de tenir almenys 8 caràcters i incloure un caràcter especial.',
+      registerErrorEmailInvalid: 'Introdueix un correu electrònic vàlid.',
+      registerErrorDuplicate: 'Aquesta adreça ja està registrada. Inicia sessió.',
+      registerErrorValidation: 'No s\'han pogut validar les dades. Comprova els camps.',
+      registerErrorServiceUnavailable: 'El registre no està disponible temporalment. Torna-ho a provar més tard.',
+      registerErrorRateLimit: 'Massa intents. Espera un minut i torna-ho a provar.',
+      registerErrorGeneric: 'No s\'ha pogut crear el compte. Torna-ho a provar més tard.',
+      registerErrorFreemailMailbox: 'KM0 Mail no admet Gmail, Outlook ni altres correus gratuïts com a bústia. Fes servir @km0digital.com o el teu domini.',
+      registerErrorInvalidDomain: 'Domini no vàlid per a aquest mode de registre.',
       pricingNotice: 'KM0 Mail és gratuït en la fase de prova. Consulta km0digital.com.',
       domainTitle: 'Verifica el teu domini',
       domainIntro: 'Afegeix aquests registres DNS i prem Comprova de nou.',
@@ -104,8 +146,8 @@
       loginEyebrow: 'Kilometer 0 Digital',
       landingTagline: 'Lokaler Ursprung · Digitale Wirkung',
       loginTitle: 'KM0 Mail',
-      loginIntro: 'Melden Sie sich mit KM0 LDAP oder Ihrem Postfachpasswort an.',
-      ldapButton: 'Mit KM0 LDAP anmelden',
+      loginIntro: 'Melden Sie sich mit Postfachpasswort oder OpenCloud / LDAP an.',
+      ldapButton: 'Mit OpenCloud / LDAP anmelden',
       passwordButton: 'Mit E-Mail und Passwort anmelden',
       landingDividerOr: 'oder',
       registerLink: 'Kostenloses Konto erstellen',
@@ -118,9 +160,23 @@
       usernameLabel: 'Benutzername',
       usernameSuffix: '@km0digital.com',
       passwordLabel: 'Passwort',
+      passwordConfirmLabel: 'Passwort bestätigen',
       contactLabel: 'Kontakt-E-Mail (optional)',
       submitRegister: 'Konto erstellen',
       signInLink: 'Bereits ein Konto?',
+      ldapHint: 'Nutzt Ihr OpenCloud- / LDAP-Konto (kurze Weiterleitung zu cloud.km0digital.com).',
+      errorUsernameRequired: 'Benutzername ist erforderlich.',
+      errorEmailRequired: 'E-Mail-Adresse ist erforderlich.',
+      registerErrorPasswordMismatch: 'Passwörter stimmen nicht überein.',
+      registerErrorPasswordWeak: 'Passwort muss mindestens 8 Zeichen und ein Sonderzeichen enthalten.',
+      registerErrorEmailInvalid: 'Geben Sie eine gültige E-Mail-Adresse ein.',
+      registerErrorDuplicate: 'Diese Adresse ist bereits registriert. Bitte anmelden.',
+      registerErrorValidation: 'Daten konnten nicht validiert werden. Felder prüfen.',
+      registerErrorServiceUnavailable: 'Registrierung vorübergehend nicht verfügbar. Später erneut versuchen.',
+      registerErrorRateLimit: 'Zu viele Versuche. Eine Minute warten und erneut versuchen.',
+      registerErrorGeneric: 'Konto konnte nicht erstellt werden. Bitte später erneut versuchen.',
+      registerErrorFreemailMailbox: 'KM0 Mail unterstützt Gmail, Outlook und andere Freemail-Domains nicht als Postfach. Nutze @km0digital.com oder deine eigene Domain.',
+      registerErrorInvalidDomain: 'Ungültige Domain für diesen Registrierungsmodus.',
       pricingNotice: 'KM0 Mail ist in der Testphase kostenlos. Siehe km0digital.com.',
       domainTitle: 'Domain verifizieren',
       domainIntro: 'DNS-Einträge beim Registrar setzen, dann erneut prüfen.',
@@ -138,12 +194,22 @@
     return LOCALES.indexOf(c) >= 0 ? c : null;
   }
 
+  function detectBrowserLocale() {
+    if (typeof navigator === 'undefined' || !navigator.language) return DEFAULT;
+    var langs = navigator.languages || [navigator.language];
+    for (var i = 0; i < langs.length; i++) {
+      var loc = norm(langs[i]);
+      if (loc) return loc;
+    }
+    return DEFAULT;
+  }
+
   function getLocale() {
     try {
       var q = new URLSearchParams(location.search).get('lang');
       var fromQ = norm(q);
       if (fromQ) { localStorage.setItem(STORAGE_KEY, fromQ); return fromQ; }
-      return norm(localStorage.getItem(STORAGE_KEY)) || DEFAULT;
+      return norm(localStorage.getItem(STORAGE_KEY)) || detectBrowserLocale();
     } catch (e) { return DEFAULT; }
   }
 

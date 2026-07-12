@@ -42,6 +42,13 @@ server {
     client_max_body_size 25M;
 
     # Branded auth entry (does NOT replace Roundcube login template)
+    location = / {
+        if ($args) {
+            return 302 $scheme://$host/index.php?$args;
+        }
+        return 302 $scheme://$host/login.html;
+    }
+
     location = /login.html {
         alias /var/www/mail-auth/login.html;
         default_type text/html;

@@ -149,7 +149,8 @@ docker compose up -d --build
 
 | URL | Purpose |
 |-----|---------|
-| `/login.html` | Branded entry: LDAP OAuth or link to Roundcube password login |
+| `/` | Redirects to `/login.html` (Roundcube tasks with `?args` go to `/index.php`) |
+| `/login.html` | Canonical branded entry: mailbox password or OpenCloud / LDAP |
 | `/register` | Self-registration Model A (`@km0digital.com`) or B (custom domain) |
 | `/domain.html?domain=example.com` | DNS wizard (Model B) |
 | `/verify?token=…` | Email verification (Model A) |
