@@ -1,12 +1,15 @@
-# KM0 Mail — Roundcube webmail (TLS termination on host Nginx)
+# KM0 Mail — webmail + auth pages (TLS on host Nginx)
 # Hostname: mail.km0digital.com
 #
-# Install:
+# Deploy auth static files:
+#   sudo rsync -a host-www/mail-auth/ /var/www/mail-auth/
 #   sudo cp nginx/sites-available/mail /etc/nginx/sites-available/mail
-#   sudo ln -sf /etc/nginx/sites-available/mail /etc/nginx/sites-enabled/mail
 #   sudo nginx -t && sudo systemctl reload nginx
 #
-# Upstream: Roundcube Docker on 127.0.0.1:8080 (see docker-compose.yml)
+# Roundcube upstream: 127.0.0.1:8080
+# register-api proxy: 127.0.0.1:8091 (km0-opencloud)
+# mail-provision-api: 127.0.0.1:8092
+# domain-verify-api: 127.0.0.1:8093
 
 server {
     listen 80;
@@ -38,7 +41,98 @@ server {
 
     client_max_body_size 25M;
 
-    # Roundcube webmail — all paths (login, static assets, AJAX)
+    # Branded auth entry (does NOT replace Roundcube login template)
+    location = /login.html {
+        alias /var/www/mail-auth/login.html;
+        default_type text/html;
+    }
+
+    location = /register {
+        alias /var/www/mail-auth/register.html;
+        default_type text/html;
+    }
+
+    location = /register.html {
+        return 301 /register$is_args$args;
+    }
+
+    location = /domain.html {
+        alias /var/www/mail-auth/domain.html;
+        default_type text/html;
+    }
+
+    location = /verify {
+        alias /var/www/mail-auth/verify.html;
+        default_type text/html;
+    }
+
+    location = /km0-auth.css {
+        alias /var/www/mail-auth/km0-auth.css;
+        default_type text/css;
+        expires 1h;
+    }
+
+    location = /km0-auth-i18n.js {
+        alias /var/www/mail-auth/km0-auth-i18n.js;
+        default_type application/javascript;
+        expires 1h;
+    }
+
+    location = /dex-auth.js {
+        alias /var/www/mail-auth/dex-auth.js;
+        default_type application/javascript;
+        expires 1h;
+    }
+
+    location = /logo.svg {
+        alias /var/www/mail-auth/logo.svg;
+        default_type image/svg+xml;
+        expires 7d;
+        access_log off;
+    }
+
+    location = /favicon.svg {
+        alias /var/www/mail-auth/favicon.svg;
+        default_type image/svg+xml;
+        expires 7d;
+        access_log off;
+    }
+
+    # Dex i18n for LDAP login button labels
+    location = /dex/theme/i18n.js {
+        proxy_pass https://cloud.km0digital.com/dex/theme/i18n.js;
+        proxy_ssl_server_name on;
+        expires 1h;
+    }
+
+    # Self-registration (same-origin proxy avoids CORS; register-api on host :8091)
+    location = /api/register {
+        proxy_pass http://127.0.0.1:8091/register;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+    }
+
+    location /api/mail/ {
+        proxy_pass http://127.0.0.1:8092/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /api/mail/domain/ {
+        proxy_pass http://127.0.0.1:8093/domain/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Roundcube webmail (native login at /index.php?_task=login, OAuth at /index.php/login/oauth)
     location / {
         proxy_pass http://127.0.0.1:8080;
         proxy_http_version 1.1;

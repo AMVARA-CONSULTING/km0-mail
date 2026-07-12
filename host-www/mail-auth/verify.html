@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="verifyTitle">Email verification</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/km0-auth.css" />
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="/logo.svg" alt="KM0 Digital" width="160" height="160" />
+    <h1 data-i18n="verifyTitle">Email verification</h1>
+    <div class="banner" id="verify-banner" role="status"></div>
+    <a class="btn-primary" href="/index.php?_task=login" data-i18n="passwordButton">Sign in to webmail</a>
+  </div>
+  <script src="/km0-auth-i18n.js"></script>
+  <script>
+    (function () {
+      var token = new URLSearchParams(location.search).get('token') || '';
+      var banner = document.getElementById('verify-banner');
+      if (!token) {
+        banner.textContent = window.KM0AuthI18n.t('verifyError');
+        banner.className = 'banner banner--error banner--visible';
+        return;
+      }
+      fetch('/api/mail/verify-email?token=' + encodeURIComponent(token))
+        .then(function (r) { return r.json().then(function (b) { if (!r.ok) throw new Error(); return b; }); })
+        .then(function () {
+          banner.textContent = window.KM0AuthI18n.t('verifySuccess');
+          banner.className = 'banner banner--success banner--visible';
+        })
+        .catch(function () {
+          banner.textContent = window.KM0AuthI18n.t('verifyError');
+          banner.className = 'banner banner--error banner--visible';
+        });
+    })();
+  </script>
+</body>
+</html>

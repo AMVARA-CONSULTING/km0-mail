@@ -63,5 +63,6 @@ postconf -e "smtp_tls_security_level = may"
 postconf -e "smtpd_tls_cert_file = /etc/ssl/certs/ssl-cert-snakeoil.pem"
 postconf -e "smtpd_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key"
 postconf -e "mynetworks = 127.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, [::1]/128"
+postconf -e "smtpd_sender_restrictions = check_sender_access pgsql:/etc/postfix/sql/sender-verification.cf"
 
 exec "$@"

@@ -284,9 +284,13 @@ body.task-error-login #layout-content > .header {
   display: none;
 }
 
-@media (max-width: 480px) {
-  body.task-login #layout-content.km0-login-card {
-    padding: 2rem 1.25rem 1.5rem;
-    border-radius: 16px;
-  }
+body.task-mail .km0-verify-banner {
+  background: rgba(123, 63, 228, 0.15);
+  border: 1px solid rgba(123, 63, 228, 0.35);
+  color: #e9d8fd;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 1rem;
+  font-size: 0.85rem;
+  text-align: center;
 }

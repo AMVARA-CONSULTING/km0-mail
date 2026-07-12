@@ -128,7 +128,37 @@ docker compose up -d dovecot
 ./scripts/km0-mail-admin list-aliases
 ```
 
-Mail passwords are **independent** from OpenCloud (phase 1). Future SSO/register: see deferred draft [`github-issue-mail-sso.md`](github-issue-mail-sso.md).
+Mail passwords are synced from register-api when users self-register. CLI mailboxes are created verified by default.
+
+## Public registration (Model A + B)
+
+Deploy auth static files and updated nginx vhost:
+
+```bash
+sudo rsync -a host-www/mail-auth/ /var/www/mail-auth/
+sudo cp nginx/sites-available/mail /etc/nginx/sites-available/mail
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+Apply DB migration on existing volumes (non-destructive):
+
+```bash
+./scripts/apply-registration-migration.sh
+docker compose up -d --build
+```
+
+| URL | Purpose |
+|-----|---------|
+| `/login.html` | Branded entry: LDAP OAuth or link to Roundcube password login |
+| `/register` | Self-registration Model A (`@km0digital.com`) or B (custom domain) |
+| `/domain.html?domain=example.com` | DNS wizard (Model B) |
+| `/verify?token=…` | Email verification (Model A) |
+
+**Auth tracks:** password login (Roundcube native), LDAP OAuth (Dex `connector_id=ldap` only, no Google). See [`opencloud-registration-integration.md`](opencloud-registration-integration.md) for km0-opencloud prerequisites.
+
+**Pre-verification:** pending mailboxes can log in and receive mail; outbound SMTP on port 587 is blocked until verified.
+
+**Test account:** use `test@km0digital.com` after provisioning via register flow or `./scripts/km0-mail-admin create-mailbox test@km0digital.com`.
 
 `km0-mail-admin` creates Maildir `cur/new/tmp` and reloads Postfix hash maps automatically. To rebuild maps manually:
 
@@ -236,12 +266,21 @@ cd /opt/km0-mail
 git pull
 docker compose build dovecot --no-cache
 docker compose up -d dovecot
-docker compose logs --tail=20 dovecot   # must NOT show DOVECOT_OAUTH_CLIENT_SECRET
+docker compose logs --tail=20 dovecot   # expect "OAuth2 passdb disabled" or "enabled"
 nc -vz 127.0.0.1 993
 docker compose exec dovecot doveadm auth test postmaster@km0digital.com '<password>'
 ```
 
-Symptom: `docker compose ps` shows Dovecot **Restarting**; Roundcube login returns 401 / *IMAP connection error*.
+**OAuth2 / LDAP SSO:** Debian Bookworm Dovecot 2.3 does not ship the `oauth2` passdb driver. The entrypoint enables OAuth2 only when `DOVECOT_OAUTH_CLIENT_SECRET` is set **and** `libdriver_oauth2.so` is present (e.g. after installing Dovecot CE packages). Otherwise password login (SQL passdb) is used — safe default.
+
+After changing Postfix sender-verification templates or entrypoint, rebuild Postfix too:
+
+```bash
+docker compose build postfix --no-cache && docker compose up -d postfix
+docker compose exec postfix postconf smtpd_sender_restrictions
+```
+
+Symptom: `docker compose ps` shows Dovecot **Restarting**; Roundcube login returns 401 / *IMAP connection error*; `doveadm auth test` times out with *Couldn't connect to auth socket*.
 
 ---
 

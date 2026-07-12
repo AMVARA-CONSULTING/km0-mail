@@ -15,7 +15,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     \$\$;
     GRANT CONNECT ON DATABASE ${POSTGRES_DB} TO ${MAIL_DB_USER};
     GRANT USAGE ON SCHEMA public TO ${MAIL_DB_USER};
-    GRANT SELECT ON mail_domains, mail_accounts, mail_aliases TO ${MAIL_DB_USER};
+    GRANT SELECT, INSERT, UPDATE ON mail_domains, mail_accounts, mail_aliases TO ${MAIL_DB_USER};
     GRANT SELECT, USAGE ON ALL SEQUENCES IN SCHEMA public TO ${MAIL_DB_USER};
 EOSQL
 
