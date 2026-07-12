@@ -38,10 +38,10 @@ register-api listens on `127.0.0.1:8091`. Mail nginx proxies `/api/register` sam
 
 ## Smoke checklist
 
-- Register `newuser@km0digital.com` via `/register` creates IDM + mailbox
-- LDAP login at `/login.html` reaches Roundcube inbox
-- Password login at `/index.php?_task=login` works for same user
-- `@gmail.com` as mailbox rejected; as contact accepted
-- Cloud register checkbox provisions mail when checked
+- [x] Register `newuser@km0digital.com` via `/register` creates IDM + mailbox
+- [ ] LDAP login at `/login.html` reaches Roundcube inbox (requires Dovecot OAuth2 driver on km0-mail — Debian Bookworm stock image pending)
+- [x] Password login at `/index.php?_task=login` works for provisioned user
+- [x] `@gmail.com` as mailbox rejected; as contact accepted
+- [x] Cloud register checkbox provisions mail when checked
 
-See also: `docs/issue-mail-registration-preplan.md`
+See also: `docs/issue-mail-registration-preplan.md` (km0-mail repo)
