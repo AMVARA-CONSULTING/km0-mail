@@ -1,0 +1,6 @@
+# Reject outbound submission for unverified mailboxes (Model A pending / Model B DNS incomplete)
+user = @MAIL_DB_USER@
+password = @MAIL_DB_PASSWORD@
+hosts = @POSTGRES_HOST@
+dbname = @POSTGRES_DB@
+query = SELECT CASE WHEN a.verification_status IS DISTINCT FROM 'verified' THEN 'REJECT Account pending email verification. Log in to webmail and confirm your address.' WHEN a.mail_mode = 'custom' AND (d.active IS NOT TRUE OR d.verification_status IS DISTINCT FROM 'verified') THEN 'REJECT Domain DNS verification incomplete. Complete the DNS wizard first.' ELSE 'OK' END FROM mail_accounts a LEFT JOIN mail_domains d ON d.name = split_part(a.email, '@', 2) WHERE lower(a.email) = lower('%s') AND a.active = TRUE LIMIT 1

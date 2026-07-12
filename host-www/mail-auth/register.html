@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="registerTitle">Create account</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/km0-auth.css" />
+</head>
+<body>
+  <div class="card">
+    <nav class="km0-lang-switch" role="navigation" aria-label="Language">
+      <button type="button" class="km0-lang-switch__btn" data-lang="ca">CA</button>
+      <button type="button" class="km0-lang-switch__btn" data-lang="es">ES</button>
+      <button type="button" class="km0-lang-switch__btn km0-lang-switch__btn--active" data-lang="en">EN</button>
+      <button type="button" class="km0-lang-switch__btn" data-lang="de">DE</button>
+    </nav>
+    <img class="logo" src="/logo.svg" alt="KM0 Digital" width="192" height="192" />
+    <p class="eyebrow" data-i18n="loginEyebrow">Kilometer 0 Digital</p>
+    <h1 data-i18n="registerTitle">Create account</h1>
+    <p class="tagline" data-i18n="landingTagline">Local origin · Digital impact</p>
+    <p class="intro" data-i18n="registerIntro">Choose a @km0digital.com address or use your own domain.</p>
+
+    <div class="pricing-notice" data-i18n="pricingNotice"></div>
+
+    <form class="register-form" id="km0-register-form" novalidate>
+      <div class="banner banner--error" id="km0-register-error" role="alert"></div>
+
+      <div class="mode-toggle" role="tablist">
+        <button type="button" class="active" data-mode="km0" data-i18n="modeKm0">@km0digital.com</button>
+        <button type="button" data-mode="custom" data-i18n="modeCustom">My domain</button>
+      </div>
+
+      <div class="field" id="field-km0">
+        <label for="km0-username" data-i18n="usernameLabel">Username</label>
+        <input type="text" id="km0-username" autocomplete="username" pattern="[a-zA-Z0-9._-]+" />
+        <small data-i18n="usernameSuffix">@km0digital.com</small>
+      </div>
+
+      <div class="field" id="field-custom" hidden>
+        <label for="km0-email" data-i18n="emailLabel">Email address</label>
+        <input type="email" id="km0-email" autocomplete="email" placeholder="you@example.com" />
+      </div>
+
+      <div class="field">
+        <label for="km0-password" data-i18n="passwordLabel">Password</label>
+        <input type="password" id="km0-password" autocomplete="new-password" required minlength="8" />
+      </div>
+
+      <div class="field">
+        <label for="km0-contact" data-i18n="contactLabel">Contact email (optional)</label>
+        <input type="email" id="km0-contact" autocomplete="email" />
+      </div>
+
+      <button type="submit" class="btn-primary" id="km0-submit" data-i18n="submitRegister">Create account</button>
+    </form>
+
+    <a class="text-link" href="/login.html" data-i18n="signInLink">Already have an account?</a>
+
+    <footer>
+      <a href="https://km0digital.com/" target="_blank" rel="noopener" data-i18n="footerHome">km0digital.com</a>
+    </footer>
+  </div>
+  <script src="/km0-auth-i18n.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var mode = 'km0';
+      var form = document.getElementById('km0-register-form');
+      var errEl = document.getElementById('km0-register-error');
+
+      document.querySelectorAll('.mode-toggle button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          mode = btn.getAttribute('data-mode');
+          document.querySelectorAll('.mode-toggle button').forEach(function (b) {
+            b.classList.toggle('active', b === btn);
+          });
+          document.getElementById('field-km0').hidden = mode !== 'km0';
+          document.getElementById('field-custom').hidden = mode !== 'custom';
+        });
+      });
+
+      function showError(msg) {
+        errEl.textContent = msg;
+        errEl.classList.add('banner--visible');
+      }
+
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        errEl.classList.remove('banner--visible');
+        var password = document.getElementById('km0-password').value;
+        var contact = document.getElementById('km0-contact').value.trim();
+        var desiredEmail;
+        if (mode === 'km0') {
+          var user = document.getElementById('km0-username').value.trim().toLowerCase();
+          if (!user) { showError('Username required'); return; }
+          desiredEmail = user + '@km0digital.com';
+        } else {
+          desiredEmail = document.getElementById('km0-email').value.trim().toLowerCase();
+          if (!desiredEmail) { showError('Email required'); return; }
+        }
+
+        var payload = {
+          email: desiredEmail,
+          desired_email: desiredEmail,
+          password: password,
+          create_mail: true,
+          mail_mode: mode,
+          contact_email: contact || undefined
+        };
+
+        document.getElementById('km0-submit').disabled = true;
+        fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          return res.json().then(function (body) {
+            if (!res.ok) throw new Error(body.error || body.message || 'Registration failed');
+            if (mode === 'custom') {
+              location.href = '/domain.html?domain=' + encodeURIComponent(desiredEmail.split('@')[1]);
+            } else {
+              location.href = '/login.html?registered=1';
+            }
+          });
+        }).catch(function (e) {
+          showError(e.message || 'Registration failed');
+          document.getElementById('km0-submit').disabled = false;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

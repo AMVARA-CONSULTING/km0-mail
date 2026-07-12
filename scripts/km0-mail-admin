@@ -65,8 +65,8 @@ cmd_create_mailbox() {
     hash="$(hash_password "$password")"
 
     psql_exec -c \
-        "INSERT INTO mail_accounts (email, password_hash) VALUES ('${email}', '${hash}')
-         ON CONFLICT (email) DO UPDATE SET password_hash=EXCLUDED.password_hash, active=TRUE, updated_at=NOW();"
+        "INSERT INTO mail_accounts (email, password_hash, verification_status, mail_mode) VALUES ('${email}', '${hash}', 'verified', 'km0')
+         ON CONFLICT (email) DO UPDATE SET password_hash=EXCLUDED.password_hash, active=TRUE, verification_status='verified', updated_at=NOW();"
 
     local local_part domain maildir
     local_part="${email%@*}"

@@ -2,9 +2,25 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Dovecot auth: OAuth2 passdb enabled only when driver and `DOVECOT_OAUTH_CLIENT_SECRET` are present (fixes *Auth process broken* on Debian Bookworm)
+- mail-provision-api: STARTTLS on SMTP submission for verification emails
+- verify-mail-stack: Dovecot auth worker and Postfix sender-verification checks
+- Postfix submission: `smtpd_tls_security_level=may` on port 587 (fixes hung banner with `encrypt`)
+
 ### Added
 
-- Roundcube KM0 login branding: custom `km0` skin (extends Elastic) with logo, favicon, and styled login page; mounted via Docker Compose; inbox UI unchanged
+- Public mail registration (issue #6): Model A (`@km0digital.com`) and Model B (custom domain DNS wizard)
+- `mail-provision-api` and `domain-verify-api` services; SQL migration `03-registration-schema.sql`
+- Branded auth pages at `host-www/mail-auth/` (`/login.html`, `/register`, `/domain.html`, `/verify`)
+- Dex LDAP OAuth (no Google): Roundcube OAuth2, Dovecot XOAUTH2, `km0_sso_provision` plugin
+- Pre-verification outbound hold via Postfix sender policy; Roundcube `km0_verification_banner` plugin
+- Same-origin nginx proxy for `/api/register` and mail APIs; docs in `opencloud-registration-integration.md`
+
+### Added (prior)
+
+- Roundcube KM0 login branding: custom `km0` skin (extends Elastic) with logo, favicon, and styled login page
 - KM0 login page language switch (CA/ES/EN/DE) with client-side i18n (`skins/km0/js/i18n.js`); browser/query/localStorage locale detection
 
 ### Fixed
