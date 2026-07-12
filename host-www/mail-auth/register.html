@@ -51,6 +51,11 @@
       </div>
 
       <div class="field">
+        <label for="km0-password-confirm" data-i18n="passwordConfirmLabel">Confirm password</label>
+        <input type="password" id="km0-password-confirm" autocomplete="new-password" required minlength="8" />
+      </div>
+
+      <div class="field">
         <label for="km0-contact" data-i18n="contactLabel">Contact email (optional)</label>
         <input type="email" id="km0-contact" autocomplete="email" />
       </div>
@@ -68,9 +73,14 @@
   <script>
     (function () {
       'use strict';
+      var SPECIAL_RE = /[!@#$%^&*(),.?":{}|<>\[\]\\/_+=\-~`]/;
       var mode = 'km0';
       var form = document.getElementById('km0-register-form');
       var errEl = document.getElementById('km0-register-error');
+
+      function t(key) {
+        return (window.KM0AuthI18n && window.KM0AuthI18n.t(key)) || key;
+      }
 
       document.querySelectorAll('.mode-toggle button').forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -83,24 +93,56 @@
         });
       });
 
-      function showError(msg) {
-        errEl.textContent = msg;
+      function showError(key) {
+        errEl.textContent = t(key);
         errEl.classList.add('banner--visible');
+      }
+
+      function errorKeyFromResponse(status, body) {
+        if (status === 429) return 'registerErrorRateLimit';
+        var err = body && body.error;
+        if (status === 409 || err === 'duplicate') return 'registerErrorDuplicate';
+        if (status === 503 || err === 'service_unavailable') return 'registerErrorServiceUnavailable';
+        if (status === 400) {
+          if (err === 'invalid_email') return 'registerErrorEmailInvalid';
+          if (err === 'password_too_short' || err === 'password_needs_special') {
+            return 'registerErrorPasswordWeak';
+          }
+          if (err === 'validation') return 'registerErrorValidation';
+          if (err === 'freemail_blocked') return 'registerErrorFreemailMailbox';
+          if (err === 'invalid_domain') return 'registerErrorInvalidDomain';
+        }
+        return 'registerErrorGeneric';
+      }
+
+      function validateClient(password, confirm) {
+        if (password !== confirm) return 'registerErrorPasswordMismatch';
+        if (password.length < 8 || !SPECIAL_RE.test(password)) {
+          return 'registerErrorPasswordWeak';
+        }
+        return null;
       }
 
       form.addEventListener('submit', function (ev) {
         ev.preventDefault();
         errEl.classList.remove('banner--visible');
         var password = document.getElementById('km0-password').value;
+        var confirm = document.getElementById('km0-password-confirm').value;
+        var clientErr = validateClient(password, confirm);
+        if (clientErr) {
+          showError(clientErr);
+          return;
+        }
+
         var contact = document.getElementById('km0-contact').value.trim();
         var desiredEmail;
         if (mode === 'km0') {
           var user = document.getElementById('km0-username').value.trim().toLowerCase();
-          if (!user) { showError('Username required'); return; }
+          if (!user) { showError('errorUsernameRequired'); return; }
           desiredEmail = user + '@km0digital.com';
         } else {
           desiredEmail = document.getElementById('km0-email').value.trim().toLowerCase();
-          if (!desiredEmail) { showError('Email required'); return; }
+          if (!desiredEmail) { showError('errorEmailRequired'); return; }
         }
 
         var payload = {
@@ -119,7 +161,7 @@
           body: JSON.stringify(payload)
         }).then(function (res) {
           return res.json().then(function (body) {
-            if (!res.ok) throw new Error(body.error || body.message || 'Registration failed');
+            if (!res.ok) throw { status: res.status, body: body };
             if (mode === 'custom') {
               location.href = '/domain.html?domain=' + encodeURIComponent(desiredEmail.split('@')[1]);
             } else {
@@ -127,7 +169,7 @@
             }
           });
         }).catch(function (e) {
-          showError(e.message || 'Registration failed');
+          showError(errorKeyFromResponse(e.status || 0, e.body || {}));
           document.getElementById('km0-submit').disabled = false;
         });
       });

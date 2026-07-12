@@ -268,6 +268,27 @@ body.task-login #login-footer .support-link:hover {
   color: #7b3fe4;
 }
 
+.km0-login-links {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+}
+
+.km0-login-register-link,
+.km0-login-back-link {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+}
+
+.km0-login-register-link:hover,
+.km0-login-back-link:hover {
+  color: #7b3fe4;
+}
+
+.km0-login-links-sep {
+  margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
 body.task-login #messagestack .warning,
 body.task-login #messagestack .error,
 body.task-login #messagestack .notice {

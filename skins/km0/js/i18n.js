@@ -22,6 +22,8 @@
       passwordLabel: 'Password',
       loginButton: 'Login',
       support: 'Support',
+      registerLink: 'Create a free account',
+      backToLanding: 'Other sign-in options',
     },
     es: {
       langAria: 'Idioma',
@@ -32,6 +34,8 @@
       passwordLabel: 'Contraseña',
       loginButton: 'Iniciar sesión',
       support: 'Soporte',
+      registerLink: 'Crear cuenta gratuita',
+      backToLanding: 'Otras opciones de acceso',
     },
     ca: {
       langAria: 'Idioma',
@@ -42,6 +46,8 @@
       passwordLabel: 'Contrasenya',
       loginButton: 'Iniciar sessió',
       support: 'Suport',
+      registerLink: 'Crear compte gratuït',
+      backToLanding: 'Altres opcions d\'accés',
     },
     de: {
       langAria: 'Sprache',
@@ -52,6 +58,8 @@
       passwordLabel: 'Passwort',
       loginButton: 'Anmelden',
       support: 'Support',
+      registerLink: 'Kostenloses Konto erstellen',
+      backToLanding: 'Weitere Anmeldeoptionen',
     },
   };
 

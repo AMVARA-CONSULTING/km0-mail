@@ -22,15 +22,16 @@
     <p class="eyebrow" data-i18n="loginEyebrow">Kilometer 0 Digital</p>
     <h1 data-i18n="loginTitle">KM0 Mail</h1>
     <p class="tagline" data-i18n="landingTagline">Local origin · Digital impact</p>
-    <p class="intro" data-i18n="loginIntro">Sign in with your KM0 LDAP account or mailbox password.</p>
+    <p class="intro" data-i18n="loginIntro">Sign in with your mailbox password or OpenCloud LDAP account.</p>
 
     <div class="banner banner--success" id="km0-registered-banner" data-i18n="registerSuccessBanner" role="status"></div>
 
-    <button type="button" class="btn-primary" id="km0-ldap-login" data-i18n="ldapButton">Sign in with KM0 LDAP</button>
+    <a class="btn-primary" href="/index.php?_task=login" data-i18n="passwordButton">Sign in with email and password</a>
 
     <p class="landing-divider" data-i18n="landingDividerOr">or</p>
 
-    <a class="btn-secondary" href="/index.php?_task=login" data-i18n="passwordButton">Sign in with email and password</a>
+    <button type="button" class="btn-secondary" id="km0-ldap-login" data-i18n="ldapButton">Sign in with OpenCloud / LDAP</button>
+    <p class="ldap-hint" data-i18n="ldapHint">Uses your OpenCloud / LDAP account (brief redirect to cloud.km0digital.com).</p>
 
     <a class="text-link" href="/register" data-i18n="registerLink">Create a free account</a>
 
