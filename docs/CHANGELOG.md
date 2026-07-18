@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Mail auth + Roundcube login: civic dark KM0 tokens (Paper/Snow/Mist/Ink/Signal), IBM Plex / Bricolage, and canonical K0 favicon/logo (replacing Inter + purple gradient)
+- Nginx: `/`, `/login.html`, and `/register` redirect to Auth Hub (`auth.km0digital.com`); Roundcube login links point at the hub
+- Roundcube OAuth: Dex auth/token URIs and LDAP `connector_id` for OpenCloud SSO
+- verify-mail-stack: expect `/login.html` redirect to Auth Hub
+
 ### Added
 
 - Branded login landing: mailbox password primary, OpenCloud / LDAP secondary with redirect hint (en/es/ca/de)

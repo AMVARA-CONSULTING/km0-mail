@@ -1,19 +1,24 @@
 /**
  * KM0 Mail — login page branding (extends Elastic skin)
- * Visual tokens from OpenCloud auth: navy #0b1220, Inter, gradient accent
+ * Civic dark tokens: Paper / Snow / Mist / Ink / Signal + IBM Plex Sans
  */
 
 :root {
-  --km0-navy: #0b1220;
-  --km0-gradient: linear-gradient(135deg, #ff5f2e 0%, #e040a0 35%, #7b3fe4 65%, #007bff 100%);
+  --km0-paper: #0B1220;
+  --km0-snow: #141B28;
+  --km0-mist: #2A3344;
+  --km0-ink: #E6E9ED;
+  --km0-ink-muted: rgba(230, 233, 237, 0.65);
+  --km0-signal: #2DD4BF;
+  --km0-signal-hover: #5EEAD4;
 }
 
 html.dark-mode body.task-login,
 body.task-login {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--km0-navy) !important;
-  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(123, 63, 228, 0.18) 0%, transparent 70%) !important;
-  color: #fff;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  background: var(--km0-paper) !important;
+  background-image: none !important;
+  color: var(--km0-ink);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -28,10 +33,10 @@ body.task-login #layout-content.km0-login-card {
   position: relative;
   width: min(440px, 92vw);
   padding: 2.5rem 2rem 2rem;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  background: var(--km0-snow);
+  border: 1px solid var(--km0-mist);
+  box-shadow: none;
   text-align: center;
   top: auto !important;
   margin: 1rem auto;
@@ -45,15 +50,15 @@ body.task-login #layout-content.km0-login-card {
   display: flex;
   gap: 2px;
   padding: 3px;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid var(--km0-mist);
+  background: rgba(11, 18, 32, 0.45);
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1;
 }
 
-/* Override Elastic/Bootstrap .btn.btn-secondary on language pills (OpenCloud style) */
+/* Override Elastic/Bootstrap .btn.btn-secondary on language pills */
 body.task-login nav.km0-lang-switch button.km0-lang-switch__btn,
 body.task-login nav.km0-lang-switch button.btn {
   appearance: none;
@@ -69,11 +74,11 @@ body.task-login nav.km0-lang-switch button.btn {
   text-transform: none;
   vertical-align: baseline;
   border: 0 !important;
-  border-radius: 9999px !important;
+  border-radius: 6px !important;
   background: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: var(--km0-ink-muted) !important;
   cursor: pointer;
   font: inherit;
   font-size: 0.75rem;
@@ -87,27 +92,27 @@ body.task-login nav.km0-lang-switch button.km0-lang-switch__btn:hover,
 body.task-login nav.km0-lang-switch button.btn:hover {
   background: transparent !important;
   background-color: transparent !important;
-  color: #fff !important;
+  color: var(--km0-ink) !important;
   border: 0 !important;
   box-shadow: none !important;
 }
 
 body.task-login nav.km0-lang-switch button.km0-lang-switch__btn--active,
 body.task-login nav.km0-lang-switch button.km0-lang-switch__btn--active.btn {
-  background: rgba(255, 255, 255, 0.15) !important;
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  color: #fff !important;
+  background: var(--km0-mist) !important;
+  background-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
 }
 
 body.task-login nav.km0-lang-switch button.km0-lang-switch__btn--active:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
-  color: #fff !important;
+  background: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
 }
 
 body.task-login nav.km0-lang-switch button.km0-lang-switch__btn:focus,
 body.task-login nav.km0-lang-switch button.km0-lang-switch__btn:focus-visible,
 body.task-login nav.km0-lang-switch button.btn:focus {
-  outline: 2px solid #7b3fe4;
+  outline: 2px solid var(--km0-signal);
   outline-offset: 2px;
   box-shadow: none !important;
 }
@@ -122,11 +127,11 @@ body.task-login #logo {
   display: block;
   position: static !important;
   top: auto !important;
-  width: min(192px, 44vw);
+  width: min(72px, 22vw);
   height: auto;
   max-height: none !important;
-  margin: 0 auto 1.5rem;
-  filter: drop-shadow(0 0 24px rgba(123, 63, 228, 0.35));
+  margin: 0 auto 1.25rem;
+  filter: none;
 }
 
 .km0-login-eyebrow {
@@ -134,20 +139,21 @@ body.task-login #logo {
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--km0-ink-muted);
   margin: 0 0 0.75rem;
 }
 
 .km0-login-title {
   margin: 0 0 0.5rem;
+  font-family: 'Bricolage Grotesque', 'IBM Plex Sans', system-ui, sans-serif;
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  background: var(--km0-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--km0-ink);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
 }
 
 .km0-login-tagline {
@@ -156,7 +162,7 @@ body.task-login #logo {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--km0-ink-muted);
 }
 
 body.task-login #login-form {
@@ -188,7 +194,7 @@ body.task-login #login-form td.title {
 body.task-login #login-form td.title label {
   font-size: 0.85rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--km0-ink-muted);
 }
 
 body.task-login #login-form td.input {
@@ -197,23 +203,23 @@ body.task-login #login-form td.input {
   padding: 0;
 }
 
-/* Hide Elastic prepend icons — OpenCloud uses plain inputs */
+/* Hide Elastic prepend icons — plain inputs */
 body.task-login #login-form .input-group-prepend,
 body.task-login #login-form .input-group-text {
   display: none !important;
 }
 
 body.task-login #login-form .input-group .form-control {
-  border-radius: 12px;
+  border-radius: 8px;
   width: 100%;
 }
 
 body.task-login #login-form .form-control {
   width: 100%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  color: #fff;
+  background: rgba(11, 18, 32, 0.55);
+  border: 1px solid var(--km0-mist);
+  border-radius: 8px;
+  color: var(--km0-ink);
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 0.95rem;
@@ -221,32 +227,33 @@ body.task-login #login-form .form-control {
 
 body.task-login #login-form .form-control:focus {
   outline: none;
-  border-color: #7b3fe4;
-  box-shadow: 0 0 0 3px rgba(123, 63, 228, 0.25);
+  border-color: var(--km0-signal);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.25);
 }
 
 body.task-login #login-form .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(230, 233, 237, 0.35);
 }
 
 body.task-login #rcmloginsubmit {
   width: 100%;
   border: 0;
-  border-radius: 9999px;
-  background: var(--km0-gradient);
-  color: #fff;
+  border-radius: 8px;
+  background: var(--km0-signal);
+  color: var(--km0-paper);
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 600;
   padding: 0.85rem 2rem;
   margin-top: 0.5rem;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.2s ease;
 }
 
 body.task-login #rcmloginsubmit:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 24px rgba(123, 63, 228, 0.35);
+  background: var(--km0-signal-hover);
+  transform: none;
+  box-shadow: none;
 }
 
 body.task-login #rcmloginsubmit:before {
@@ -256,16 +263,16 @@ body.task-login #rcmloginsubmit:before {
 body.task-login #login-footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--km0-ink-muted);
 }
 
 body.task-login #login-footer .support-link {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--km0-ink-muted);
   text-decoration: none;
 }
 
 body.task-login #login-footer .support-link:hover {
-  color: #7b3fe4;
+  color: var(--km0-signal);
 }
 
 .km0-login-links {
@@ -275,18 +282,18 @@ body.task-login #login-footer .support-link:hover {
 
 .km0-login-register-link,
 .km0-login-back-link {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--km0-signal);
   text-decoration: none;
 }
 
 .km0-login-register-link:hover,
 .km0-login-back-link:hover {
-  color: #7b3fe4;
+  color: var(--km0-signal-hover);
 }
 
 .km0-login-links-sep {
   margin: 0 0.5rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--km0-ink-muted);
 }
 
 body.task-login #messagestack .warning,
@@ -295,7 +302,7 @@ body.task-login #messagestack .notice {
   background: rgba(220, 53, 69, 0.15);
   border: 1px solid rgba(220, 53, 69, 0.35);
   color: #ffb3b3;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   font-size: 0.85rem;
@@ -306,10 +313,10 @@ body.task-error-login #layout-content > .header {
 }
 
 body.task-mail .km0-verify-banner {
-  background: rgba(123, 63, 228, 0.15);
-  border: 1px solid rgba(123, 63, 228, 0.35);
-  color: #e9d8fd;
-  border-radius: 12px;
+  background: rgba(45, 212, 191, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  color: var(--km0-ink);
+  border-radius: 8px;
   padding: 0.75rem 1rem;
   margin: 0.75rem 1rem;
   font-size: 0.85rem;

@@ -83,10 +83,10 @@ if curl -fsS --max-time 3 http://127.0.0.1:8093/health 2>/dev/null | grep -q '"o
 else
     warn "domain-verify-api not healthy on :8093"
 fi
-if curl -fsSI --max-time 5 "https://${MAIL_HOST}/login.html" 2>/dev/null | head -1 | grep -q 200; then
-    ok "https://${MAIL_HOST}/login.html"
+if curl -fsSI --max-time 5 "https://${MAIL_HOST}/login.html" 2>/dev/null | grep -qi 'auth.km0digital.com'; then
+    ok "https://${MAIL_HOST}/login.html redirects to auth hub"
 else
-    warn "auth pages not deployed — rsync host-www/mail-auth to /var/www/mail-auth"
+    warn "mail login.html not redirecting to auth hub"
 fi
 echo
 if curl -fsSI --max-time 5 "https://${MAIL_HOST}/" 2>/dev/null | head -1 | grep -qE '200|301|302'; then

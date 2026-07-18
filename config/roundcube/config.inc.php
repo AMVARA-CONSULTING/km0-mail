@@ -53,7 +53,9 @@ $config['oauth_config_uri'] = getenv('DEX_OIDC_DISCOVERY_URL')
 $config['oauth_scope'] = 'openid profile email';
 $config['oauth_identity_fields'] = ['email'];
 $config['oauth_verify_peer'] = true;
-$config['oauth_auth_uri'] = '';
+$config['oauth_auth_uri'] = 'https://cloud.km0digital.com/dex/auth';
+$config['oauth_token_uri'] = 'https://cloud.km0digital.com/dex/token';
+$config['oauth_auth_parameters'] = ['connector_id' => 'ldap'];
 $config['oauth_cache'] = 'db';
 $config['oauth_login_redirect'] = false;
 
