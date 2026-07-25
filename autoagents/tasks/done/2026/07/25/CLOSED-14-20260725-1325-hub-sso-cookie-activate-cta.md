@@ -1,3 +1,13 @@
+---
+## Closing summary (TOP)
+
+- **What happened:** Auth hub never set `sso=all`, so Google-only sessions broke silent LDAP sso-continue and had no activate CTA for mail.
+- **What was done:** Cross-repo hub updates (`sso=all` for lobby/mail, chooser without auto prompt=none, activate CTA + i18n), verify-auth-hub smoke, deploy, and km0-mail docs; completes #11 goals.
+- **What was tested:** Tester PASS — deploy + 9 smoke checks, live hub-auth/sso-continue/activate-mail, cloud-only #22 intact, docs, no secrets, stack healthy.
+- **Why closed:** All acceptance criteria passed under testing.
+- **Closed at (UTC):** 2026-07-25 15:35
+---
+
 # FEAT-Task: Hub SSO cookie (sso=all) + Google-safe sso-continue + activate CTA
 
 ## GitHub Issue
@@ -69,3 +79,31 @@ Canonical activate deep-link: `https://cloud.km0digital.com/activate-mail.html`
    ```
 
 6. No secrets in hub files; mail stack unchanged (`docker compose ps` still healthy).
+
+## Test report
+
+1. **Date/time (UTC) and log window:** 2026-07-25 15:32:57 UTC → 15:33:26 UTC. Mail compose logs sampled ~15:17–15:33 UTC; hub redeployed 15:33:03 UTC.
+2. **Environment:** branch `main` @ `da01a42`; compose project `km0-mail` (postfix/dovecot/rspamd/roundcube/postgres/mail-provision-api up). URLs: `https://auth.km0digital.com/`, `https://cloud.km0digital.com/activate-mail.html`, `https://mail.km0digital.com/`. Stack ready via: `docker compose ps` all Up; `curl -sI https://mail.km0digital.com/` → HTTP/2 302 to hub login; MX/A + ports 25/587/993 OK; auth hub smoke EXIT 0 after deploy.
+3. **What was tested:** `deploy-auth-hub.sh` + `verify-auth-hub.sh`; live hub-auth.js / sso-continue / activate-mail.html; login?service=mail activate CTA HTML; `wantsMailFollowThrough` cloud-only logic; docs runbook/CHANGELOG; secrets scan; compose health.
+4. **Results:**
+   - Deploy + smoke (`verify-auth-hub.sh`) — **PASS** (all 9 checks; EXIT 0; chooser + `sso=all` + mail activate CTA)
+   - Live `hub-auth.js` (`wantsMailFollowThrough`, `activate-mail.html`, `params.set('sso','all')`) — **PASS**
+   - Live `/sso-continue` chooser buttons (`km0-sso-activate`, `km0-sso-ldap-oauth`) — **PASS**; no auto `prompt=none` redirect (comment + click handlers only)
+   - `activate-mail.html` HTTP 200 — **PASS**
+   - `login?service=mail` activate block (`km0-mail-activate-block` shown when `service === 'mail'`) — **PASS**
+   - Cloud-only #22 (`wantsMailFollowThrough`: `!svc || svc === 'mail'` — not for `service=cloud`) — **PASS** (code + live JS; interactive Google→/files not re-run this window)
+   - Docs `sso=all` / `sso-continue` in runbook + CHANGELOG — **PASS** (runbook:170, CHANGELOG:9)
+   - No secrets in hub files; mail stack healthy — **PASS** (id_token_hint only; compose all Up)
+5. **Overall:** **PASS**
+6. **URLs tested:** https://auth.km0digital.com/ , `/login?service=mail`, `/sso-continue`, `/hub-auth.js`, `/i18n.js`; https://cloud.km0digital.com/activate-mail.html ; https://mail.km0digital.com/ (302→hub)
+7. **Relevant log excerpts:**
+   ```
+   KM0 Auth Hub deployed to /var/www/km0-auth
+   PASS: /sso-continue chooser HTTP 200
+   PASS: /hub-auth.js sso=all + activate URL
+   PASS: /login?service=mail activate CTA present
+   All KM0 Auth Hub smoke checks passed.
+   curl activate-mail.html → 200
+   mail.km0digital.com → HTTP/2 302 → auth login?service=mail
+   nc 25/587/993 → succeeded
+   ```

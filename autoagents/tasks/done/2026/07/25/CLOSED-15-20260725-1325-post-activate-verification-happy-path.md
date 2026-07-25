@@ -1,3 +1,13 @@
+---
+## Closing summary (TOP)
+
+- **What happened:** Post-activate users must verify `@km0` via inbox using password login; Google IdP cannot skip that path.
+- **What was done:** Provision API entry hints (`activated=1`, next_steps, verify_path), Roundcube activated/google banners + i18n, wizard/hub/Dex copy, and runbook post-activate checklist.
+- **What was tested:** Tester PASS — activate entry shape, banners/i18n, wizard/hub copy, password→inbox pending verify, no Google on password form, docs, stack healthy.
+- **Why closed:** All acceptance criteria passed; documented UX path without Google IdP for verify.
+- **Closed at (UTC):** 2026-07-25 15:35
+---
+
 # FEAT-Task: Post-activate verification happy path (password → verify → LDAP OAuth)
 
 ## GitHub Issue
@@ -71,3 +81,26 @@ Inbound verify banner in Roundcube inbox (`km0_verification_banner`) already exi
    ```
 
 6. Stack health: `docker compose ps` (mail-provision-api, roundcube, dovecot healthy). No secrets in diffs.
+
+## Test report
+
+1. **Date/time (UTC) and log window:** 2026-07-25 15:34:32 UTC → 15:35:15 UTC. Roundcube/dovecot logs in same window (POST login 15:34:53).
+2. **Environment:** branch `main` @ `da01a42`; compose `km0-mail` (mail-provision-api, roundcube, dovecot Up). URLs: provision `http://127.0.0.1:8092`, Roundcube via `127.0.0.1:8080` and `https://mail.km0digital.com/`. Ready via: compose Up + mail HTTPS 302 + activate API 200/`ok:true`.
+3. **What was tested:** `POST /activate` entry shape; Roundcube `activated=1` / `hint=google` banners + i18n; wizard/hub/Dex copy; password login → inbox (pending verify markers); docs; no Google IdP on password form; compose health.
+4. **Results:**
+   - Provision `entry.password_login_url` ends `activated=1`; `next_steps[0]=password_login`; `verify_path=https://mail.km0digital.com/verify` — **PASS** (mailbox `t15qa@km0digital.com`, status created/pending)
+   - Roundcube `km0-activated-banner` + i18n `activatedBanner` / `googleOnlyBanner` — **PASS**; `hint=google` exposes warn banner element
+   - Wizard `activated=1` + Dex i18n “verification email” + hub `MAIL_POST_ACTIVATE_LOGIN` + `verify-auth-hub.sh` — **PASS**
+   - Password login (localhost:8080) → `/?_task=mail` Inbox; pending `km0-verify` markers — **PASS** (`send_verification:false` so no token link exercised this run)
+   - No Google IdP button on Roundcube password form (only native + KM0 LDAP OAuth) — **PASS**
+   - Docs Post-activate checklist / `activated=1` — **PASS** (runbook + CHANGELOG)
+   - Stack healthy; no secrets in docs diffs — **PASS**
+5. **Overall:** **PASS**
+6. **URLs tested:** `http://127.0.0.1:8092/activate`; `https://mail.km0digital.com/index.php?_task=login&activated=1` (+`&hint=google`); `http://127.0.0.1:8080` login→mail; `https://cloud.km0digital.com/activate-mail.html`; `https://cloud.km0digital.com/dex/theme/i18n.js`; `https://auth.km0digital.com/hub-auth.js`
+7. **Relevant log excerpts:**
+   ```
+   POST /activate → ok:true, password_login_url=...activated=1, next_steps=["password_login",...]
+   Roundcube POST /?_task=login → 302 Location: /?_task=mail&_token=...
+   Inbox HTML contains km0-verify / km0_verify
+   grep runbook: Post-activate checklist (issue #15)
+   ```
