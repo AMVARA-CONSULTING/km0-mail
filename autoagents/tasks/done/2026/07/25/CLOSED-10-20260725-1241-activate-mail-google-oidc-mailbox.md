@@ -1,3 +1,13 @@
+---
+## Closing summary (TOP)
+
+- **What happened:** Google/OIDC Cloud users needed Activate Mail so a chosen local part becomes `foo@km0digital.com` with `opencloud_uuid` and freemail `contact_email`, without using freemail as the mailbox.
+- **What was done:** Added `POST /activate` and `POST /link` on mail-provision-api (freemail mailbox blocked; uuid/contact lookups; entry hints for password login and LDAP OAuth), plus docs/runbook/CHANGELOG updates; hub UI left to #11/#14.
+- **What was tested:** Tester PASS — activate create/idempotent/conflict, freemail_blocked, Dovecot password auth, link path, docs sanity, no secrets in git (2026-07-25 ~15:18 UTC).
+- **Why closed:** All acceptance criteria passed; API + docs delivered without hub UX stranding Google users.
+- **Closed at (UTC):** 2026-07-25 15:19
+---
+
 # FEAT-Task: Activate KM0 Mail for Google/OIDC Cloud users (mailbox foo@km0digital.com)
 
 ## GitHub Issue
@@ -90,3 +100,34 @@ Google/OIDC-only Cloud users cannot get mail with freemail as mailbox. Activate 
      "DELETE FROM mail_accounts WHERE opencloud_uuid='$UUID' OR email='${LP}@km0digital.com';"
    ```
 7. Pass when: activate creates `@km0digital.com` with contact freemail; freemail mailbox blocked; password auth succeeds; docs describe Google=Cloud IdP + LDAP OAuth path. Fail if secrets appear in git or freemail mailboxes are accepted.
+
+## Test report
+
+1. **Date/time (UTC) and log window:** 2026-07-25 15:17:42 UTC → 15:18:35 UTC (API rebuild+health 15:18:05; activate/auth 15:18:11–15:18:13; link 15:18:19–15:18:26).
+2. **Environment:** compose project `km0-mail` (postgres healthy; mail-provision-api/postfix/dovecot recreated then Up; roundcube/rspamd Up); branch `main` @ `36cc38d`; API `http://127.0.0.1:8092`. **Stack ready:** polled `GET /health` until `{"ok":true,"domain":"km0digital.com"}` (HTTP 200 after rebuild); `https://mail.km0digital.com/` → HTTP/2 302 to Auth Hub; MX `50 mail.km0digital.com.`; A `116.202.10.106`; `nc` open on 25/587/993.
+3. **What was tested:** mail-provision-api rebuild+health; lookup missing → `activate_required`; freemail mailbox blocked; activate create/idempotent/conflict; Dovecot password IMAP auth; provision-then-`POST /link`; docs (Activate Mail / Cloud IdP / POST /activate); cleanup; no secrets in git.
+4. **Results:**
+   - Health after rebuild — **PASS** (`GET /health` → 200 `ok:true`)
+   - Missing uuid lookup → 404 `activate_required:true` — **PASS**
+   - Freemail as mailbox → 400 `freemail_blocked` — **PASS**
+   - Activate `t102691@km0digital.com` + uuid + contact freemail → 201 `status=created` + entry LDAP OAuth notes — **PASS**
+   - Idempotent same activate → 200 `status=exists` — **PASS**
+   - Same uuid + other local_part → 409 `uuid_already_linked` — **PASS**
+   - Password IMAP (`doveadm auth test`) — **PASS** (`passdb: … auth succeeded`)
+   - Link path (provision without uuid, then `POST /link`) → 200 `status=linked` + lookup by uuid — **PASS** (provision uses `email`, not `local_part`)
+   - Docs (preplan / opencloud-registration-integration / runbook / CHANGELOG) — **PASS**
+   - No secrets committed — **PASS** (`.env` gitignored)
+5. **Overall:** **PASS**
+6. **URLs tested:** `http://127.0.0.1:8092/health`, `/lookup/by-uuid/…`, `/activate`, `/provision`, `/link`; `https://mail.km0digital.com/` (readiness); infra MX/A/25/587/993
+7. **Relevant log excerpts:**
+   ```
+   GET /health → 200 {"domain":"km0digital.com","ok":true}
+   GET /lookup/by-uuid/test10-1784992691 → 404 activate_required
+   POST /activate user@gmail.com → 400 freemail_blocked
+   POST /activate local_part=t102691 → 201 created (contact c+test10-…@gmail.com)
+   POST /activate (same) → 200 exists
+   POST /activate other local_part → 409 uuid_already_linked
+   doveadm auth test t102691@km0digital.com → passdb auth succeeded
+   POST /provision email=t10l2705@… → 201; POST /link → 200 status=linked
+   HTTPS mail.km0digital.com/ → 302 location: https://auth.km0digital.com/login?service=mail
+   ```
