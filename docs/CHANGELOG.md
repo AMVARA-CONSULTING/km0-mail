@@ -10,6 +10,7 @@
 - Activate Mail API (issue #10): `POST /activate` (local_part + opencloud_uuid + contact_email + password → `foo@km0digital.com`), `POST /link`, lookup `activate_required` soft-fail; freemail never a mailbox; docs clarify Google = Cloud IdP, Roundcube = password + Dex LDAP OAuth
 - One mailbox per OpenCloud user (issue #13): unique partial index on `mail_accounts.opencloud_uuid`, index on `contact_email`; `mail-provision-api` returns existing or `409 uuid_already_linked` on duplicate uuid; `GET /lookup/by-uuid/` and `/lookup/by-contact/` helpers
 - Docs: agent pipeline order for mail SSO / activate (`docs/agent-pipeline-mail-activate.md`) so FEATs #10–#15 and opencloud #23–#26 do not race (issue #16)
+- Agent 001 dedupe (issue #16 follow-up): `issue_checker_agent.py` skips when `WIP|UNTESTED|TESTING|CLOSED-<N>-*` exists or issue has `agent:wip|untested|testing` (stops recreating FEATs after rename)
 
 ### Fixed
 

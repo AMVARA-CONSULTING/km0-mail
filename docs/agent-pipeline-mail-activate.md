@@ -41,6 +41,7 @@ Do **not** start a later step until earlier foundations have a clear path (merge
 - **Do not double-implement [#11](https://github.com/AMVARA-CONSULTING/km0-mail/issues/11)** — implement hub goals under [#14](https://github.com/AMVARA-CONSULTING/km0-mail/issues/14); leave #11 with a pointer comment only.
 - **[#14](https://github.com/AMVARA-CONSULTING/km0-mail/issues/14)** waits on opencloud #24 + #25 for identity + wizard URL; soft-block #9 for silent OAuth.
 - **[#10](https://github.com/AMVARA-CONSULTING/km0-mail/issues/10)** must not ship activate UX that strands Google users (coordinate opencloud #24).
+- **Agent 001 dedupe:** do not recreate `FEAT-<N>` when `WIP|UNTESTED|TESTING|CLOSED-<N>-*` already exists in `autoagents/tasks/`, or when the issue already has `agent:planned|wip|untested|testing`. Enforced in `autoagents/issue_checker_agent.py`.
 
 ## Hub / auth surfaces
 
