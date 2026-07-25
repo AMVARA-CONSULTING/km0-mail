@@ -24,6 +24,10 @@
       support: 'Support',
       registerLink: 'Create a free account',
       backToLanding: 'Other sign-in options',
+      activatedBanner:
+        'Mailbox activated. Sign in with your @km0digital.com address and mailbox password, then open the verification email in your inbox. Google sign-in cannot open this mailbox.',
+      googleOnlyBanner:
+        'Google is your Cloud identity only. To verify and use KM0 Mail, sign in here with the mailbox password (or KM0/LDAP after linking).',
     },
     es: {
       langAria: 'Idioma',
@@ -36,6 +40,10 @@
       support: 'Soporte',
       registerLink: 'Crear cuenta gratuita',
       backToLanding: 'Otras opciones de acceso',
+      activatedBanner:
+        'Buzón activado. Entra con tu dirección @km0digital.com y la contraseña del buzón; luego abre el correo de verificación. Google no puede abrir este buzón.',
+      googleOnlyBanner:
+        'Google es solo tu identidad de Cloud. Para verificar y usar KM0 Mail, entra aquí con la contraseña del buzón (o KM0/LDAP tras el enlace).',
     },
     ca: {
       langAria: 'Idioma',
@@ -48,6 +56,10 @@
       support: 'Suport',
       registerLink: 'Crear compte gratuït',
       backToLanding: 'Altres opcions d\'accés',
+      activatedBanner:
+        'Bústia activada. Entra amb la teva adreça @km0digital.com i la contrasenya de la bústia; després obre el correu de verificació. Google no pot obrir aquesta bústia.',
+      googleOnlyBanner:
+        'Google és només la teva identitat de Cloud. Per verificar i usar KM0 Mail, entra aquí amb la contrasenya de la bústia (o KM0/LDAP després de l\'enllaç).',
     },
     de: {
       langAria: 'Sprache',
@@ -60,6 +72,10 @@
       support: 'Support',
       registerLink: 'Kostenloses Konto erstellen',
       backToLanding: 'Weitere Anmeldeoptionen',
+      activatedBanner:
+        'Postfach aktiviert. Melden Sie sich mit @km0digital.com und dem Postfachpasswort an und öffnen Sie die Bestätigungs-E-Mail. Google öffnet dieses Postfach nicht.',
+      googleOnlyBanner:
+        'Google ist nur Ihre Cloud-Identität. Zum Bestätigen und Nutzen von KM0 Mail hier mit Postfachpasswort anmelden (oder KM0/LDAP nach Verknüpfung).',
     },
   };
 
@@ -143,6 +159,7 @@
     }
     applyLocale(locale);
     updateLangSwitcher(locale);
+    showQueryBanners(locale);
   }
 
   function stripBootstrapFromLangButtons() {
@@ -161,12 +178,31 @@
     });
   }
 
+  function showQueryBanners(locale) {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var activated = document.getElementById('km0-activated-banner');
+      var googleOnly = document.getElementById('km0-google-only-banner');
+      if (activated && params.get('activated') === '1') {
+        activated.textContent = t(locale, 'activatedBanner');
+        activated.hidden = false;
+      }
+      if (googleOnly && (params.get('hint') === 'google' || params.get('google_only') === '1')) {
+        googleOnly.textContent = t(locale, 'googleOnlyBanner');
+        googleOnly.hidden = false;
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
   function init() {
     var locale = getLocale();
     stripBootstrapFromLangButtons();
     applyLocale(locale);
     updateLangSwitcher(locale);
     bindLangSwitcher();
+    showQueryBanners(locale);
     stripBootstrapFromLangButtons();
     window.setTimeout(stripBootstrapFromLangButtons, 0);
     window.setTimeout(stripBootstrapFromLangButtons, 100);

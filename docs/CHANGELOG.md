@@ -2,6 +2,24 @@
 
 ## [Unreleased]
 
+### Added
+
+- SPIKE #12 closed as **wontfix**: Google IdP will not map directly into Roundcube (`docs/spike-google-idp-roundcube-mailbox-map.md`); keep Dex LDAP OAuth + password; Roundcube discards `oauth_login` username rewrite and Dovecot `username_attribute=email` requires token email = mailbox
+- Post-activate verify happy path (issue #15): Roundcube login `?activated=1` banner; `entry` next_steps (password → verify → optional LDAP); wizard/hub copy stresses mailbox password + inbox verify (no Google IdP for mail); runbook checklist
+- Hub SSO cookie + Google-safe continue (issue #14, supersedes #11): Auth Hub `sso=all` on cloud bridge for unified/`service=mail`; `/sso-continue` chooser (LDAP OAuth / activate-mail.html / password) — no auto `prompt=none`; login `service=mail` activate CTA (cross-repo `/opt/km0-auth/host-www/`)
+- Activate Mail API (issue #10): `POST /activate` (local_part + opencloud_uuid + contact_email + password → `foo@km0digital.com`), `POST /link`, lookup `activate_required` soft-fail; freemail never a mailbox; docs clarify Google = Cloud IdP, Roundcube = password + Dex LDAP OAuth
+- One mailbox per OpenCloud user (issue #13): unique partial index on `mail_accounts.opencloud_uuid`, index on `contact_email`; `mail-provision-api` returns existing or `409 uuid_already_linked` on duplicate uuid; `GET /lookup/by-uuid/` and `/lookup/by-contact/` helpers
+- Docs: agent pipeline order for mail SSO / activate (`docs/agent-pipeline-mail-activate.md`) so FEATs #10–#15 and opencloud #23–#26 do not race (issue #16)
+
+### Fixed
+
+- Dovecot OAuth/XOAUTH2 for Roundcube Dex LDAP SSO (issue #9): image upgraded to Dovecot CE 2.4 with built-in oauth2; IMAP advertises `AUTH=XOAUTH2` when `DOVECOT_OAUTH_CLIENT_SECRET` is set (ends silent OAuth→login-form loop caused by missing driver on Bookworm 2.3)
+- Roundcube KM0 login: `i18n.js` script uses skin-relative `/js/i18n.js` so Roundcube no longer doubles the path to `skins/km0/skins/km0/js/i18n.js` (issue #8)
+
+### Changed
+
+- Dovecot: CE 2.4 config (`mail_driver`/`mail_path`, inline SQL passdb/userdb, `auth-local.conf` rendered at start)
+
 ### Changed
 
 - Mail auth + Roundcube login: civic dark KM0 tokens (Paper/Snow/Mist/Ink/Signal), IBM Plex / Bricolage, and canonical K0 favicon/logo (replacing Inter + purple gradient)

@@ -1,6 +1,9 @@
-# Dex OIDC token introspection (RFC 7662) — rendered at container start
-introspection_url = @DEX_INTROSPECTION_URL@
-introspection_mode = post
-client_id = @DOVECOT_OAUTH_CLIENT_ID@
-client_secret = @DOVECOT_OAUTH_CLIENT_SECRET@
-username_attribute = email
+# Dex OIDC token introspection (RFC 7662) — rendered into auth-local.conf at start
+oauth2 {
+  introspection_mode = post
+  introspection_url = @DEX_INTROSPECTION_URL@
+  client_id = @DOVECOT_OAUTH_CLIENT_ID@
+  client_secret = @DOVECOT_OAUTH_CLIENT_SECRET@
+  username_attribute = email
+  ssl_client_ca_dir = /etc/ssl/certs
+}

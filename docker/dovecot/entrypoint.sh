@@ -10,78 +10,87 @@ set -eu
 : "${DOVECOT_OAUTH_CLIENT_ID:=km0-mail-dovecot}"
 : "${DOVECOT_OAUTH_CLIENT_SECRET:=}"
 
-render_sql() {
-    src="$1"
-    dest="$2"
-    sed \
-        -e "s|@POSTGRES_HOST@|${POSTGRES_HOST}|g" \
-        -e "s|@MAIL_DB_USER@|${MAIL_DB_USER}|g" \
-        -e "s|@MAIL_DB_PASSWORD@|${MAIL_DB_PASSWORD}|g" \
-        -e "s|@POSTGRES_DB@|${POSTGRES_DB}|g" \
-        "$src" > "$dest"
+# CE 2.4+ ships oauth2 in-core; do not call doveconf here (auth-local.conf
+# is not written yet and !include would fail). Older images may ship .so.
+has_oauth2_support() {
+    case "$(dovecot --version 2>/dev/null)" in
+        2.[4-9]*|[3-9].*) return 0 ;;
+    esac
+    find /usr/lib -name 'libdriver_oauth2.so' 2>/dev/null | grep -q .
 }
 
-render_oauth2() {
+render_oauth2_block() {
     src="$1"
-    dest="$2"
     sed \
         -e "s|@DEX_INTROSPECTION_URL@|${DEX_INTROSPECTION_URL}|g" \
         -e "s|@DOVECOT_OAUTH_CLIENT_ID@|${DOVECOT_OAUTH_CLIENT_ID}|g" \
         -e "s|@DOVECOT_OAUTH_CLIENT_SECRET@|${DOVECOT_OAUTH_CLIENT_SECRET}|g" \
-        "$src" > "$dest"
+        "$src"
 }
 
-has_oauth2_driver() {
-    find /usr/lib/dovecot -name 'libdriver_oauth2.so' 2>/dev/null | grep -q .
-}
-
-render_auth_conf() {
-    dest="/run/dovecot/auth.conf"
+render_auth_local() {
+    dest="/run/dovecot/auth-local.conf"
     use_oauth2=0
-    if [ -n "${DOVECOT_OAUTH_CLIENT_SECRET}" ] && has_oauth2_driver; then
+    if [ -n "${DOVECOT_OAUTH_CLIENT_SECRET}" ] && has_oauth2_support; then
         use_oauth2=1
     fi
 
-    if [ "$use_oauth2" -eq 1 ]; then
-        echo "dovecot: OAuth2 passdb enabled (Dex LDAP SSO)" >&2
-        cat > "$dest" <<'EOF'
-auth_mechanisms = plain login xoauth2 oauthbearer
-
-passdb {
-  driver = oauth2
-  args = /run/dovecot/dovecot-oauth2.conf.ext
-  mechanisms = xoauth2 oauthbearer
-}
-
-passdb {
-  driver = sql
-  args = /run/dovecot/dovecot-sql.conf.ext
-  mechanisms = plain login
+    {
+        if [ "$use_oauth2" -eq 1 ]; then
+            echo "dovecot: OAuth2/XOAUTH2 enabled (Dex LDAP SSO)" >&2
+            cat <<'EOF'
+auth_mechanisms {
+  plain = yes
+  login = yes
+  xoauth2 = yes
+  oauthbearer = yes
 }
 EOF
-    else
-        if [ -n "${DOVECOT_OAUTH_CLIENT_SECRET}" ] && ! has_oauth2_driver; then
-            echo "dovecot: DOVECOT_OAUTH_CLIENT_SECRET set but oauth2 driver missing — password login only" >&2
+            if [ -f /etc/dovecot/dovecot-oauth2.conf.ext.template ]; then
+                render_oauth2_block /etc/dovecot/dovecot-oauth2.conf.ext.template
+            fi
         else
-            echo "dovecot: OAuth2 passdb disabled — password login only" >&2
-        fi
-        cat > "$dest" <<'EOF'
-auth_mechanisms = plain login
-
-passdb {
-  driver = sql
-  args = /run/dovecot/dovecot-sql.conf.ext
+            if [ -n "${DOVECOT_OAUTH_CLIENT_SECRET}" ] && ! has_oauth2_support; then
+                echo "dovecot: DOVECOT_OAUTH_CLIENT_SECRET set but oauth2 support missing — password login only" >&2
+            else
+                echo "dovecot: OAuth2 disabled — password login only" >&2
+            fi
+            cat <<'EOF'
+auth_mechanisms {
+  plain = yes
+  login = yes
 }
 EOF
-    fi
+        fi
+
+        cat <<EOF
+sql_driver = pgsql
+pgsql ${POSTGRES_HOST} {
+  parameters {
+    user = ${MAIL_DB_USER}
+    password = ${MAIL_DB_PASSWORD}
+    dbname = ${POSTGRES_DB}
+  }
+}
+
+passdb sql {
+  mechanisms_filter {
+    plain = yes
+    login = yes
+  }
+  default_password_scheme = BLF-CRYPT
+  query = SELECT email AS user, password_hash AS password FROM mail_accounts WHERE email='%{user}' AND active=TRUE
+}
+
+userdb sql {
+  query = SELECT '/var/mail/vhosts/' || split_part(email,'@',2) || '/' || split_part(email,'@',1) AS home, 5000 AS uid, 5000 AS gid FROM mail_accounts WHERE email='%{user}' AND active=TRUE
+}
+EOF
+    } > "$dest"
 }
 
 mkdir -p /run/dovecot/ssl /var/mail/vhosts
-render_sql /etc/dovecot/dovecot-sql.conf.ext.template /run/dovecot/dovecot-sql.conf.ext
-if [ -f /etc/dovecot/dovecot-oauth2.conf.ext.template ] && [ -n "${DOVECOT_OAUTH_CLIENT_SECRET}" ] && has_oauth2_driver; then
-    render_oauth2 /etc/dovecot/dovecot-oauth2.conf.ext.template /run/dovecot/dovecot-oauth2.conf.ext
-fi
-render_auth_conf
+render_auth_local
 
 if [ ! -f /run/dovecot/ssl/dovecot.pem ] || [ ! -f /run/dovecot/ssl/dovecot.key ]; then
     openssl req -new -x509 -days 3650 -nodes \
@@ -92,5 +101,8 @@ if [ ! -f /run/dovecot/ssl/dovecot.pem ] || [ ! -f /run/dovecot/ssl/dovecot.key 
 fi
 
 chown -R vmail:vmail /var/mail/vhosts
+
+# Fail fast if config is invalid (avoids opaque restart loops)
+doveconf -n >/dev/null
 
 exec "$@"

@@ -52,7 +52,6 @@ services:
     volumes:
       - mail-data:/var/mail/vhosts
       - ./config/dovecot/dovecot.conf:/etc/dovecot/dovecot.conf:ro
-      - ./config/dovecot/dovecot-sql.conf.ext.template:/etc/dovecot/dovecot-sql.conf.ext.template:ro
       - ./config/dovecot/dovecot-oauth2.conf.ext.template:/etc/dovecot/dovecot-oauth2.conf.ext.template:ro
       # Optional: mount host LE certs for IMAPS (see docs/runbook.md)
       # - /etc/letsencrypt/live/mail.km0digital.com/fullchain.pem:/run/dovecot/ssl/dovecot.pem:ro
