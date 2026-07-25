@@ -1,3 +1,13 @@
+---
+## Closing summary (TOP)
+
+- **What happened:** Issue #13 required one mailbox per `opencloud_uuid` plus a `contact_email` index to stop duplicate mailboxes and ambiguous SSO lookup.
+- **What was done:** Added SQL migration (unique partial index + contact index), made provision-api idempotent/409 on uuid conflict with lookup helpers, and updated CHANGELOG/runbook/docs.
+- **What was tested:** Tester PASS — indexes present, no duplicate uuids, provision 201/200/409, lookups OK, no secrets.
+- **Why closed:** All acceptance criteria passed under testing.
+- **Closed at (UTC):** 2026-07-25 15:11
+---
+
 # FEAT-Task: Enforce 1 mailbox per opencloud_uuid + contact_email indexes
 
 ## GitHub Issue
@@ -75,3 +85,32 @@ No UNIQUE on `mail_accounts.opencloud_uuid` / index on `contact_email` → dupli
    ```
 
 4. Pass when: unique + contact indexes exist, idempotent 200, conflict 409, lookups return the mailbox; no secrets committed.
+
+## Test report
+
+1. **Date/time (UTC) and log window:** 2026-07-25 15:09:59 UTC → 15:10:15 UTC (provision-api exercised 15:10:00–15:10:06Z).
+2. **Environment:** compose project `km0-mail` (postgres healthy; mail-provision-api Up; postfix/dovecot/rspamd/roundcube Up); branch `main` @ `abc3c98`; API `http://127.0.0.1:8092`. **Stack ready:** `GET /health` → `{"ok":true}`; polled `https://mail.km0digital.com/` → HTTP/2 302 to Auth Hub; MX `50 mail.km0digital.com.`; A `116.202.10.106`; `nc` open on 25/587/993.
+3. **What was tested:** Idempotent registration migration (`04-one-mailbox-per-uuid`); presence of unique uuid + contact_email indexes; no duplicate uuid rows; `/provision` create / exists / conflict; lookup by uuid and by contact; docs mentions; cleanup of disposable row; no secrets in git.
+4. **Results:**
+   - Unique + contact indexes present — **PASS** (`idx_mail_accounts_opencloud_uuid_unique`, `idx_mail_accounts_contact_email`; migration re-run idempotent)
+   - No duplicate `opencloud_uuid` rows — **PASS** (HAVING count(*) > 1 → 0 rows)
+   - Provision create → HTTP 201 `status=created` — **PASS** (`tester13-1784992205@km0digital.com`)
+   - Idempotent same uuid+email → HTTP 200 `status=exists` — **PASS**
+   - Same uuid + other email → HTTP 409 `uuid_already_linked` — **PASS**
+   - `GET /lookup/by-uuid/…` and `/lookup/by-contact/…` — **PASS** (mailbox + contact returned)
+   - Docs (CHANGELOG/runbook/integration/preplan) — **PASS** (issue #13 / indexes / `uuid_already_linked` documented)
+   - No secrets committed — **PASS** (`.env` not staged; only autoagents/task noise in working tree)
+5. **Overall:** **PASS**
+6. **URLs tested:** `http://127.0.0.1:8092/health`, `/provision`, `/lookup/by-uuid/…`, `/lookup/by-contact/…`; `https://mail.km0digital.com/` (readiness)
+7. **Relevant log excerpts:**
+   ```
+   Migration: NOTICE relation "idx_mail_accounts_opencloud_uuid_unique" already exists, skipping
+   Migration: NOTICE relation "idx_mail_accounts_contact_email" already exists, skipping
+   POST /provision → 201 created
+   POST /provision → 200 exists
+   POST /provision → 409 uuid_already_linked (existing_email=tester13-1784992205@km0digital.com)
+   GET /lookup/by-uuid/tester-13-1784992205 → 200
+   GET /lookup/by-contact/c+tester-13-1784992205@gmail.com → 200
+   DELETE FROM mail_accounts … → DELETE 1
+   HTTPS mail.km0digital.com/ → 302 location: https://auth.km0digital.com/login?service=mail
+   ```
