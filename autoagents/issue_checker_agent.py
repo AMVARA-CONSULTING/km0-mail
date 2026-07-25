@@ -32,11 +32,29 @@ def _gh(*args: str) -> subprocess.CompletedProcess[str]:
     )
 
 
+# Pipeline statuses that mean issue N already has an active task (do not recreate FEAT).
+_TASK_STATUSES = ("FEAT", "WIP", "UNTESTED", "TESTING", "CLOSED")
+# GitHub labels that mean the issue is already in the agent pipeline.
+_PIPELINE_LABELS = frozenset(
+    {
+        "agent:planned",
+        "agent:wip",
+        "agent:untested",
+        "agent:testing",
+    }
+)
+
+
 def has_task_file(issue_num: int) -> bool:
+    """True if any active task file for this issue exists (any pipeline status)."""
     if not os.path.isdir(TASKS_DIR):
         return False
-    prefix = f"FEAT-{issue_num}-"
-    return any(f.startswith(prefix) for f in os.listdir(TASKS_DIR))
+    prefixes = tuple(f"{status}-{issue_num}-" for status in _TASK_STATUSES)
+    return any(
+        f.startswith(prefixes) and f.endswith(".md")
+        for f in os.listdir(TASKS_DIR)
+        if not f.startswith(".")
+    )
 
 
 def get_open_issues() -> list[dict]:
@@ -157,15 +175,16 @@ def run_workflow() -> bool:
             break
         num = issue["number"]
         if has_task_file(num):
-            print(f"  skip #{num} — FEAT file exists")
+            print(f"  skip #{num} — task file exists (FEAT/WIP/UNTESTED/TESTING/CLOSED)")
             continue
         details = fetch_issue_details(num)
         if not details:
             print(f"  skip #{num} — could not fetch details")
             continue
         labels = [l.get("name", "") for l in details.get("labels", [])]
-        if "agent:planned" in labels:
-            print(f"  skip #{num} — agent:planned")
+        hit = _PIPELINE_LABELS.intersection(labels)
+        if hit:
+            print(f"  skip #{num} — already labeled {sorted(hit)}")
             continue
         path = create_task(details)
         basename = os.path.basename(path)
