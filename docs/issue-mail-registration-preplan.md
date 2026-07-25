@@ -3,7 +3,7 @@
 > **Purpose:** Integration design for self-service mail registration with unified KM0 identity.  
 > **Target:** `mail.km0digital.com` + `cloud.km0digital.com` (cross-repo).  
 > **Derived from:** [`issue-mail-preplan.md`](issue-mail-preplan.md), lessons from reverted SSO ([`github-issue-mail-sso.md`](github-issue-mail-sso.md), CHANGELOG 2026-06-16).  
-> **Status:** Draft for review — LDAP webmail included in launch (done right, no Google).
+> **Status:** Draft for review — dual auth (password + Dex LDAP OAuth). Google/OIDC remains **Cloud IdP only**; mailbox is always `@km0digital.com` (or verified custom). Freemail = `contact_email`, never the mailbox.
 
 ---
 
@@ -14,7 +14,7 @@ Enable **public registration** so any user can obtain a KM0 mailbox for free dur
 - **Model A:** an address at `@km0digital.com` (apex only), or
 - **Model B:** an address on a **customer-owned domain** (Proton Mail–style DNS verification),
 
-with **unified identity** (one IDM account, one mailbox, one password for Cloud and Mail), **full Dex LDAP webmail login in the same release**, **no Google OAuth**, and **no paid third-party integrations** (Google Workspace APIs, SendGrid, etc.).
+with **unified identity** (one IDM account, one mailbox, one password for Cloud and Mail), **full Dex LDAP webmail login in the same release**, **no Google IdP on Roundcube** (Google stays Cloud IdP; see [Activate Mail for Google/OIDC](#activate-mail-for-googleoidc-cloud-users)), and **no paid third-party integrations** (Google Workspace APIs, SendGrid, etc.).
 
 **Working phrase:** *Ship Model A and Model B with unified register-api, correct LDAP SSO (Dex LDAP only), dual auth (password + OAuth), and in-band verification — applying issue #3 lessons so nothing is deferred half-done.*
 
@@ -29,7 +29,8 @@ with **unified identity** (one IDM account, one mailbox, one password for Cloud 
 | Per-user scope | **1 user = 1 mailbox = 1 address** at registration; user picks **either** KM0 **or** custom domain, not both |
 | Custom domains | **Proton Mail–style** self-service DNS verification (see dedicated section) |
 | Authentication | **Dual at launch:** (1) email + password via Roundcube native login; (2) **Dex LDAP** via Roundcube OAuth2 + Dovecot XOAUTH2 |
-| Google OAuth | **Excluded** from mail UI, registration, and Dex connector selection on mail hostname |
+| Google OAuth on Roundcube | **Excluded** — Dex `connector_id=google` is not used for mail UI (spike [#12](https://github.com/AMVARA-CONSULTING/km0-mail/issues/12) → [wontfix](./spike-google-idp-roundcube-mailbox-map.md)) |
+| Google / Apple as Cloud IdP | **Allowed** — freemail is `contact_email`; Activate Mail provisions `foo@km0digital.com` + `opencloud_uuid` |
 | Freemail (Gmail, Outlook, …) | Maximize end-user convenience **without** third-party APIs or fees (see [freemail policy](#freemail-policy)) |
 | Verification | Always confirm identity; `@km0digital.com` users **must be able to log in to webmail** to accept the verification message |
 | Pre-verification limits | **Block outbound send only**; inbound + webmail read allowed (see [pre-verification decision](#pre-verification-decision)) |
@@ -164,7 +165,7 @@ OpenCloud register form (`cloud.km0digital.com`) includes an optional checkbox:
 |------|-----------|
 | Mailbox domain | **Block** freemail domains (`gmail.com`, `googlemail.com`, `outlook.com`, `hotmail.com`, `live.com`, `yahoo.com`, `icloud.com`, `proton.me`, …) |
 | Contact / recovery email | **Allow** freemail — no API integration |
-| Social login on mail | **LDAP via Dex only**; **no Google** button or connector |
+| Social login on mail | **LDAP via Dex only**; **no Google** button on Roundcube (Google = Cloud IdP + Activate Mail) |
 | Delivery to Gmail/Outlook | Standard SMTP (SPF/DKIM/DMARC) |
 | Paid relay (SendGrid, etc.) | Out of scope unless deliverability crisis |
 
@@ -251,18 +252,33 @@ flowchart LR
 
 ---
 
-## Authentication (no Google)
+## Authentication (Cloud Google IdP ≠ Roundcube Google)
 
 | Method | When | Components |
 |--------|------|------------|
 | Email + password | Register + webmail + IMAP clients | SQL passdb; hash synced via provision hook |
 | Dex **LDAP** OAuth | Webmail “Sign in with KM0 LDAP” | Dex `connector_id=ldap`, Roundcube OAuth2, Dovecot XOAUTH2 introspection |
-| Google OAuth | **Excluded** | — |
+| Google on Roundcube | **Excluded** | Cloud IdP only; do not map Gmail→IMAP (see #12 spike) |
 | Legacy (`postmaster@`, CLI) | Ops mailboxes | SQL passdb unchanged |
 
 **Password sync:** Provision hook writes Dovecot-BLF hash to `mail_accounts` on register and password change so Cloud and Mail passwords stay aligned.
 
 **Post-OAuth auto-provision:** `km0_sso_provision` Roundcube plugin + provision API — if LDAP user has IDM session but no mailbox, silent provision (idempotent), then continue IMAP login. Domain must match mailbox policy (not freemail).
+
+### Activate Mail for Google/OIDC Cloud users
+
+Users who signed into Cloud with Google (or other freemail OIDC) **cannot** use Gmail as the IMAP mailbox (MX/reputation + Dovecot `username_attribute=email`). Flow:
+
+1. Hub / Cloud wizard (opencloud #25, hub #14) → user picks local part `foo`.
+2. `register-api` / activate UI ensures IDM can authenticate with `mail=foo@km0digital.com` (password at activation). **opencloud #24** must preserve Google OIDC identity when Graph mail is rewritten — do not ship UX that strands Google re-login.
+3. Call `mail-provision-api` `POST /activate` with `local_part`, `opencloud_uuid`, `contact_email` (Gmail), `password`.
+4. Entry into Roundcube:
+   - **Password** — immediate (`https://mail.km0digital.com/` → native form → SQL passdb).
+   - **LDAP OAuth** — preferred SSO once IDM `mail` = mailbox and Dovecot XOAUTH2 (#9) is live; token email claim must equal `foo@km0digital.com`.
+
+Lookups: `GET /lookup/by-uuid/<uuid>` and `GET /lookup/by-contact/<email>` return `activate_required: true` when no mailbox is linked. Linking an existing mailbox without re-hash: `POST /link`.
+
+Primary activate UI is hub + register-api (opencloud #23); km0-mail only exposes the provision APIs and docs.
 
 ---
 
@@ -307,7 +323,7 @@ flowchart TB
 | Component | Responsibility |
 |-----------|----------------|
 | `host-www/mail-auth/` | `login.html` (password link + LDAP button), `register.html`, DNS wizard, `dex-auth.js` (LDAP only), i18n |
-| `docker/mail-provision-api/` | `POST /provision`, idempotent, localhost token, postfix map reload via `docker exec` |
+| `docker/mail-provision-api/` | `POST /provision`, `POST /activate`, `POST /link`, lookups by uuid/contact; freemail mailbox blocked; localhost token |
 | `docker/domain-verify-api/` | Pending domains, DNS polling, DKIM key generation |
 | `config/roundcube/plugins/km0_sso_provision/` | Post-OAuth silent provision hook |
 | Roundcube `config.inc.php` | OAuth2 generic → Dex discovery; **no Google provider** |
@@ -345,9 +361,15 @@ ALTER TABLE mail_accounts ADD COLUMN verification_status VARCHAR(20) DEFAULT 'pe
 ALTER TABLE mail_accounts ADD COLUMN verification_token VARCHAR(64);
 ALTER TABLE mail_accounts ADD COLUMN contact_email VARCHAR(255);
 ALTER TABLE mail_accounts ADD COLUMN mail_mode VARCHAR(10); -- 'km0' | 'custom'
+
+-- Issue #13: one mailbox per OpenCloud user + contact lookup
+CREATE UNIQUE INDEX IF NOT EXISTS idx_mail_accounts_opencloud_uuid_unique
+    ON mail_accounts (opencloud_uuid) WHERE opencloud_uuid IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_mail_accounts_contact_email
+    ON mail_accounts (lower(contact_email)) WHERE contact_email IS NOT NULL;
 ```
 
-Migration: existing `km0digital.com` → `verification_status=verified`, `active=true`.
+Migration: existing `km0digital.com` → `verification_status=verified`, `active=true`. Apply via `./scripts/apply-registration-migration.sh` (includes `04-one-mailbox-per-uuid.sql`).
 
 Rspamd: regenerate per-domain `dkim_signing.conf` snippet when custom domain activates.
 
@@ -371,7 +393,7 @@ Tracks 4 and 5 can proceed in parallel after Track 1. **GA requires all five.**
 
 ## Out of scope (this pre-plan)
 
-- Google OAuth / Google connector on mail
+- Google IdP **directly** into Roundcube (spike #12 — optional later; not required for Activate Mail)
 - Google Workspace APIs
 - Subdomains `*.km0digital.com`
 - Multiple mailboxes or domains per user after registration
@@ -414,10 +436,11 @@ Tracks 4 and 5 can proceed in parallel after Track 1. **GA requires all five.**
 **Auth (launch — complete)**
 
 - [ ] Unified password works on Cloud and Roundcube
-- [ ] LDAP login via Dex → Roundcube inbox (no Google involved)
-- [ ] No Google button on mail pages
-- [ ] LDAP user without mailbox → silent auto-provision
-- [ ] LDAP with `@gmail.com` OIDC email → error, no mailbox
+- [ ] LDAP login via Dex → Roundcube inbox (token email = mailbox; no Google IdP on Roundcube)
+- [ ] No Google button on mail pages (Google = Cloud IdP + Activate Mail)
+- [ ] LDAP user without mailbox → silent auto-provision when domain matches
+- [ ] Freemail OIDC email alone → no mailbox; Activate Mail required
+- [ ] `POST /activate` → `foo@km0digital.com` + uuid + contact_email; password Roundcube login works
 - [ ] `postmaster@` password login still works
 
 **Cloud registration**

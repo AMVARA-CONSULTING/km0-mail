@@ -147,15 +147,48 @@ Apply DB migration on existing volumes (non-destructive):
 docker compose up -d --build
 ```
 
+That script also applies `sql/init/04-one-mailbox-per-uuid.sql` (issue #13): unique `opencloud_uuid` (NULLs allowed), `contact_email` index, and clears duplicate uuid links on older rows before creating the unique index.
+
+**Provision API** (Bearer `MAIL_PROVISION_API_TOKEN`, localhost `:8092`):
+
+| Method | Path | Purpose |
+|--------|------|---------|
+| `POST` | `/provision` | Create/link mailbox; same uuid+email → `200 exists`; same uuid+other email → `409 uuid_already_linked` |
+| `POST` | `/activate` | Activate Mail for Cloud user: `local_part` + `opencloud_uuid` + `contact_email` + `password` → `foo@km0digital.com` (rejects freemail mailbox) |
+| `POST` | `/link` | Attach `opencloud_uuid` (+ optional `contact_email`) to an existing mailbox |
+| `GET` | `/lookup/by-uuid/<opencloud_uuid>` | Resolve mailbox; `404` + `activate_required` if missing |
+| `GET` | `/lookup/by-contact/<contact_email>` | Resolve by freemail contact |
+
+**Activate Mail (Google / OIDC Cloud users):** freemail stays `contact_email`; mailbox is always `@km0digital.com` (or custom). After activate:
+
+1. **Password login** — Roundcube native form at `/index.php?_task=login&activated=1` (works without waiting on OAuth/#9). Google IdP cannot open the mailbox or complete verify.
+2. **Verify** — open the in-band verification email in the inbox → `/verify?token=…`. Pending mailboxes can read; outbound SMTP on 587 stays blocked until verified. Roundcube shows `km0_verification_banner` while `verification_status=pending`.
+3. **LDAP OAuth** (optional) — Dex `connector_id=ldap` once IDM `mail` equals the mailbox and Dovecot XOAUTH2 is live (#9). Do not use Google IdP for Roundcube ([#12 wontfix](spike-google-idp-roundcube-mailbox-map.md)).
+
+`POST /activate` response `entry` includes `password_login_url` (with `activated=1`), `verify_path`, and ordered `next_steps`.
+
+Hub CTA / SSO (issue #14, supersedes #11): Auth Hub sets `sso=all` on the cloud bridge for unified login and `?service=mail` (not `?service=cloud` alone). After Cloud login, `/sso-continue` is a **chooser** (LDAP OAuth / [Activate KM0 Mail](https://cloud.km0digital.com/activate-mail.html) / mailbox password) — no auto `prompt=none` (avoids Google-only loops). Session-gate `#22` cloud→`/files` unchanged. Identity preserve: opencloud #24. Pipeline: [`agent-pipeline-mail-activate.md`](agent-pipeline-mail-activate.md).
+
+### Post-activate checklist (issue #15)
+
+Operator / QA happy path (no Google for mail):
+
+1. Cloud user completes [activate-mail.html](https://cloud.km0digital.com/activate-mail.html) → success copy points to Roundcube password login (`activated=1`).
+2. Sign in at `https://mail.km0digital.com/index.php?_task=login&activated=1` with `foo@km0digital.com` + mailbox password — banner explains verify step.
+3. Inbox shows verification mail; open link → `https://mail.km0digital.com/verify?token=…` succeeds.
+4. Confirm outbound: submit on 587 works only after verified (pre-verify = reject).
+5. Optional: hub LDAP OAuth into Roundcube as same mailbox (needs #9).
+
 | URL | Purpose |
 |-----|---------|
-| `/` | Redirects to `/login.html` (Roundcube tasks with `?args` go to `/index.php`) |
-| `/login.html` | Canonical branded entry: mailbox password or OpenCloud / LDAP |
-| `/register` | Self-registration Model A (`@km0digital.com`) or B (custom domain) |
+| `/` | Redirects to Auth Hub `service=mail` (Roundcube tasks with `?args` go to `/index.php`) |
+| `/login.html` | Redirects to Auth Hub `service=mail` |
+| `/index.php?_task=login` | Roundcube password form (add `&activated=1` after activate) |
+| `/register` | Self-registration Model A (`@km0digital.com`) or B (custom domain) — Auth Hub |
 | `/domain.html?domain=example.com` | DNS wizard (Model B) |
-| `/verify?token=…` | Email verification (Model A) |
+| `/verify?token=…` | Email verification (Model A / activate) |
 
-**Auth tracks:** password login (Roundcube native), LDAP OAuth (Dex `connector_id=ldap` only, no Google). See [`opencloud-registration-integration.md`](opencloud-registration-integration.md) for km0-opencloud prerequisites.
+**Auth tracks:** password login (Roundcube native), LDAP OAuth (Dex `connector_id=ldap` only — Google is Cloud IdP, not Roundcube). See [`opencloud-registration-integration.md`](opencloud-registration-integration.md) for km0-opencloud prerequisites.
 
 **Pre-verification:** pending mailboxes can log in and receive mail; outbound SMTP on port 587 is blocked until verified.
 
@@ -254,6 +287,8 @@ curl -sI http://127.0.0.1:8080/ | head -5
 
 Skin files: `skins/km0/templates/login.html`, `skins/km0/styles/km0-login.css`, `skins/km0/js/i18n.js`, `skins/km0/images/logo.svg`, `skins/km0/images/favicon.svg`.
 
+Asset URLs in skin templates must be **skin-relative** (e.g. `/js/i18n.js`, `/images/logo.svg`). Do not hardcode `/skins/km0/...` — Roundcube prefixes the skin path and would double it.
+
 Login page language switch (CA/ES/EN/DE) uses client-side i18n; default Roundcube locale is `en_US` in `config/roundcube/config.inc.php`.
 
 ---
@@ -267,12 +302,16 @@ cd /opt/km0-mail
 git pull
 docker compose build dovecot --no-cache
 docker compose up -d dovecot
-docker compose logs --tail=20 dovecot   # expect "OAuth2 passdb disabled" or "enabled"
+docker compose logs --tail=20 dovecot   # expect "OAuth2/XOAUTH2 enabled" or "OAuth2 disabled"
 nc -vz 127.0.0.1 993
 docker compose exec dovecot doveadm auth test postmaster@km0digital.com '<password>'
+# CAPABILITY should list AUTH=XOAUTH2 when OAuth is enabled:
+# openssl s_client -connect 127.0.0.1:993 -quiet <<<'' | head -1
 ```
 
-**OAuth2 / LDAP SSO:** Debian Bookworm Dovecot 2.3 does not ship the `oauth2` passdb driver. The entrypoint enables OAuth2 only when `DOVECOT_OAUTH_CLIENT_SECRET` is set **and** `libdriver_oauth2.so` is present (e.g. after installing Dovecot CE packages). Otherwise password login (SQL passdb) is used — safe default.
+**OAuth2 / LDAP SSO:** The Dovecot image uses **Dovecot CE 2.4** from `repo.dovecot.org` (not Debian Bookworm 2.3). CE 2.4 has built-in OAuth2/XOAUTH2. When `DOVECOT_OAUTH_CLIENT_SECRET` is set, the entrypoint enables `xoauth2`/`oauthbearer` plus Dex token introspection (`username_attribute=email`). SQL `plain`/`login` remain available for password users. Without the secret, password-only auth is used.
+
+**Rebuild note:** Dovecot 2.4 config syntax differs from 2.3 (`mail_driver`/`mail_path`, `ssl_server_*_file`, named listeners, inline SQL). Do not revert `config/dovecot/dovecot.conf` to 2.3 syntax.
 
 After changing Postfix sender-verification templates or entrypoint, rebuild Postfix too:
 

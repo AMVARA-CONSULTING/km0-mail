@@ -97,10 +97,10 @@ fi
 echo
 
 echo "--- Dovecot auth ---"
-if docker compose exec -T dovecot test -f /run/dovecot/auth.conf 2>/dev/null; then
-    ok "dovecot auth.conf rendered"
+if docker compose exec -T dovecot test -f /run/dovecot/auth-local.conf 2>/dev/null; then
+    ok "dovecot auth-local.conf rendered"
 else
-    fail "dovecot auth.conf missing — rebuild dovecot image"
+    fail "dovecot auth-local.conf missing — rebuild dovecot image"
 fi
 auth_out=""
 auth_rc=0

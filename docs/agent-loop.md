@@ -47,6 +47,7 @@ Create labels in the repo if missing.
 - Git sync: **`./scripts/git-sync-main.sh`**
 - Task docs: **`autoagents/TASKS-README.md`**
 - Architecture pre-plan: **`docs/issue-mail-preplan.md`**
+- Mail SSO / activate order (anti-race): **`docs/agent-pipeline-mail-activate.md`**
 - Cursor skill: **`.cursor/skills/autoagents/SKILL.md`**
 - Redmine tracking ticket: **#7605**
 

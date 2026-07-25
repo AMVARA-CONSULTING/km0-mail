@@ -15,6 +15,8 @@
 		<h2 class="km0-login-title"><roundcube:object name="productname" /></h2>
 		<p class="km0-login-tagline" data-i18n="loginTagline">Local origin · Digital impact</p>
 	</div>
+	<div class="km0-activated-banner" id="km0-activated-banner" data-i18n="activatedBanner" role="status" hidden></div>
+	<div class="km0-activated-banner km0-activated-banner--warn" id="km0-google-only-banner" data-i18n="googleOnlyBanner" role="status" hidden></div>
 	<roundcube:form id="login-form" name="login-form" method="post" class="propform km0-login-form">
 	<roundcube:object name="loginform" form="login-form" size="40" submit=true class="form-control" />
 		<div id="login-footer" role="contentinfo">
@@ -37,6 +39,6 @@
 	<p class="noscriptwarning"><roundcube:label name="noscriptwarning" /></p>
 </noscript>
 
-<script src="/skins/km0/js/i18n.js"></script>
+<script src="/js/i18n.js"></script>
 
 <roundcube:include file="includes/footer.html" />
