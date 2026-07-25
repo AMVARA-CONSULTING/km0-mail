@@ -52,3 +52,5 @@
 
 
 2026-07-25T15:00:20 UTC | 001 cursor-agent | FEAT: 0 | NEW: 0 | km0-mail #9-#15 all have pipeline tasks (UNTESTED); opencloud #25/#26 belong to km0-opencloud 001 (digest repo mismatch) | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 (mail) G001_LOG_SIGNALS=1 (no standing incident) | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+2026-07-25T15:09:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
