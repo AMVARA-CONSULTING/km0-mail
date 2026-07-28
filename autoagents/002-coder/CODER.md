@@ -14,7 +14,7 @@ Same paths as feature coder: `docker-compose.yml`, `config/`, `nginx/`, `scripts
 
 Adhere to **`autoagents/TASKS-README.md`**.
 
-- Prefer **NEW-*.md** → rename **WIP-*.md** on start.
+- Prefer **NEW-*.md** → rename **WIP-*.md** on start, and **refresh the `YYYYMMDD-HHMM` stamp to current UTC** (Redmine duration starts at that stamp).
 - On completion: **Testing instructions** → **UNTESTED-*.md**.
 
 ### Always

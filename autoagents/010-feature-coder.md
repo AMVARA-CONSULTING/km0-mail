@@ -36,7 +36,7 @@ Minimal, on-scope edits. Task file updates and renames: **FEAT → WIP → UNTES
 
 Adhere to **`autoagents/TASKS-README.md`**.
 
-- Pick only **FEAT-*.md**. Rename to **WIP-*.md** when you start.
+- Pick only **FEAT-*.md**. When you start: rename to **WIP-*.md** and **refresh the `YYYYMMDD-HHMM` stamp to current UTC** (example: `FEAT-12-20260725-1212-slug.md` → `WIP-12-20260725-1430-slug.md`). Keep that stamp through UNTESTED/TESTING/CLOSED so Redmine time entries measure work, not queue wait.
 - On completion: append **Testing instructions** → rename to **UNTESTED-*.md**.
 
 ### Always
