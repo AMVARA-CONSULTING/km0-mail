@@ -60,3 +60,1731 @@
 
 2026-07-25T15:32:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
 
+2026-07-25T15:41:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T15:47:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T15:52:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T15:58:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:03:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:09:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:14:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:20:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:25:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:30:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:36:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:41:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:47:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:53:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T16:58:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:04:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:12:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:17:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:23:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:28:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:34:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:39:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:45:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:50:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T17:56:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:01:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:07:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:12:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:18:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:23:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:29:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:34:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:39:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:45:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:50:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T18:56:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:01:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:07:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:12:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:18:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:23:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:29:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:34:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:39:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:45:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:50:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T19:56:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:01:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:07:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:12:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:18:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:23:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:28:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:34:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:39:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:45:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:50:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T20:56:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:01:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:07:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:12:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:18:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:23:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:29:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:34:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:40:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:45:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:50:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T21:56:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:01:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:07:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:12:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:18:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:23:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:28:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:34:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:39:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:45:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:50:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T22:56:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:01:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:07:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:12:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:17:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:23:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:28:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:34:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:39:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:45:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:50:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-25T23:55:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:01:25Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:06:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:12:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:17:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:23:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:28:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:34:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:39:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:44:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:50:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T00:55:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:01:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:06:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:12:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:17:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:22:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:28:25Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:33:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:39:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:44:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:50:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T01:55:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:01:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:06:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:12:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:17:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:22:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:28:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:33:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:39:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:44:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:50:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T02:55:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:01:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:06:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:12:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:17:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:23:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:28:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:33:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:39:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:44:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:50:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T03:55:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:01:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:06:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:11:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:17:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:22:52Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:28:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:33:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:39:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:44:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:50:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T04:55:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:01:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:06:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:12:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:17:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:22:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:28:25Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:33:52Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:39:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:44:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:50:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T05:55:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:01:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:06:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:12:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:17:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:23:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:28:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:34:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:39:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:45:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:50:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T06:56:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:01:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:07:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:12:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:18:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:23:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:29:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:34:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:39:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:46:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:51:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T07:57:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:02:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:08:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:13:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:19:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:25:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:30:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:36:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:41:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:47:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:52:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T08:58:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:03:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:09:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:14:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:20:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:25:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:31:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:36:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:42:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:47:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:53:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T09:58:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:04:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:09:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:15:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:20:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:26:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:31:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:37:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:42:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:48:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:53:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T10:59:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:04:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:09:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:15:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:20:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:26:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:31:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:37:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:42:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:48:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:53:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T11:59:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:04:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:10:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:15:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:21:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:26:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:32:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:37:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:43:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:48:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:54:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T12:59:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:05:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:11:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:16:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:22:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:27:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:33:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:38:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:44:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:49:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T13:55:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:00:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:06:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:11:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:17:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:22:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:28:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:33:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:39:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:44:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:50:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T14:55:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:01:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:06:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:11:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:17:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:23:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:28:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:34:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:39:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:45:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:50:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T15:56:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:01:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:07:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:12:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:18:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:23:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:29:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:34:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:40:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:45:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:51:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T16:56:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:02:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:07:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:13:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:18:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:24:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:29:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:35:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:40:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:46:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:51:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T17:57:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:02:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:08:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:13:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:19:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:24:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:29:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:35:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:40:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:46:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:51:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T18:57:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:02:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:08:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:13:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:19:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:24:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:30:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:35:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:40:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:46:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:52:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T19:57:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:02:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:08:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:13:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:19:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:24:52Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:30:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:35:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:41:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:46:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:52:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T20:57:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:03:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:08:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:14:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:19:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:25:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:30:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:36:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:41:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:46:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:52:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T21:57:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:03:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:08:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:14:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:19:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:25:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:30:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:35:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:41:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:46:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:52:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T22:57:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:03:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:08:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:14:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:19:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:25:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:30:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:36:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:41:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:47:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:52:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-26T23:58:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:03:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:09:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:14:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:19:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:25:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:30:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:36:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:41:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:47:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:52:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T00:58:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:03:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:09:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:14:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:20:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:25:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:30:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:36:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:41:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:47:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:52:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T01:58:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:03:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:09:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:14:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:20:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:25:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:31:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:36:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:42:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:48:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:53:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T02:59:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:05:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:10:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:16:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:21:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:27:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:34:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:39:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:45:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:50:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T03:58:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:03:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:09:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:15:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:20:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:26:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:32:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:37:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:43:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:49:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T04:54:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:00:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:05:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:11:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:16:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:22:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:27:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:33:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:38:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:44:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:49:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T05:55:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:00:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:05:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:11:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:17:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:24:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:30:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:35:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:41:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:49:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T06:54:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:00:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:05:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:11:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:16:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:22:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:27:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:33:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:39:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:45:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:50:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T07:56:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:01:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:07:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:13:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:18:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:24:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:29:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:35:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:40:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:46:25Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:51:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T08:57:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:02:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:08:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:14:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:19:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:25:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:30:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:36:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:42:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:48:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:53:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T09:59:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:04:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:10:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:15:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:21:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:26:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:32:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:37:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:43:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:48:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T10:54:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:00:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:05:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:11:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:16:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:22:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:28:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:33:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:39:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:44:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:50:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T11:55:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:01:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:06:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:12:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:17:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:22:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:28:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:34:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:39:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:45:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:50:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T12:56:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:01:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:07:25Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:12:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:18:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:24:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:29:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:34:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:40:25Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:45:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:51:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T13:56:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:02:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:08:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:14:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:20:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:25:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:30:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:36:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:42:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:47:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:53:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T14:58:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:04:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:09:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:15:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:20:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:26:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:31:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:37:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:42:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:48:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:53:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T15:59:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:04:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:10:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:15:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:21:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:26:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:32:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:37:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:43:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:48:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:54:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T16:59:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:05:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:10:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:15:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:21:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:26:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:32:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:38:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:43:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:48:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:54:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T17:59:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:05:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:10:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:16:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:22:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:27:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:33:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:38:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:44:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:49:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T18:55:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:00:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:06:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:11:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:16:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:23:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:28:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:34:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:39:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:45:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:50:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T19:56:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:01:52Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:07:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:13:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:18:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:24:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:30:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:35:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:41:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:46:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:52:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T20:57:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:02:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:08:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:13:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:19:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:24:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:30:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:35:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:41:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:46:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:52:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T21:57:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:02:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:08:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:13:49Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:19:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:24:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:30:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:35:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:41:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:47:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:52:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T22:57:52Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:03:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:09:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:14:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:20:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:25:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:31:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:36:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:41:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:47:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:52:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-27T23:58:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:03:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:09:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:14:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:20:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:25:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:31:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:36:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:42:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:47:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:53:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T00:58:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:04:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:09:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:15:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:20:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:26:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:31:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:37:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:42:27Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:47:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:53:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T01:58:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:04:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:09:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:15:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:20:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:26:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:31:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:37:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:42:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:48:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:53:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T02:59:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:04:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:10:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:15:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:21:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:27:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:32:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:38:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:43:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:49:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T03:55:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:00:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:06:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:11:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:17:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:22:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:27:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:33:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:38:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:44:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:49:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T04:55:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:00:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:06:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:11:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:17:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:22:50Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:28:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:34:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:39:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:45:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:50:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T05:56:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:01:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:07:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:13:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:19:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:24:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:30:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:35:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:41:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:46:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:52:16Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T06:57:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:03:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:08:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:14:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:19:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:25:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:31:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:37:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:42:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:48:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:53:43Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T07:59:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:04:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:10:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:15:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:21:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:27:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:32:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:38:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:44:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:49:52Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T08:55:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:00:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:06:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:12:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:18:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:23:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:29:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:35:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:40:52Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:46:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:51:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T09:57:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:03:23Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:08:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:14:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:19:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:25:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:31:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:36:34Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:42:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:47:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:53:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T10:58:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:04:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:09:53Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:15:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:20:58Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:26:31Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:31:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:37:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:43:04Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:48:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:54:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T11:59:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:05:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:10:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:16:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:22:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:27:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:33:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:38:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:44:20Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:50:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T12:55:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:01:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:06:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:12:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:18:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:23:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:29:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:34:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:40:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:45:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:51:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T13:57:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:03:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:08:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:14:03Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:19:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:25:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:30:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:36:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:41:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:48:02Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:53:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T14:59:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:04:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:10:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:15:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:21:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:26:44Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:32:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:37:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:43:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:48:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:54:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T15:59:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:05:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:10:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:16:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:21:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:26:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:32:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:37:56Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:43:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:48:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:54:24Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T16:59:54Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:05:22Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:10:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:16:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:21:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:27:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:32:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:38:06Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:43:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:49:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T17:54:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:00:12Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:05:41Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:11:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:16:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:22:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:27:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:33:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:38:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:44:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:49:32Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T18:55:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:00:36Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:06:14Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:11:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:17:13Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:22:42Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:28:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:33:38Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:39:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:44:40Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:50:10Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T19:55:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:01:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:06:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:12:08Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:18:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:23:39Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:29:09Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:35:05Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:40:33Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:46:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:51:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T20:56:59Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:02:30Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:08:00Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:13:28Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:18:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:24:26Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:29:55Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:35:21Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:40:51Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:46:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:51:48Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T21:57:17Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:02:45Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:08:19Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:13:47Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:19:18Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:24:46Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:30:15Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:36:07Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:41:35Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:47:11Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:52:37Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T22:58:01Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T23:03:29Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+
+2026-07-28T23:08:57Z UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=1 G001_UNTRACKED_ISSUES=0 G001_LOG_SIGNALS=1 | digest: /opt/km0-mail/autoagents/var/loop/001-latest-context.txt
+

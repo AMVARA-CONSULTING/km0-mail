@@ -27,12 +27,18 @@ NOTE_AUTHOR = "km0-mail autoagents"
 NOTES_DIR = "/root/redminenotes"
 REDMINE_ACTIVITY_ID = int(os.environ.get("REDMINE_ACTIVITY_ID", "10"))
 TASK_STAMP_RE = re.compile(
-    r"^(?:CLOSED|NEW|FEAT|UNTESTED|TESTING)-\d+-(\d{8})-(\d{4})-",
+    r"^(?:CLOSED|NEW|FEAT|WIP|UNTESTED|TESTING)-\d+-(\d{8})-(\d{4})-",
     re.IGNORECASE,
 )
+# Closing summary uses Markdown bold: **Closed at (UTC):** YYYY-MM-DD HH:MM
+# Allow optional closing ** after the colon so the date is still captured.
 CLOSED_AT_RE = re.compile(
-    r"Closed at \(UTC\):\s*(\d{4}-\d{2}-\d{2})\s+(\d{1,2}:\d{2})",
+    r"Closed at \(UTC\):\*{0,2}\s*(\d{4}-\d{2}-\d{2})\s+(\d{1,2}:\d{2})",
     re.IGNORECASE,
+)
+CLOSED_AT_BULLET_RE = re.compile(
+    r"^-\s+\*\*Closed at \(UTC\):\*\*\s*(\d{4}-\d{2}-\d{2})\s+(\d{1,2}:\d{2})\s*$",
+    re.IGNORECASE | re.MULTILINE,
 )
 
 
@@ -126,6 +132,7 @@ def add_redmine_time_entry(
 
 
 def parse_task_start_utc(basename: str) -> Optional[datetime]:
+    """Start time from task filename stamp (UTC). Prefer WIP-refresh stamp."""
     m = TASK_STAMP_RE.match(basename)
     if not m:
         return None
@@ -138,7 +145,14 @@ def parse_task_start_utc(basename: str) -> Optional[datetime]:
 
 
 def parse_closed_at_utc(summary: str) -> Optional[datetime]:
-    m = CLOSED_AT_RE.search(summary)
+    """
+    End time from closing summary Closed at (UTC) field.
+
+    Accepts both plain and Markdown-bold forms:
+      Closed at (UTC): 2026-07-25 14:36
+      - **Closed at (UTC):** 2026-07-25 14:36
+    """
+    m = CLOSED_AT_BULLET_RE.search(summary) or CLOSED_AT_RE.search(summary)
     if not m:
         return None
     try:
@@ -168,11 +182,15 @@ def format_duration_label(delta: timedelta) -> str:
 def compute_task_duration(
     task_basename: str, summary_text: str
 ) -> tuple[Optional[str], Optional[float], Optional[str]]:
+    """
+    Return (label, hours, spent_on_yyyy_mm_dd) from filename stamp → Closed at.
+
+    Never falls back to datetime.now() for the end time: a missing Closed at
+    means we skip time logging rather than inventing inflated hours.
+    """
     start = parse_task_start_utc(task_basename)
     end = parse_closed_at_utc(summary_text)
-    if end is None:
-        end = datetime.now(timezone.utc)
-    if start is None or end < start:
+    if start is None or end is None or end < start:
         return None, None, None
     delta = end - start
     label = format_duration_label(delta)
@@ -428,9 +446,11 @@ if __name__ == "__main__":
             )
             sys.exit(1)
         base_url, api_key, issue_id = cfg
-        stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
+        now = datetime.now(timezone.utc)
         # Fixed 12-minute window for predictable Time taken in the note.
-        closed_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
+        start_utc = now - timedelta(minutes=12)
+        stamp = start_utc.strftime("%Y%m%d-%H%M")
+        closed_utc = now.strftime("%Y-%m-%d %H:%M")
         sample_bn = f"CLOSED-0-{stamp}-redmine-sync-duration-test.md"
         summary_text = (
             "- **What happened:** Integration test for Redmine note + duration.\n"

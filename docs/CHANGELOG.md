@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Autoagents Redmine time tracking: refresh `YYYYMMDD-HHMM` stamp on FEAT/NEW → WIP so duration starts when work begins (not when the task was queued); `redmine_sync.py` parses WIP stamps and Markdown `**Closed at (UTC):**` lines
+
+### Fixed
+
+- Autoagents Redmine time entries: skip logging when `Closed at (UTC)` is missing instead of falling back to `datetime.now()` (avoids inflated hours)
+
 ### Added
 
 - SPIKE #12 closed as **wontfix**: Google IdP will not map directly into Roundcube (`docs/spike-google-idp-roundcube-mailbox-map.md`); keep Dex LDAP OAuth + password; Roundcube discards `oauth_login` username rewrite and Dovecot `username_attribute=email` requires token email = mailbox
