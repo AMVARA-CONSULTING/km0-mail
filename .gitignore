@@ -7,6 +7,10 @@ autoagents/.env
 autoagents/.runtime/
 autoagents/var/loop/
 
+# Python bytecode cache
+__pycache__/
+*.pyc
+
 # Docker / mail data (when deployed)
 mail-data/
 *.pem
