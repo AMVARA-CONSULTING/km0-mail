@@ -12,7 +12,7 @@ Self-hosted mail stack for **KM0 Digital** — Postfix, Dovecot, Rspamd, Roundcu
 
 **Webmail (live):** https://mail.km0digital.com
 
-Docker stack running on the VPS. **You still need DNS at Joker + PTR at Hetzner** for mail from Gmail/Outlook — see [`docs/joker-dns-checklist.md`](docs/joker-dns-checklist.md).
+Docker stack running on the VPS. **Login is native-first:** `/` serves the branded KM0 login page (mailbox email + password) and `/register` is self-contained on the mail host (`POST /api/register` → `mail-provision-api`) — no Auth Hub redirect and no cross-repo register-api for the happy path. OpenCloud / Dex LDAP SSO is optional/legacy for Cloud users. **You still need DNS at Joker + PTR at Hetzner** for mail from Gmail/Outlook — see [`docs/joker-dns-checklist.md`](docs/joker-dns-checklist.md).
 
 ```bash
 ./scripts/verify-mail-stack.sh

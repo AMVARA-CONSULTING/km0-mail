@@ -1,6 +1,8 @@
 # km0-opencloud integration for public mail registration
 
-Cross-repo work required on **AMVARA-CONSULTING/km0-opencloud** (sibling to km0-mail).
+> **Note (native-first signup):** the KM0 Mail happy path is now **self-contained** and does **not** require the km0-opencloud register-api (:8091). Public signup goes to `mail-provision-api`'s own `POST /register` (nginx `/api/register` → :8092), and login is the native mailbox password form at `/`. The cross-repo integration below is the **optional Cloud-linked path** — for existing OpenCloud (Google/OIDC) users who want SSO or to *activate* a mailbox from a Cloud account.
+
+Cross-repo work (optional) on **AMVARA-CONSULTING/km0-opencloud** (sibling to km0-mail).
 
 ## Dex static clients
 
@@ -52,7 +54,7 @@ Expose **LDAP connector only** on mail auth pages. Hide Google connector for req
 
 ## Nginx on cloud host
 
-register-api listens on `127.0.0.1:8091`. Mail nginx proxies `/api/register` same-origin (already in km0-mail vhost).
+For the native happy path, the km0-mail vhost proxies `/api/register` same-origin to the self-contained `mail-provision-api` (`127.0.0.1:8092`) — the km0-opencloud register-api (`127.0.0.1:8091`) is not involved. The :8091 register-api remains relevant only for the optional Cloud-driven `create_mail` checkbox flow described above.
 
 ## Smoke checklist
 

@@ -128,7 +128,7 @@ docker compose up -d dovecot
 ./scripts/km0-mail-admin list-aliases
 ```
 
-Mail passwords are synced from register-api when users self-register. CLI mailboxes are created verified by default.
+Mailbox passwords are set by the self-contained public `POST /api/register` (`mail-provision-api`, :8092) when users self-register; no cross-repo km0-opencloud register-api (:8091) is required for the happy path. CLI mailboxes are created verified by default.
 
 ## Public registration (Model A + B)
 
@@ -167,7 +167,7 @@ That script also applies `sql/init/04-one-mailbox-per-uuid.sql` (issue #13): uni
 
 `POST /activate` response `entry` includes `password_login_url` (with `activated=1`), `verify_path`, and ordered `next_steps`.
 
-Hub CTA / SSO (issue #14, supersedes #11): Auth Hub sets `sso=all` on the cloud bridge for unified login and `?service=mail` (not `?service=cloud` alone). After Cloud login, `/sso-continue` is a **chooser** (LDAP OAuth / [Activate KM0 Mail](https://cloud.km0digital.com/activate-mail.html) / mailbox password) — no auto `prompt=none` (avoids Google-only loops). Session-gate `#22` cloud→`/files` unchanged. Identity preserve: opencloud #24. Pipeline: [`agent-pipeline-mail-activate.md`](agent-pipeline-mail-activate.md).
+**Hub SSO (OPTIONAL / LEGACY — Cloud users only, issue #14, supersedes #11):** the Auth Hub / Dex path is **not** the default entry point. It applies only to existing OpenCloud (Google/OIDC) users who want SSO. When used, the Auth Hub sets `sso=all` on the cloud bridge and `?service=mail` (not `?service=cloud` alone); after Cloud login, `/sso-continue` is a **chooser** (LDAP OAuth / [Activate KM0 Mail](https://cloud.km0digital.com/activate-mail.html) / mailbox password) — no auto `prompt=none` (avoids Google-only loops). Session-gate `#22` cloud→`/files` unchanged. Identity preserve: opencloud #24. Pipeline: [`agent-pipeline-mail-activate.md`](agent-pipeline-mail-activate.md).
 
 ### Post-activate checklist (issue #15)
 
@@ -181,14 +181,14 @@ Operator / QA happy path (no Google for mail):
 
 | URL | Purpose |
 |-----|---------|
-| `/` | Redirects to Auth Hub `service=mail` (Roundcube tasks with `?args` go to `/index.php`) |
-| `/login.html` | Redirects to Auth Hub `service=mail` |
+| `/` | Serves the native branded login page (`login.html`, HTTP 200) — **canonical**. Roundcube tasks with `?args` go to `/index.php` |
+| `/login.html` | Native branded login (mailbox email + password primary; hub/LDAP SSO demoted to "Other ways to sign in") |
 | `/index.php?_task=login` | Roundcube password form (add `&activated=1` after activate) |
-| `/register` | Self-registration Model A (`@km0digital.com`) or B (custom domain) — Auth Hub |
+| `/register` | Self-registration Model A (`@km0digital.com`) or B (custom domain) — served locally; `POST /api/register` → `mail-provision-api` (:8092) |
 | `/domain.html?domain=example.com` | DNS wizard (Model B) |
 | `/verify?token=…` | Email verification (Model A / activate) |
 
-**Auth tracks:** password login (Roundcube native), LDAP OAuth (Dex `connector_id=ldap` only — Google is Cloud IdP, not Roundcube). See [`opencloud-registration-integration.md`](opencloud-registration-integration.md) for km0-opencloud prerequisites.
+**Auth tracks:** native mailbox password login (Roundcube SQL passdb) is the canonical path — no Auth Hub redirect. LDAP OAuth (Dex `connector_id=ldap` only — Google is Cloud IdP, not Roundcube) is **optional/legacy** for Cloud users. See [`opencloud-registration-integration.md`](opencloud-registration-integration.md) for the optional km0-opencloud prerequisites.
 
 **Pre-verification:** pending mailboxes can log in and receive mail; outbound SMTP on port 587 is blocked until verified.
 
