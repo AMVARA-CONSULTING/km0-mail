@@ -86,7 +86,7 @@ repeat steps 2–6 with `ldeluipy.es` once the operator can set its DNS.
 2. **Custom register** creates pending domain + mailbox:
    ```bash
    curl -s -X POST http://127.0.0.1:8092/register -H 'Content-Type: application/json' \
-     -d '{"email":"admin@km0e2etest.org","mail_mode":"custom","password":"correcthorse9"}'
+     -d '{"email":"admin@km0e2etest.org","mail_mode":"custom","password":"<redacted>"}'
    ```
    → `{"continue_to":"/domain.html?domain=km0e2etest.org","domain":"km0e2etest.org","mail_mode":"custom","ok":true,"status":"created","verification_status":"pending"}`
    DB: `mail_domains` row `active=f verification_status=pending` (pub=f priv=f before wizard); `mail_accounts admin@km0e2etest.org active=t mail_mode=custom`.

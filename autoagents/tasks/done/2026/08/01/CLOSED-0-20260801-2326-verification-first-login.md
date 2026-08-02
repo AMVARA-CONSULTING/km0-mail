@@ -80,7 +80,7 @@ link, sending disabled until verified) in EN/ES/CA/DE.
 ```text
 # 1. Register km0 user (public /register) → pending
 $ curl -s -X POST https://mail.km0digital.com/api/register -H 'Content-Type: application/json' \
-    -d '{"email":"ver-…@km0digital.com","mail_mode":"km0","password":"correcthorse9!"}'
+    -d '{"email":"ver-…@km0digital.com","mail_mode":"km0","password":"<redacted>"}'
 {"email":"ver-…@km0digital.com","mail_mode":"km0","ok":true,"status":"created","verification_status":"pending"}
 
 # 2. Verify email delivered to the NEW inbox

@@ -93,7 +93,7 @@ Run from repo root on the VPS. Real output captured 2026-08-01 23:2x UTC after d
    ```bash
    L="reg-$(date +%s)"
    curl -s -X POST https://mail.km0digital.com/api/register -H 'Content-Type: application/json' \
-     -d "{\"email\":\"$L@km0digital.com\",\"mail_mode\":\"km0\",\"password\":\"correcthorse9!\"}"
+     -d "{\"email\":\"$L@km0digital.com\",\"mail_mode\":\"km0\",\"password\":\"<redacted>\"}"
    curl -s https://mail.km0digital.com/api/mail/account/$L@km0digital.com/status
    ```
    Observed:
@@ -114,7 +114,7 @@ Run from repo root on the VPS. Real output captured 2026-08-01 23:2x UTC after d
 4. Invalid input rejected:
    ```bash
    curl -s -X POST https://mail.km0digital.com/api/register -H 'Content-Type: application/json' \
-     -d '{"email":"foo@gmail.com","mail_mode":"km0","password":"correcthorse9!"}'   # freemail
+     -d '{"email":"foo@gmail.com","mail_mode":"km0","password":"<redacted>"}'   # freemail
    curl -s -X POST https://mail.km0digital.com/api/register -H 'Content-Type: application/json' \
      -d '{"email":"shorty@km0digital.com","mail_mode":"km0","password":"abc"}'      # short pw
    curl -s -o /dev/null -w '%{http_code}\n' -X POST https://mail.km0digital.com/api/register \
@@ -125,7 +125,7 @@ Run from repo root on the VPS. Real output captured 2026-08-01 23:2x UTC after d
    ```bash
    for i in $(seq 1 20); do curl -s -o /dev/null -w '%{http_code} ' -X POST \
      https://mail.km0digital.com/api/register -H 'Content-Type: application/json' \
-     -d '{"email":"rl@km0digital.com","mail_mode":"km0","password":"correcthorse9!"}'; done; echo
+     -d '{"email":"rl@km0digital.com","mail_mode":"km0","password":"<redacted>"}'; done; echo
    ```
    Observed: `201 200 200 200 429 429 429 429 429 429 429 429 429 429 429 429 429 429 429 429`
    (first hits create/exist, then 429 once the window is full; prior probes counted toward the 10).
@@ -133,7 +133,7 @@ Run from repo root on the VPS. Real output captured 2026-08-01 23:2x UTC after d
    ```bash
    CD="cust-$(date +%s).example"
    curl -s -X POST https://mail.km0digital.com/api/register -H 'Content-Type: application/json' \
-     -d "{\"email\":\"admin@$CD\",\"mail_mode\":\"custom\",\"password\":\"correcthorse9!\"}"
+     -d "{\"email\":\"admin@$CD\",\"mail_mode\":\"custom\",\"password\":\"<redacted>\"}"
    docker compose exec -T postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c \
      "SELECT name, active, verification_status FROM mail_domains WHERE name='$CD';"
    ```
@@ -142,7 +142,7 @@ Run from repo root on the VPS. Real output captured 2026-08-01 23:2x UTC after d
 7. Token-gated routes unchanged (Bearer still required):
    ```bash
    curl -s -o /dev/null -w '%{http_code}\n' -X POST https://mail.km0digital.com/api/mail/provision \
-     -H 'Content-Type: application/json' -d '{"email":"x@km0digital.com","mail_mode":"km0","password":"correcthorse9!"}'
+     -H 'Content-Type: application/json' -d '{"email":"x@km0digital.com","mail_mode":"km0","password":"<redacted>"}'
    ```
    Observed: `401`.
 8. Native password login with the freshly registered mailbox (FEAT native-login path):
