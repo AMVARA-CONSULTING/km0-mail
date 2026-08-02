@@ -8,6 +8,8 @@ import re
 import secrets
 import smtplib
 import subprocess
+import threading
+import time
 from email.message import EmailMessage
 from pathlib import Path
 from urllib.parse import urlencode
@@ -35,6 +37,10 @@ RELOAD_POSTFIX_MAPS = os.environ.get("RELOAD_POSTFIX_MAPS", "true").lower() in (
 SMTP_RELAY = os.environ.get("SMTP_RELAY", "postfix:587")
 NOREPLY = os.environ.get("NOREPLY_ADDRESS", f"noreply@{MAIL_DOMAIN}")
 VERIFY_BASE_URL = os.environ.get("VERIFY_BASE_URL", f"https://{MAIL_HOSTNAME}/verify")
+
+# Public /register throttle (per client IP; in-process, dependency-light).
+REGISTER_RATE_MAX = int(os.environ.get("REGISTER_RATE_MAX", "10"))
+REGISTER_RATE_WINDOW = int(os.environ.get("REGISTER_RATE_WINDOW_SEC", "300"))
 
 FREEMAIL_DOMAINS = frozenset(
     d.strip().lower()
@@ -65,6 +71,34 @@ def auth_ok() -> bool:
     if not auth.startswith("Bearer "):
         return False
     return secrets.compare_digest(auth[7:], API_TOKEN)
+
+
+_rate_lock = threading.Lock()
+_rate_hits: dict[str, list[float]] = {}
+
+
+def client_ip() -> str:
+    """Real client IP behind nginx (X-Forwarded-For first hop, then X-Real-IP)."""
+    xff = request.headers.get("X-Forwarded-For", "")
+    if xff:
+        return xff.split(",")[0].strip()
+    return request.headers.get("X-Real-IP") or request.remote_addr or "unknown"
+
+
+def rate_limited(ip: str) -> bool:
+    """Sliding-window limiter: True once an IP exceeds REGISTER_RATE_MAX in the window."""
+    now = time.time()
+    with _rate_lock:
+        hits = [t for t in _rate_hits.get(ip, []) if now - t < REGISTER_RATE_WINDOW]
+        if len(hits) >= REGISTER_RATE_MAX:
+            _rate_hits[ip] = hits
+            return True
+        hits.append(now)
+        _rate_hits[ip] = hits
+        if len(_rate_hits) > 10000:
+            for key in [k for k, v in _rate_hits.items() if all(now - t >= REGISTER_RATE_WINDOW for t in v)]:
+                del _rate_hits[key]
+    return False
 
 
 def domain_of(email: str) -> str:
@@ -429,6 +463,59 @@ def provision():
     body = {"ok": True, "email": (extra or {}).get("email", email), "status": status}
     if extra:
         body.update(extra)
+    return jsonify(body), code
+
+
+@app.route("/register", methods=["POST"])
+def register():
+    """Public, self-contained mailbox registration for the browser signup form.
+
+    Reached via nginx `/api/register` -> :8092/register. No Bearer token (called
+    from the browser); protected by per-IP rate limiting and freemail rejection.
+    Public signups are never IDM-linked, so any `opencloud_uuid` in the body is
+    ignored. Reuses `provision_mailbox` so it behaves exactly like `/provision`.
+    """
+    if not DB["password"]:
+        return jsonify({"error": "service_unavailable"}), 503
+
+    if rate_limited(client_ip()):
+        return jsonify({"error": "rate_limited"}), 429
+
+    data = request.get_json(silent=True) or {}
+    email = (data.get("email") or data.get("desired_email") or "").strip().lower()
+    password = data.get("password")
+    mail_mode = (data.get("mail_mode") or "km0").strip().lower()
+    contact_email = (data.get("contact_email") or "").strip().lower() or None
+
+    if mail_mode not in ("km0", "custom"):
+        return jsonify({"error": "invalid_mail_mode"}), 400
+    if not email or not EMAIL_RE.match(email):
+        return jsonify({"error": "invalid_email"}), 400
+    if not password or len(str(password)) < 8:
+        return jsonify({"error": "password_too_short"}), 400
+    lp_err = validate_local_part(email.split("@", 1)[0])
+    if lp_err:
+        return jsonify({"error": lp_err}), 400
+
+    # opencloud_uuid intentionally forced to None: public signups are not IDM-linked.
+    ok, status, extra = provision_mailbox(
+        email, password, None, mail_mode, contact_email, send_verify=True
+    )
+    if not ok:
+        body = {"error": status}
+        if extra:
+            body.update(extra)
+        code = 409 if status in ("uuid_already_linked", "email_already_linked", "conflict") else 400
+        return jsonify(body), code
+
+    code = 201 if status == "created" else 200
+    body = {"ok": True, "email": (extra or {}).get("email", email), "status": status}
+    if extra:
+        body.update(extra)
+    if mail_mode == "custom":
+        domain = domain_of(email)
+        body["domain"] = domain
+        body["continue_to"] = f"/domain.html?domain={domain}"
     return jsonify(body), code
 
 

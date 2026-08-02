@@ -4,6 +4,7 @@
 
 ### Changed
 
+- Native-first login is now canonical (Redmine #7605): nginx serves the branded `/login.html` and `/register` locally instead of `302`-redirecting to `auth.km0digital.com`; login page leads with email + password and demotes OpenCloud / LDAP SSO to an "Other ways to sign in" section; register banner clarifies verification is required before sending. Hub / Dex SSO is now optional/legacy. Docs + `verify-mail-stack` updated to expect native login
 - Autoagents Redmine time tracking: refresh `YYYYMMDD-HHMM` stamp on FEAT/NEW → WIP so duration starts when work begins (not when the task was queued); `redmine_sync.py` parses WIP stamps and Markdown `**Closed at (UTC):**` lines
 
 ### Fixed
@@ -12,6 +13,8 @@
 
 ### Added
 
+- Self-contained public registration (Redmine #7605): `mail-provision-api` now exposes a public `POST /register` (per-IP rate-limited, freemail-rejected, never IDM-linked) that reuses `provision_mailbox`; nginx `/api/register` proxies to `:8092` instead of the cross-repo km0-opencloud register-api (`:8091`). Custom-mode signups get a `continue_to` to the domain DNS wizard
+- Custom domain (Model B) outbound DKIM signing (Redmine #7605): `mail_domains.dkim_private_key` migration (`sql/init/05-custom-domain-dkim.sql`); `domain-verify-api` now persists **both** DKIM keys on first generation, generates them on the wizard's first `/status` view (so the DKIM record is shown), and on verification materializes the domain's private key to `/var/lib/rspamd/dkim/<domain>.<selector>.key` (`_rspamd`-owned, `0600`) + SIGHUP-reloads Rspamd so it signs `d=<customdomain>` via the generic `$domain.$selector.key` map — no per-domain config. `/check` is now usable by the public DNS wizard (per-IP rate-limited; a supplied Bearer token must still be valid). Inbound already flowed from `active=true` via Postfix hash maps. Private key lives in the trusted DB and re-materializes on volume loss. Runbook: end-to-end custom-domain onboarding
 - SPIKE #12 closed as **wontfix**: Google IdP will not map directly into Roundcube (`docs/spike-google-idp-roundcube-mailbox-map.md`); keep Dex LDAP OAuth + password; Roundcube discards `oauth_login` username rewrite and Dovecot `username_attribute=email` requires token email = mailbox
 - Post-activate verify happy path (issue #15): Roundcube login `?activated=1` banner; `entry` next_steps (password → verify → optional LDAP); wizard/hub copy stresses mailbox password + inbox verify (no Google IdP for mail); runbook checklist
 - Hub SSO cookie + Google-safe continue (issue #14, supersedes #11): Auth Hub `sso=all` on cloud bridge for unified/`service=mail`; `/sso-continue` chooser (LDAP OAuth / activate-mail.html / password) — no auto `prompt=none`; login `service=mail` activate CTA (cross-repo `/opt/km0-auth/host-www/`)

@@ -7,9 +7,10 @@
 #   sudo nginx -t && sudo systemctl reload nginx
 #
 # Roundcube upstream: 127.0.0.1:8080
-# register-api proxy: 127.0.0.1:8091 (km0-opencloud)
-# mail-provision-api: 127.0.0.1:8092
+# mail-provision-api: 127.0.0.1:8092 (public /register + provisioning)
 # domain-verify-api: 127.0.0.1:8093
+# NOTE: km0-opencloud register-api (:8091) is no longer used for the KM0 signup
+#       happy path; /api/register now targets the self-contained :8092 endpoint.
 
 server {
     listen 80;
@@ -41,20 +42,25 @@ server {
 
     client_max_body_size 25M;
 
-    # Branded auth → KM0 Auth Hub
+    # Native branded login is the canonical entry point (no forced Auth Hub redirect).
+    # Roundcube deep links / logged-in sessions carry $args and go straight to the app.
     location = / {
         if ($args) {
             return 302 $scheme://$host/index.php?$args;
         }
-        return 302 https://auth.km0digital.com/login?service=mail;
+        rewrite ^ /login.html last;
     }
 
     location = /login.html {
-        return 302 https://auth.km0digital.com/login?service=mail$is_args$args;
+        alias /var/www/mail-auth/login.html;
+        default_type text/html;
     }
 
+    # Serve the local register page; backend wiring is handled by the
+    # self-contained-registration FEAT.
     location = /register {
-        return 302 https://auth.km0digital.com/register$is_args$args;
+        alias /var/www/mail-auth/register.html;
+        default_type text/html;
     }
 
     location = /register.html {
@@ -110,9 +116,11 @@ server {
         expires 1h;
     }
 
-    # Self-registration (same-origin proxy avoids CORS; register-api on host :8091)
+    # Self-registration (same-origin proxy avoids CORS). Self-contained on the
+    # mail host: mail-provision-api :8092 public /register (no cross-repo :8091).
+    # X-Real-IP / X-Forwarded-For are required for the API's per-IP rate limit.
     location = /api/register {
-        proxy_pass http://127.0.0.1:8091/register;
+        proxy_pass http://127.0.0.1:8092/register;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;

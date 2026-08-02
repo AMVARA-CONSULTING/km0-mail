@@ -202,6 +202,67 @@ docker compose exec postfix build-hash-maps.sh
 
 ---
 
+## Custom domain onboarding (Model B, end-to-end)
+
+Runs a customer-owned domain on this stack: inbound delivery, native password login
+for `user@customdomain`, and outbound mail DKIM-signed with the domain's **own** key.
+Everything is DB-driven — no per-domain config edits or code changes. Example below
+uses `ldeluipy.es`; substitute any real domain the operator controls DNS for.
+
+1. **Register** — the user signs up in `custom` mode (self-service or operator):
+
+   ```bash
+   curl -s -X POST https://mail.km0digital.com/api/register -H 'Content-Type: application/json' \
+     -d '{"email":"admin@ldeluipy.es","mail_mode":"custom","password":"<strong-pass>"}'
+   ```
+
+   Creates a **pending** `mail_domains` row (`active=false`) and the mailbox, and the
+   response `continue_to` sends the browser to `/domain.html?domain=ldeluipy.es`.
+
+2. **DNS wizard** — `/domain.html?domain=ldeluipy.es` loads and calls the public
+   `GET /api/mail/domain/<domain>/status`. On first view the domain's DKIM keypair is
+   generated and persisted (both public and **private** keys in `mail_domains`), and the
+   four records to publish are shown. Add them at the registrar:
+
+   | Type | Host | Value |
+   |------|------|-------|
+   | TXT | `@` | `km0-mail-verification=<token>` |
+   | MX | `@` | `mail.km0digital.com` (priority 10) |
+   | TXT (SPF) | `@` | `v=spf1 mx a:mail.km0digital.com ~all` |
+   | TXT (DKIM) | `mail._domainkey` | `v=DKIM1; k=rsa; p=<public key from wizard>` |
+
+3. **Verify** — the user clicks **Check again**, which POSTs to
+   `/api/mail/domain/<domain>/check` (public, per-IP rate-limited). When all four
+   records resolve, the domain flips to `active=true` / `verified` and, in one step:
+   - **Inbound:** `reload_postfix_maps()` rebuilds the Postfix hash maps so
+     `@ldeluipy.es` is an accepted `virtual_mailbox_domain`.
+   - **Outbound:** the domain's private key is materialized to
+     `/var/lib/rspamd/dkim/ldeluipy.es.mail.key` (owned by `_rspamd`, `0600`) and Rspamd
+     is soft-reloaded (SIGHUP). Rspamd's generic `$domain.$selector.key` map then signs
+     outbound mail from `admin@ldeluipy.es` with `d=ldeluipy.es`.
+
+4. **Login** — `admin@ldeluipy.es` signs in at the native login with email + password
+   (Dovecot SQL passdb; no OAuth required). Custom mailboxes are `verified` once their
+   domain verifies, so outbound on 587 is unblocked.
+
+**Operator checks:**
+
+```bash
+# domain active + both DKIM keys stored
+docker compose exec postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c \
+  "SELECT name, active, verification_status, (dkim_public_key IS NOT NULL) pub, (dkim_private_key IS NOT NULL) priv FROM mail_domains WHERE name='ldeluipy.es';"
+# signing key present in Rspamd
+docker compose exec rspamd ls -l /var/lib/rspamd/dkim/ | grep ldeluipy
+# Postfix accepts the domain
+docker compose exec postfix postmap -q ldeluipy.es hash:/etc/postfix/virtual-mailbox-domains
+```
+
+**Recovery:** the private key lives in the (trusted) DB. If the Rspamd volume is lost,
+the next successful `/check` for the domain re-materializes the key from the DB — no key
+rotation or DNS change needed. To force re-materialization, POST `/check` again.
+
+---
+
 ## Localhost SMTP relay (OpenCloud / apps)
 
 Apps on the same host send via `127.0.0.1:587` **without auth** (restricted by Postfix `mynetworks`).
