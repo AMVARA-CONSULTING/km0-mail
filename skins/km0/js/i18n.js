@@ -23,11 +23,12 @@
       loginButton: 'Login',
       support: 'Support',
       registerLink: 'Create a free account',
-      backToLanding: 'Other sign-in options',
-      activatedBanner:
-        'Mailbox activated. Sign in with your @km0digital.com address and mailbox password, then open the verification email in your inbox. Google sign-in cannot open this mailbox.',
-      googleOnlyBanner:
-        'Google is your Cloud identity only. To verify and use KM0 Mail, sign in here with the mailbox password (or KM0/LDAP after linking).',
+      registeredBanner:
+        'Account created — sign in below with your new address and password.',
+      loginErrorCredentials:
+        'Incorrect email or password. Check your details (and Caps Lock) and try again.',
+      loginErrorServer:
+        'The mail server is temporarily unavailable. Please try again in a moment.',
     },
     es: {
       langAria: 'Idioma',
@@ -39,11 +40,12 @@
       loginButton: 'Iniciar sesión',
       support: 'Soporte',
       registerLink: 'Crear cuenta gratuita',
-      backToLanding: 'Otras opciones de acceso',
-      activatedBanner:
-        'Buzón activado. Entra con tu dirección @km0digital.com y la contraseña del buzón; luego abre el correo de verificación. Google no puede abrir este buzón.',
-      googleOnlyBanner:
-        'Google es solo tu identidad de Cloud. Para verificar y usar KM0 Mail, entra aquí con la contraseña del buzón (o KM0/LDAP tras el enlace).',
+      registeredBanner:
+        'Cuenta creada. Entra abajo con tu nueva dirección y contraseña.',
+      loginErrorCredentials:
+        'Email o contraseña incorrectos. Revisa los datos (y el Bloq Mayús) e inténtalo de nuevo.',
+      loginErrorServer:
+        'El servidor de correo no está disponible temporalmente. Inténtalo de nuevo en un momento.',
     },
     ca: {
       langAria: 'Idioma',
@@ -55,11 +57,12 @@
       loginButton: 'Iniciar sessió',
       support: 'Suport',
       registerLink: 'Crear compte gratuït',
-      backToLanding: 'Altres opcions d\'accés',
-      activatedBanner:
-        'Bústia activada. Entra amb la teva adreça @km0digital.com i la contrasenya de la bústia; després obre el correu de verificació. Google no pot obrir aquesta bústia.',
-      googleOnlyBanner:
-        'Google és només la teva identitat de Cloud. Per verificar i usar KM0 Mail, entra aquí amb la contrasenya de la bústia (o KM0/LDAP després de l\'enllaç).',
+      registeredBanner:
+        'Compte creat. Entra a sota amb la teva nova adreça i contrasenya.',
+      loginErrorCredentials:
+        'Correu o contrasenya incorrectes. Revisa les dades (i el Bloq Maj) i torna-ho a provar.',
+      loginErrorServer:
+        'El servidor de correu no està disponible temporalment. Torna-ho a provar d\'aquí un moment.',
     },
     de: {
       langAria: 'Sprache',
@@ -71,11 +74,12 @@
       loginButton: 'Anmelden',
       support: 'Support',
       registerLink: 'Kostenloses Konto erstellen',
-      backToLanding: 'Weitere Anmeldeoptionen',
-      activatedBanner:
-        'Postfach aktiviert. Melden Sie sich mit @km0digital.com und dem Postfachpasswort an und öffnen Sie die Bestätigungs-E-Mail. Google öffnet dieses Postfach nicht.',
-      googleOnlyBanner:
-        'Google ist nur Ihre Cloud-Identität. Zum Bestätigen und Nutzen von KM0 Mail hier mit Postfachpasswort anmelden (oder KM0/LDAP nach Verknüpfung).',
+      registeredBanner:
+        'Konto erstellt. Melden Sie sich unten mit Ihrer neuen Adresse und Ihrem Passwort an.',
+      loginErrorCredentials:
+        'E-Mail oder Passwort ist falsch. Bitte prüfen Sie Ihre Angaben (und die Feststelltaste) und versuchen Sie es erneut.',
+      loginErrorServer:
+        'Der Mailserver ist vorübergehend nicht verfügbar. Bitte versuchen Sie es gleich erneut.',
     },
   };
 
@@ -181,23 +185,66 @@
   function showQueryBanners(locale) {
     try {
       var params = new URLSearchParams(window.location.search);
-      var activated = document.getElementById('km0-activated-banner');
-      var googleOnly = document.getElementById('km0-google-only-banner');
-      if (activated && params.get('activated') === '1') {
-        activated.textContent = t(locale, 'activatedBanner');
-        activated.hidden = false;
-      }
-      if (googleOnly && (params.get('hint') === 'google' || params.get('google_only') === '1')) {
-        googleOnly.textContent = t(locale, 'googleOnlyBanner');
-        googleOnly.hidden = false;
+      var registered = document.getElementById('km0-registered-banner');
+      if (registered && params.get('registered') === '1') {
+        registered.textContent = t(locale, 'registeredBanner');
+        registered.hidden = false;
       }
     } catch (e) {
       /* ignore */
     }
   }
 
+  // Turn Roundcube's generic "Login failed." / "Server Error!" toast into a
+  // clear, localized message so users know exactly what went wrong. Roundcube
+  // queues the message (pending_message) before its own init flush; overriding
+  // display_message synchronously here — while rcmail already exists but the
+  // message container does not yet — lets us rewrite it before it is shown.
+  function mapLoginMessage(locale, msg, type) {
+    if (typeof msg !== 'string') return null;
+    var m = msg.toLowerCase();
+    if (m.indexOf('login failed') !== -1 || m.indexOf('authentication') !== -1) {
+      return { msg: t(locale, 'loginErrorCredentials'), type: 'error', timeout: 0 };
+    }
+    if (
+      m.indexOf('server error') !== -1 || m.indexOf('storage') !== -1 ||
+      m.indexOf('imap') !== -1 || m.indexOf('connect') !== -1 ||
+      m.indexOf('unavailable') !== -1
+    ) {
+      return { msg: t(locale, 'loginErrorServer'), type: 'error', timeout: 0 };
+    }
+    return null;
+  }
+
+  function patchLoginMessages(locale) {
+    if (typeof window === 'undefined' || !window.rcmail || window.rcmail.__km0MsgPatched) {
+      return;
+    }
+    var rc = window.rcmail;
+    rc.__km0MsgPatched = true;
+    var orig = typeof rc.display_message === 'function' ? rc.display_message : null;
+    rc.display_message = function (msg, type, timeout, key) {
+      var mapped = null;
+      try {
+        mapped = mapLoginMessage(locale, msg, type);
+      } catch (e) {
+        /* fall back to original message */
+      }
+      if (mapped) {
+        msg = mapped.msg;
+        type = mapped.type;
+        timeout = mapped.timeout;
+      }
+      if (orig) return orig.call(rc, msg, type, timeout, key);
+    };
+  }
+
+  // Run before DOMContentLoaded so we win the race with rcmail's init flush.
+  patchLoginMessages(getLocale());
+
   function init() {
     var locale = getLocale();
+    patchLoginMessages(locale);
     stripBootstrapFromLangButtons();
     applyLocale(locale);
     updateLangSwitcher(locale);

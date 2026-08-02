@@ -42,22 +42,17 @@ server {
 
     client_max_body_size 25M;
 
-    # Native branded login is the canonical entry point (no forced Auth Hub redirect).
-    # Roundcube deep links / logged-in sessions carry $args and go straight to the app.
-    location = / {
-        if ($args) {
-            return 302 $scheme://$host/index.php?$args;
-        }
-        rewrite ^ /login.html last;
-    }
+    # Single login surface: the native Roundcube form is served directly at `/`
+    # by the catch-all proxy below (Roundcube shows the login form when logged out
+    # and the inbox when authenticated). No static landing, no redirect — a 302
+    # here would break the login POST (Roundcube posts the form to `/?_task=login`).
 
+    # Legacy static landing retired — redirect any old link to the Roundcube login.
     location = /login.html {
-        alias /var/www/mail-auth/login.html;
-        default_type text/html;
+        return 302 $scheme://$host/index.php?_task=login;
     }
 
-    # Serve the local register page; backend wiring is handled by the
-    # self-contained-registration FEAT.
+    # Self-service registration page (posts to /api/register -> mail-provision-api).
     location = /register {
         alias /var/www/mail-auth/register.html;
         default_type text/html;
