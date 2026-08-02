@@ -32,11 +32,18 @@ $config['smtp_conn_options'] = [
 ];
 
 $config['skin'] = 'km0';
+// Force the km0 logo everywhere (login, dashboard, print). The path is left
+// WITHOUT a leading slash on purpose: Roundcube's abs_url() only skin-resolves
+// slash-prefixed paths, and that resolution picks the skin that OWNS the
+// template (Elastic's menu.html) — which is why "/images/logo.svg" fell back to
+// Elastic's logo. A root-relative "skins/km0/..." value is emitted verbatim, so
+// every logo type (incl. the dark-mode swap) uses the km0 logo.
+$config['skin_logo'] = 'skins/km0/images/logo.svg';
 $config['language'] = 'en_US';
 $config['support_url'] = 'https://km0digital.com/';
 $config['product_name'] = 'KM0 Mail';
 $config['des_key'] = getenv('ROUNDCUBEMAIL_DES_KEY') ?: 'change-me';
-$config['plugins'] = ['archive', 'zipdownload', 'km0_sso_provision', 'km0_verification_banner', 'km0_domains'];
+$config['plugins'] = ['archive', 'zipdownload', 'km0_sso_provision', 'km0_verification_banner', 'km0_domains', 'km0_theme'];
 
 // Session security behind Nginx HTTPS
 $config['force_https'] = true;

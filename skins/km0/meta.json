@@ -20,6 +20,9 @@
 			},
 			{
 				"href": "/styles/km0-login.css"
+			},
+			{
+				"href": "/styles/km0-app.css"
 			}
 		]
 	}
