@@ -181,14 +181,14 @@ Operator / QA happy path (no Google for mail):
 
 | URL | Purpose |
 |-----|---------|
-| `/` | Serves the native branded login page (`login.html`, HTTP 200) — **canonical**. Roundcube tasks with `?args` go to `/index.php` |
-| `/login.html` | Native branded login (mailbox email + password primary; hub/LDAP SSO demoted to "Other ways to sign in") |
-| `/index.php?_task=login` | Roundcube password form (add `&activated=1` after activate) |
-| `/register` | Self-registration Model A (`@km0digital.com`) or B (custom domain) — served locally; `POST /api/register` → `mail-provision-api` (:8092) |
-| `/domain.html?domain=example.com` | DNS wizard (Model B) |
+| `/` | Serves the native Roundcube login directly (proxied to `:8080`; logged-out → login form, authenticated → inbox). No redirect — a 302 here breaks the login POST (`/?_task=login`) |
+| `/login.html` | `302` → `/index.php?_task=login` (legacy static landing retired) |
+| `/index.php?_task=login` | Roundcube native password form — **the** login page. `&registered=1` shows the post-signup banner; `&activated=1` still supported |
+| `/register` | Self-registration (Proton-style: username + password → `username@km0digital.com`) — served locally; `POST /api/register` → `mail-provision-api` (:8092) |
+| `/domain.html?domain=example.com` | DNS wizard (Model B, add-a-domain phase 2) |
 | `/verify?token=…` | Email verification (Model A / activate) |
 
-**Auth tracks:** native mailbox password login (Roundcube SQL passdb) is the canonical path — no Auth Hub redirect. LDAP OAuth (Dex `connector_id=ldap` only — Google is Cloud IdP, not Roundcube) is **optional/legacy** for Cloud users. See [`opencloud-registration-integration.md`](opencloud-registration-integration.md) for the optional km0-opencloud prerequisites.
+**Auth tracks:** the **only** login is the native Roundcube email + password form (SQL passdb) — no static landing, no OAuth button, no Auth Hub redirect. OAuth is disabled in `config/roundcube/config.inc.php` (`$config['oauth_provider'] = null;`), so the "Login with KM0 Mail" button is gone and the `km0_sso_provision` plugin stays dormant (its `oauth_login` hook never fires). LDAP/Dex SSO and the Auth Hub remain **legacy** and are not wired into the login page. See [`opencloud-registration-integration.md`](opencloud-registration-integration.md) for the optional km0-opencloud prerequisites.
 
 **Pre-verification:** pending mailboxes can log in and receive mail; outbound SMTP on port 587 is blocked until verified.
 
@@ -208,6 +208,25 @@ Runs a customer-owned domain on this stack: inbound delivery, native password lo
 for `user@customdomain`, and outbound mail DKIM-signed with the domain's **own** key.
 Everything is DB-driven — no per-domain config edits or code changes. Example below
 uses `ldeluipy.es`; substitute any real domain the operator controls DNS for.
+
+### Self-service (primary path): Settings → My domains
+
+Any logged-in user (operators included — an operator is just a user) manages their own
+domains inside webmail via the `km0_domains` Roundcube plugin:
+
+1. Sign in, open **Settings → My domains**, type the domain and **Add**.
+2. Publish the shown DNS records (TXT verification, MX, SPF, DKIM) at the registrar,
+   then click **Verify**. On success the domain flips `active`/`verified` (Postfix maps
+   rebuilt, per-domain DKIM materialized — same backend as below).
+3. Once active, use **Addresses** to create/delete mailboxes on the domain
+   (`user@customdomain` + password). New addresses are `verified` immediately.
+
+Ownership is tracked by `mail_domains.owner_email` (the session mailbox). The plugin calls
+the internal `mail-provision-api` `/my/*` and `domain-verify-api` endpoints server-to-server
+with the shared Bearer token; the browser only ever talks to Roundcube (session-scoped).
+`/my/*` endpoints require the Bearer, so the `owner` param cannot be spoofed publicly.
+
+### API / operator path (equivalent, scriptable)
 
 1. **Register** — the user signs up in `custom` mode (self-service or operator):
 

@@ -1,0 +1,54 @@
+<roundcube:include file="includes/layout.html" />
+<roundcube:include file="includes/menu.html" />
+<roundcube:include file="includes/settings-menu.html" />
+
+<h1 class="voice"><roundcube:label name="km0_domains.domainstitle" /></h1>
+
+<style type="text/css">
+  .km0d-section { margin: 0 0 1.5rem; }
+  .km0d-section h3 { margin: 0 0 .5rem; font-size: 1rem; }
+  .km0d-row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+  .km0d-list { list-style: none; margin: .5rem 0 0; padding: 0; }
+  .km0d-list li { display: flex; gap: .75rem; align-items: center; justify-content: space-between;
+    padding: .6rem .75rem; border: 1px solid rgba(128,128,128,.25); border-radius: 8px; margin-bottom: .5rem; flex-wrap: wrap; }
+  .km0d-badge { font-size: .75rem; padding: .1rem .5rem; border-radius: 999px; border: 1px solid rgba(128,128,128,.4); }
+  .km0d-badge.ok { border-color: rgba(45,212,191,.5); }
+  .km0d-badge.pending { border-color: rgba(245,158,11,.5); }
+  .km0d-dns { width: 100%; margin-top: .6rem; }
+  .km0d-dns table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+  .km0d-dns th, .km0d-dns td { text-align: left; padding: .35rem .5rem; border-bottom: 1px solid rgba(128,128,128,.2); vertical-align: top; word-break: break-all; }
+  .km0d-dns code { font-family: monospace; }
+  .km0d-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+  .km0d-msg { margin: .5rem 0; }
+  .km0d-hidden { display: none; }
+  .km0d-copy { cursor: pointer; }
+</style>
+
+<div id="layout-content" class="selected" role="main">
+  <div class="header">
+    <span class="header-title"><roundcube:label name="km0_domains.domainstitle" /></span>
+  </div>
+  <div class="formcontainer scroller">
+    <div class="formcontent">
+
+      <div class="km0d-msg banner" id="km0d-msg" role="alert" hidden></div>
+
+      <div class="km0d-section" id="km0d-add-domain">
+        <h3><roundcube:label name="km0_domains.adddomain" /></h3>
+        <div class="km0d-row">
+          <input type="text" id="km0d-domain-input" class="form-control" placeholder="midominio.com" autocapitalize="off" autocomplete="off" spellcheck="false" style="max-width:280px" />
+          <button type="button" class="btn btn-primary" id="km0d-domain-add"><roundcube:label name="km0_domains.add" /></button>
+        </div>
+      </div>
+
+      <div class="km0d-section" id="km0d-domains">
+        <h3><roundcube:label name="km0_domains.mydomains" /></h3>
+        <ul class="km0d-list" id="km0d-domains-list"></ul>
+        <p id="km0d-domains-empty" class="km0d-hidden"><roundcube:label name="km0_domains.nodomains" /></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<roundcube:include file="includes/footer.html" />
