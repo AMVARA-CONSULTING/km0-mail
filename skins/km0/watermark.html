@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="dark-mode">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+  /*
+   * km0 watermark for the empty content pane. Overrides Elastic's watermark.html
+   * (which hardcodes url(images/logo.svg) → Elastic's logo on a white canvas).
+   * Served from skins/km0/, so the relative logo path resolves to the km0 logo,
+   * and the canvas uses the km0 Paper token. km0 is dark-only.
+   */
+  html, body { height: 100%; margin: 0; overflow: hidden; }
+  body {
+    background: url(images/logo.svg) center no-repeat #0B1220;
+    background-size: 18%;
+  }
+  /* Subtle dim so the mark reads as a watermark, not a foreground element. */
+  body:after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: #0B1220;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body></body>
+</html>

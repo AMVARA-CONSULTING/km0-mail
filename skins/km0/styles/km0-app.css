@@ -1,0 +1,184 @@
+/**
+ * KM0 Mail — app (dashboard) branding. Camino A.
+ * Re-tints the Elastic *dark* base to the km0-web design tokens so the webmail
+ * chrome matches the marketing site. The login page is styled by km0-login.css;
+ * here we scope every rule to the app (everything except body.task-login).
+ *
+ * Tokens (--km0-paper / snow / mist / ink / ink-muted / signal / signal-hover)
+ * are declared on :root by km0-login.css, which meta.json loads on every page.
+ * Dark mode is forced app-wide by the km0_theme plugin (adds .dark-mode to
+ * <html>), so all rules below assume html.dark-mode is present.
+ */
+
+/* ---- Typography ---------------------------------------------------------- */
+html.dark-mode body:not(.task-login),
+html.dark-mode body:not(.task-login) input,
+html.dark-mode body:not(.task-login) button,
+html.dark-mode body:not(.task-login) select,
+html.dark-mode body:not(.task-login) textarea {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+/* ---- Canvas & surfaces --------------------------------------------------- */
+/* Body is the Paper canvas; Elastic leaves the panels transparent, so we lift
+   the working panels to Snow for depth (like km0-web surfaces). */
+html.dark-mode body:not(.task-login) {
+  background-color: var(--km0-paper) !important;
+  color: var(--km0-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+html.dark-mode body:not(.task-login) #layout-sidebar,
+html.dark-mode body:not(.task-login) #layout-list,
+html.dark-mode body:not(.task-login) #layout-content,
+html.dark-mode body:not(.task-login) #layout > div > .header,
+html.dark-mode body:not(.task-login) #layout > div > .footer,
+html.dark-mode body:not(.task-login) .toolbar,
+html.dark-mode body:not(.task-login) .searchbar,
+html.dark-mode body:not(.task-login) .contentbox,
+html.dark-mode body:not(.task-login) .boxlist,
+html.dark-mode body:not(.task-login) .uibox {
+  background-color: var(--km0-snow) !important;
+  border-color: var(--km0-mist) !important;
+}
+
+/* ---- Task menu (left rail) ---------------------------------------------- */
+html.dark-mode body:not(.task-login) #layout-menu,
+html.dark-mode body:not(.task-login) #taskmenu {
+  background-color: var(--km0-paper) !important;
+  border-color: var(--km0-mist) !important;
+}
+
+html.dark-mode body:not(.task-login) #taskmenu a {
+  color: var(--km0-ink-muted) !important;
+}
+
+html.dark-mode body:not(.task-login) #taskmenu a:hover,
+html.dark-mode body:not(.task-login) #taskmenu a.selected,
+html.dark-mode body:not(.task-login) #taskmenu .action-buttons a {
+  color: var(--km0-signal) !important;
+  background-color: rgba(45, 212, 191, 0.12) !important;
+}
+
+/* We force dark, so hide the light/dark toggle to avoid a broken mixed state. */
+html.dark-mode #taskmenu a.theme {
+  display: none !important;
+}
+
+/* ---- Lists & selection --------------------------------------------------- */
+html.dark-mode body:not(.task-login) .listing tr,
+html.dark-mode body:not(.task-login) table.listing td,
+html.dark-mode body:not(.task-login) .listing li {
+  border-color: var(--km0-mist) !important;
+}
+
+html.dark-mode body:not(.task-login) .listing tr.selected,
+html.dark-mode body:not(.task-login) .listing tr.focused.selected,
+html.dark-mode body:not(.task-login) .listing li.selected {
+  background-color: rgba(45, 212, 191, 0.14) !important;
+}
+
+html.dark-mode body:not(.task-login) .listing tr.selected td,
+html.dark-mode body:not(.task-login) .listing tr.selected td a,
+html.dark-mode body:not(.task-login) .listing tr.selected span.subject,
+html.dark-mode body:not(.task-login) .listing li.selected > a {
+  color: var(--km0-ink) !important;
+}
+
+/* ---- Links & accent ------------------------------------------------------ */
+html.dark-mode body:not(.task-login) a {
+  color: var(--km0-signal);
+}
+
+html.dark-mode body:not(.task-login) a:hover {
+  color: var(--km0-signal-hover);
+}
+
+/* ---- Buttons ------------------------------------------------------------- */
+html.dark-mode body:not(.task-login) .btn-primary,
+html.dark-mode body:not(.task-login) button.btn.btn-primary,
+html.dark-mode body:not(.task-login) input.btn.btn-primary {
+  background-color: var(--km0-signal) !important;
+  border-color: var(--km0-signal) !important;
+  color: var(--km0-paper) !important;
+}
+
+html.dark-mode body:not(.task-login) .btn-primary:hover,
+html.dark-mode body:not(.task-login) button.btn.btn-primary:hover {
+  background-color: var(--km0-signal-hover) !important;
+  border-color: var(--km0-signal-hover) !important;
+  color: var(--km0-paper) !important;
+}
+
+/* ---- Inputs -------------------------------------------------------------- */
+html.dark-mode body:not(.task-login) .form-control,
+html.dark-mode body:not(.task-login) select,
+html.dark-mode body:not(.task-login) textarea {
+  background-color: var(--km0-paper) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+
+html.dark-mode body:not(.task-login) .form-control:focus,
+html.dark-mode body:not(.task-login) select:focus,
+html.dark-mode body:not(.task-login) textarea:focus {
+  border-color: var(--km0-signal) !important;
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.25) !important;
+}
+
+html.dark-mode body:not(.task-login) input[type="checkbox"]:checked,
+html.dark-mode body:not(.task-login) input[type="radio"]:checked,
+html.dark-mode body:not(.task-login) .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--km0-signal) !important;
+  border-color: var(--km0-signal) !important;
+}
+
+/* ---- Popovers, menus & dialogs ------------------------------------------ */
+html.dark-mode body:not(.task-login) .popover,
+html.dark-mode body:not(.task-login) .popupmenu,
+html.dark-mode body:not(.task-login) .popover-header,
+html.dark-mode body:not(.task-login) .ui-dialog,
+html.dark-mode body:not(.task-login) .ui-dialog-titlebar,
+html.dark-mode body:not(.task-login) .menu {
+  background-color: var(--km0-snow) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+
+html.dark-mode body:not(.task-login) .menu a:not(.disabled):hover,
+html.dark-mode body:not(.task-login) .menu a:not(.disabled):focus,
+html.dark-mode body:not(.task-login) .popupmenu .listing li > a:not(.disabled):hover {
+  background-color: rgba(45, 212, 191, 0.14) !important;
+  color: var(--km0-signal) !important;
+}
+
+/* ---- Scrollbars ---------------------------------------------------------- */
+html.dark-mode body:not(.task-login) {
+  scrollbar-color: var(--km0-mist) transparent;
+}
+
+/* ---- Brand mark (top-left of the left rail) ------------------------------ */
+/* Elastic keeps the logo in #layout-menu .popover-header but on desktop it is
+   greyed/collapsed and easy to miss. Force a clean km0 brand strip on top of
+   the rail. Scoped to non-phone widths so the mobile popover header (with its
+   close button) keeps Elastic's native behaviour. */
+@media screen and (min-width: 481px) {
+  html.dark-mode body:not(.task-login) #layout-menu .popover-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 3.25rem;
+    padding: 0.5rem !important;
+    background-color: var(--km0-paper) !important;
+    border-bottom: 1px solid var(--km0-mist) !important;
+  }
+
+  html.dark-mode body:not(.task-login) #layout-menu .popover-header #logo {
+    display: inline-block !important;
+    max-height: 2.1rem;
+    max-width: 100%;
+    width: auto;
+    opacity: 1 !important;
+  }
+}
