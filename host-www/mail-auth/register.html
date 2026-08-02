@@ -22,27 +22,15 @@
     <p class="eyebrow" data-i18n="loginEyebrow">Kilometer 0 Digital</p>
     <h1 data-i18n="registerTitle">Create account</h1>
     <p class="tagline" data-i18n="landingTagline">Local origin · Digital impact</p>
-    <p class="intro" data-i18n="registerIntro">Choose a @km0digital.com address or use your own domain.</p>
-
-    <div class="pricing-notice" data-i18n="pricingNotice"></div>
+    <p class="intro" data-i18n="registerIntro">Pick a username and password. We create your @km0digital.com address instantly.</p>
 
     <form class="register-form" id="km0-register-form" novalidate>
       <div class="banner banner--error" id="km0-register-error" role="alert"></div>
 
-      <div class="mode-toggle" role="tablist">
-        <button type="button" class="active" data-mode="km0" data-i18n="modeKm0">@km0digital.com</button>
-        <button type="button" data-mode="custom" data-i18n="modeCustom">My domain</button>
-      </div>
-
       <div class="field" id="field-km0">
         <label for="km0-username" data-i18n="usernameLabel">Username</label>
-        <input type="text" id="km0-username" autocomplete="username" pattern="[a-zA-Z0-9._-]+" />
+        <input type="text" id="km0-username" autocomplete="username" pattern="[a-zA-Z0-9._-]+" required />
         <small data-i18n="usernameSuffix">@km0digital.com</small>
-      </div>
-
-      <div class="field" id="field-custom" hidden>
-        <label for="km0-email" data-i18n="emailLabel">Email address</label>
-        <input type="email" id="km0-email" autocomplete="email" placeholder="you@example.com" />
       </div>
 
       <div class="field">
@@ -55,15 +43,10 @@
         <input type="password" id="km0-password-confirm" autocomplete="new-password" required minlength="8" />
       </div>
 
-      <div class="field">
-        <label for="km0-contact" data-i18n="contactLabel">Contact email (optional)</label>
-        <input type="email" id="km0-contact" autocomplete="email" />
-      </div>
-
       <button type="submit" class="btn-primary" id="km0-submit" data-i18n="submitRegister">Create account</button>
     </form>
 
-    <a class="text-link" href="/login.html" data-i18n="signInLink">Already have an account?</a>
+    <a class="text-link" href="/index.php?_task=login" data-i18n="signInLink">Already have an account?</a>
 
     <footer>
       <a href="https://km0digital.com/" target="_blank" rel="noopener" data-i18n="footerHome">km0digital.com</a>
@@ -74,24 +57,12 @@
     (function () {
       'use strict';
       var SPECIAL_RE = /[!@#$%^&*(),.?":{}|<>\[\]\\/_+=\-~`]/;
-      var mode = 'km0';
       var form = document.getElementById('km0-register-form');
       var errEl = document.getElementById('km0-register-error');
 
       function t(key) {
         return (window.KM0AuthI18n && window.KM0AuthI18n.t(key)) || key;
       }
-
-      document.querySelectorAll('.mode-toggle button').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          mode = btn.getAttribute('data-mode');
-          document.querySelectorAll('.mode-toggle button').forEach(function (b) {
-            b.classList.toggle('active', b === btn);
-          });
-          document.getElementById('field-km0').hidden = mode !== 'km0';
-          document.getElementById('field-custom').hidden = mode !== 'custom';
-        });
-      });
 
       function showError(key) {
         errEl.textContent = t(key);
@@ -134,24 +105,16 @@
           return;
         }
 
-        var contact = document.getElementById('km0-contact').value.trim();
-        var desiredEmail;
-        if (mode === 'km0') {
-          var user = document.getElementById('km0-username').value.trim().toLowerCase();
-          if (!user) { showError('errorUsernameRequired'); return; }
-          desiredEmail = user + '@km0digital.com';
-        } else {
-          desiredEmail = document.getElementById('km0-email').value.trim().toLowerCase();
-          if (!desiredEmail) { showError('errorEmailRequired'); return; }
-        }
+        var user = document.getElementById('km0-username').value.trim().toLowerCase();
+        if (!user) { showError('errorUsernameRequired'); return; }
+        var desiredEmail = user + '@km0digital.com';
 
         var payload = {
           email: desiredEmail,
           desired_email: desiredEmail,
           password: password,
           create_mail: true,
-          mail_mode: mode,
-          contact_email: contact || undefined
+          mail_mode: 'km0'
         };
 
         document.getElementById('km0-submit').disabled = true;
@@ -162,11 +125,7 @@
         }).then(function (res) {
           return res.json().then(function (body) {
             if (!res.ok) throw { status: res.status, body: body };
-            if (mode === 'custom') {
-              location.href = '/domain.html?domain=' + encodeURIComponent(desiredEmail.split('@')[1]);
-            } else {
-              location.href = '/login.html?registered=1';
-            }
+            location.href = '/index.php?_task=login&registered=1';
           });
         }).catch(function (e) {
           showError(errorKeyFromResponse(e.status || 0, e.body || {}));
