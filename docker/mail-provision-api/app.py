@@ -105,6 +105,18 @@ def domain_of(email: str) -> str:
     return email.split("@", 1)[1].lower()
 
 
+DOMAIN_NAME_RE = re.compile(
+    r"^(?=.{1,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$"
+)
+
+
+def normalize_domain(domain: str) -> str | None:
+    domain = (domain or "").strip().lower().rstrip(".")
+    if not domain or not DOMAIN_NAME_RE.match(domain):
+        return None
+    return domain
+
+
 def is_freemail_domain(domain: str) -> bool:
     return domain.lower() in FREEMAIL_DOMAINS
 
@@ -352,14 +364,15 @@ def provision_mailbox(
                 cur.execute(
                     """
                     INSERT INTO mail_domains (
-                        name, active, owner_opencloud_uuid, verification_token,
+                        name, active, owner_opencloud_uuid, owner_email, verification_token,
                         verification_status, mx_verified, spf_verified, dkim_verified, txt_verified
-                    ) VALUES (%s, FALSE, %s, %s, 'pending', FALSE, FALSE, FALSE, FALSE)
+                    ) VALUES (%s, FALSE, %s, %s, %s, 'pending', FALSE, FALSE, FALSE, FALSE)
                     ON CONFLICT (name) DO UPDATE SET
                         owner_opencloud_uuid = COALESCE(EXCLUDED.owner_opencloud_uuid, mail_domains.owner_opencloud_uuid),
+                        owner_email = COALESCE(mail_domains.owner_email, EXCLUDED.owner_email),
                         verification_token = COALESCE(mail_domains.verification_token, EXCLUDED.verification_token)
                     """,
-                    (domain, opencloud_uuid, secrets.token_urlsafe(24)),
+                    (domain, opencloud_uuid, email, secrets.token_urlsafe(24)),
                 )
 
             try:
@@ -816,6 +829,251 @@ def verify_email():
         return jsonify({"error": "invalid_or_expired_token"}), 404
 
     return jsonify({"ok": True, "email": row[0], "verification_status": "verified"})
+
+
+# --------------------------------------------------------------------------
+# Self-service custom domains (Phase 2). Owner-scoped, Bearer-protected: only
+# the Roundcube km0_domains plugin calls these server-to-server, passing the
+# authenticated session user as `owner`. Never expose without the token — the
+# owner param is trusted precisely because the caller holds the shared Bearer.
+# --------------------------------------------------------------------------
+
+
+def _require_owner(source) -> tuple[str | None, tuple]:
+    owner = (source.get("owner") or "").strip().lower()
+    if not owner or not EMAIL_RE.match(owner):
+        return None, (jsonify({"error": "invalid_owner"}), 400)
+    return owner, ()
+
+
+@app.route("/my/domains", methods=["GET"])
+def my_domains_list():
+    if not auth_ok():
+        return jsonify({"error": "unauthorized"}), 401
+    owner, err = _require_owner(request.args)
+    if err:
+        return err
+    with db_connect() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT name, verification_status, active
+                FROM mail_domains
+                WHERE lower(owner_email) = %s
+                ORDER BY name
+                """,
+                (owner,),
+            )
+            rows = cur.fetchall()
+    return jsonify(
+        {
+            "domains": [
+                {"name": r[0], "verification_status": r[1], "active": r[2]}
+                for r in rows
+            ]
+        }
+    )
+
+
+@app.route("/my/domains", methods=["POST"])
+def my_domains_add():
+    if not auth_ok():
+        return jsonify({"error": "unauthorized"}), 401
+    if not DB["password"]:
+        return jsonify({"error": "service_unavailable"}), 503
+    data = request.get_json(silent=True) or {}
+    owner, err = _require_owner(data)
+    if err:
+        return err
+    domain = normalize_domain(data.get("domain"))
+    if not domain:
+        return jsonify({"error": "invalid_domain"}), 400
+    if domain == MAIL_DOMAIN or is_freemail_domain(domain):
+        return jsonify({"error": "invalid_domain"}), 400
+
+    with db_connect() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT owner_email FROM mail_domains WHERE lower(name) = %s",
+                (domain,),
+            )
+            row = cur.fetchone()
+            if row and row[0] and row[0].lower() != owner:
+                return jsonify({"error": "domain_taken"}), 409
+            cur.execute(
+                """
+                INSERT INTO mail_domains (
+                    name, active, owner_email, verification_token,
+                    verification_status, mx_verified, spf_verified, dkim_verified, txt_verified
+                ) VALUES (%s, FALSE, %s, %s, 'pending', FALSE, FALSE, FALSE, FALSE)
+                ON CONFLICT (name) DO UPDATE SET
+                    owner_email = COALESCE(mail_domains.owner_email, EXCLUDED.owner_email),
+                    verification_token = COALESCE(mail_domains.verification_token, EXCLUDED.verification_token)
+                """,
+                (domain, owner, secrets.token_urlsafe(24)),
+            )
+        conn.commit()
+    return jsonify({"ok": True, "domain": domain}), 201
+
+
+@app.route("/my/domains/<path:domain>", methods=["DELETE"])
+def my_domains_delete(domain: str):
+    if not auth_ok():
+        return jsonify({"error": "unauthorized"}), 401
+    owner, err = _require_owner(request.args)
+    if err:
+        return err
+    domain = (domain or "").strip().lower()
+    if domain == MAIL_DOMAIN:
+        return jsonify({"error": "forbidden"}), 403
+    with db_connect() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT owner_email FROM mail_domains WHERE lower(name) = %s",
+                (domain,),
+            )
+            row = cur.fetchone()
+            if not row:
+                return jsonify({"error": "not_found"}), 404
+            if not row[0] or row[0].lower() != owner:
+                return jsonify({"error": "forbidden"}), 403
+            cur.execute(
+                "DELETE FROM mail_aliases WHERE split_part(alias_address, '@', 2) = %s",
+                (domain,),
+            )
+            cur.execute(
+                "DELETE FROM mail_accounts WHERE split_part(email, '@', 2) = %s",
+                (domain,),
+            )
+            cur.execute("DELETE FROM mail_domains WHERE lower(name) = %s", (domain,))
+        conn.commit()
+    reload_postfix_maps()
+    return jsonify({"ok": True, "domain": domain})
+
+
+@app.route("/my/addresses", methods=["GET"])
+def my_addresses_list():
+    if not auth_ok():
+        return jsonify({"error": "unauthorized"}), 401
+    owner, err = _require_owner(request.args)
+    if err:
+        return err
+    with db_connect() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT a.email, a.verification_status, a.active, split_part(a.email, '@', 2) AS domain
+                FROM mail_accounts a
+                JOIN mail_domains d ON lower(d.name) = split_part(a.email, '@', 2)
+                WHERE lower(d.owner_email) = %s
+                ORDER BY a.email
+                """,
+                (owner,),
+            )
+            rows = cur.fetchall()
+    return jsonify(
+        {
+            "addresses": [
+                {
+                    "email": r[0],
+                    "verification_status": r[1],
+                    "active": r[2],
+                    "domain": r[3],
+                }
+                for r in rows
+            ]
+        }
+    )
+
+
+@app.route("/my/addresses", methods=["POST"])
+def my_addresses_add():
+    if not auth_ok():
+        return jsonify({"error": "unauthorized"}), 401
+    if not DB["password"]:
+        return jsonify({"error": "service_unavailable"}), 503
+    data = request.get_json(silent=True) or {}
+    owner, err = _require_owner(data)
+    if err:
+        return err
+    email = (data.get("email") or "").strip().lower()
+    password = data.get("password")
+    if not email or not EMAIL_RE.match(email):
+        return jsonify({"error": "invalid_email"}), 400
+    if not password or len(str(password)) < 8:
+        return jsonify({"error": "password_too_short"}), 400
+    lp_err = validate_local_part(email.split("@", 1)[0])
+    if lp_err:
+        return jsonify({"error": lp_err}), 400
+
+    domain = domain_of(email)
+    with db_connect() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT owner_email, active FROM mail_domains WHERE lower(name) = %s",
+                (domain,),
+            )
+            row = cur.fetchone()
+    if not row or not row[0] or row[0].lower() != owner:
+        return jsonify({"error": "forbidden"}), 403
+    if not row[1]:
+        return jsonify({"error": "domain_not_active"}), 409
+
+    ok, status, extra = provision_mailbox(
+        email, password, None, "custom", None, send_verify=False
+    )
+    if not ok:
+        body = {"error": status}
+        if extra:
+            body.update(extra)
+        code = 409 if status in ("conflict", "email_already_linked") else 400
+        return jsonify(body), code
+
+    # Domain is verified, so the new mailbox can send immediately.
+    with db_connect() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                UPDATE mail_accounts
+                SET verification_status = 'verified', verification_token = NULL, updated_at = NOW()
+                WHERE lower(email) = %s
+                """,
+                (email,),
+            )
+        conn.commit()
+
+    code = 201 if status == "created" else 200
+    return jsonify({"ok": True, "email": email, "status": status, "verification_status": "verified"}), code
+
+
+@app.route("/my/addresses/<path:email>", methods=["DELETE"])
+def my_addresses_delete(email: str):
+    if not auth_ok():
+        return jsonify({"error": "unauthorized"}), 401
+    owner, err = _require_owner(request.args)
+    if err:
+        return err
+    email = (email or "").strip().lower()
+    if not EMAIL_RE.match(email):
+        return jsonify({"error": "invalid_email"}), 400
+    domain = domain_of(email)
+    with db_connect() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT owner_email FROM mail_domains WHERE lower(name) = %s",
+                (domain,),
+            )
+            row = cur.fetchone()
+            if not row or not row[0] or row[0].lower() != owner:
+                return jsonify({"error": "forbidden"}), 403
+            cur.execute("DELETE FROM mail_aliases WHERE lower(alias_address) = %s", (email,))
+            cur.execute("DELETE FROM mail_accounts WHERE lower(email) = %s", (email,))
+            deleted = cur.rowcount
+        conn.commit()
+    if not deleted:
+        return jsonify({"error": "not_found"}), 404
+    reload_postfix_maps()
+    return jsonify({"ok": True, "email": email})
 
 
 if __name__ == "__main__":

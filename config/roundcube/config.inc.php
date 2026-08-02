@@ -36,15 +36,18 @@ $config['language'] = 'en_US';
 $config['support_url'] = 'https://km0digital.com/';
 $config['product_name'] = 'KM0 Mail';
 $config['des_key'] = getenv('ROUNDCUBEMAIL_DES_KEY') ?: 'change-me';
-$config['plugins'] = ['archive', 'zipdownload', 'km0_sso_provision', 'km0_verification_banner'];
+$config['plugins'] = ['archive', 'zipdownload', 'km0_sso_provision', 'km0_verification_banner', 'km0_domains'];
 
 // Session security behind Nginx HTTPS
 $config['force_https'] = true;
 $config['use_https'] = true;
 $config['proxy_whitelist'] = ['127.0.0.1', '::1'];
 
-// Dex OIDC SSO (LDAP connector only on mail hostname — no Google)
-$config['oauth_provider'] = 'generic';
+// Single, Proton-style login: native email+password only. OAuth disabled so the
+// "Login with KM0 Mail" button never appears (it caused a Dex redirect loop).
+// The oauth_* settings below are kept inert for a possible future opt-in; leaving
+// oauth_provider null means Roundcube renders no OAuth button and uses SQL passdb.
+$config['oauth_provider'] = null;
 $config['oauth_provider_name'] = 'KM0 Mail';
 $config['oauth_client_id'] = getenv('ROUNDCUBE_OAUTH_CLIENT_ID') ?: 'km0-mail-web';
 $config['oauth_client_secret'] = getenv('ROUNDCUBE_OAUTH_CLIENT_SECRET') ?: '';
