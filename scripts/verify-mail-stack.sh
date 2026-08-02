@@ -83,14 +83,32 @@ if curl -fsS --max-time 3 http://127.0.0.1:8093/health 2>/dev/null | grep -q '"o
 else
     warn "domain-verify-api not healthy on :8093"
 fi
-if curl -fsSI --max-time 5 "https://${MAIL_HOST}/login.html" 2>/dev/null | grep -qi 'auth.km0digital.com'; then
-    ok "https://${MAIL_HOST}/login.html redirects to auth hub"
+# Public self-contained registration: /api/register proxies to mail-provision-api
+# (:8092), NOT the cross-repo km0-opencloud register-api (:8091). An empty body
+# should fail validation (400), proving the endpoint is wired and reachable.
+reg_code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 \
+    -X POST "https://${MAIL_HOST}/api/register" \
+    -H 'Content-Type: application/json' -d '{}' 2>/dev/null || true)"
+if [[ "$reg_code" == "400" ]]; then
+    ok "public /api/register responds 400 on empty body (self-contained :8092)"
+elif [[ "$reg_code" =~ ^(200|422|429)$ ]]; then
+    ok "public /api/register reachable (HTTP ${reg_code})"
 else
-    warn "mail login.html not redirecting to auth hub"
+    warn "public /api/register unexpected/unreachable (got: ${reg_code:-none})"
 fi
 echo
-if curl -fsSI --max-time 5 "https://${MAIL_HOST}/" 2>/dev/null | head -1 | grep -qE '200|301|302'; then
-    ok "https://${MAIL_HOST}/ responds"
+
+# Native-first login: / serves the branded login page (HTTP 200 text/html);
+# it must NOT 302-redirect to auth.km0digital.com (hub SSO is optional/legacy).
+echo "--- Native login (root) ---"
+root_headers="$(curl -sSI --max-time 5 "https://${MAIL_HOST}/" 2>/dev/null | tr -d '\r' || true)"
+root_code="$(printf '%s\n' "$root_headers" | head -1 | grep -oE '[0-9]{3}' | head -1 || true)"
+if printf '%s\n' "$root_headers" | grep -qiE 'location:.*auth\.km0digital\.com'; then
+    fail "https://${MAIL_HOST}/ redirects to auth hub (expected native login page)"
+elif [[ "$root_code" == "200" ]] && printf '%s\n' "$root_headers" | grep -qiE 'content-type:.*text/html'; then
+    ok "https://${MAIL_HOST}/ serves native login page (200 text/html)"
+elif [[ -n "$root_code" ]]; then
+    warn "https://${MAIL_HOST}/ responded HTTP ${root_code} (expected 200 text/html native login)"
 else
     warn "https://${MAIL_HOST}/ not reachable (deploy nginx vhost + cert first)"
 fi

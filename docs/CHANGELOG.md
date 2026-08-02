@@ -5,6 +5,7 @@
 ### Changed
 
 - Native-first login is now canonical (Redmine #7605): nginx serves the branded `/login.html` and `/register` locally instead of `302`-redirecting to `auth.km0digital.com`; login page leads with email + password and demotes OpenCloud / LDAP SSO to an "Other ways to sign in" section; register banner clarifies verification is required before sending. Hub / Dex SSO is now optional/legacy. Docs + `verify-mail-stack` updated to expect native login
+- Docs + smoke script aligned to native-first login (Redmine #7605): `docs/runbook.md` URL table and auth-tracks now document native password login at `/` (HTTP 200 branded page) as canonical and mark Auth Hub / Dex SSO and the km0-opencloud register-api (:8091) as optional/legacy; `docs/opencloud-registration-integration.md` and `README.md` clarify the self-contained `/api/register` (:8092) happy path; `scripts/verify-mail-stack.sh` now expects the native login page (200 text/html, no hub `302`) at `/` and probes public `/api/register` (400 on empty body) instead of asserting a `login.html` hub redirect
 - Autoagents Redmine time tracking: refresh `YYYYMMDD-HHMM` stamp on FEAT/NEW → WIP so duration starts when work begins (not when the task was queued); `redmine_sync.py` parses WIP stamps and Markdown `**Closed at (UTC):**` lines
 
 ### Fixed
