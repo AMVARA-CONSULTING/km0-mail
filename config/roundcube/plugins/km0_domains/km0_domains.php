@@ -9,6 +9,10 @@
  * All backend calls are server-to-server (Bearer token) against the internal
  * mail-provision-api and domain-verify-api. The owner is always the session
  * mailbox ($_SESSION['username']); it is never taken from the browser.
+ *
+ * @version 1.0.0
+ * @license MIT
+ * @author AMVARA CONSULTING S.L.
  */
 class km0_domains extends rcube_plugin
 {

@@ -2,6 +2,10 @@
 
 /**
  * Show verification banner for pending mailboxes (Model A).
+ *
+ * @version 1.0.0
+ * @license MIT
+ * @author AMVARA CONSULTING S.L.
  */
 class km0_verification_banner extends rcube_plugin
 {

@@ -1,0 +1,17 @@
+{
+    "name": "amvara/km0_sso_provision",
+    "type": "roundcube-plugin",
+    "description": "Silent mailbox auto-provision after Dex LDAP OAuth login for KM0 Mail.",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "AMVARA CONSULTING S.L.",
+            "role": "Lead"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0",
+        "roundcube/plugin-installer": ">=0.1.3"
+    }
+}

@@ -3,6 +3,10 @@
 /**
  * Silent mailbox auto-provision after Dex LDAP OAuth login.
  * Supports @km0digital.com and verified custom domains; blocks freemail OIDC emails.
+ *
+ * @version 1.0.0
+ * @license MIT
+ * @author AMVARA CONSULTING S.L.
  */
 class km0_sso_provision extends rcube_plugin
 {
