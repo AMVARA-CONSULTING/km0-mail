@@ -7,9 +7,8 @@ Env (autoagents/.env):
   REDMINE_URL       — e.g. https://redmine.amvara.de
   REDMINE_API_KEY   — X-Redmine-API-Key
   REDMINE_ISSUE_ID  — target Redmine issue (integer)
-  REDMINE_ACTIVITY_ID — time_entry activity (default 10 = Service Management)
 
-Records task duration in the note and as a Redmine time_entry.
+Records task duration in the note text only (no Redmine time_entry / spent hours).
 Uses stdlib urllib only (no httpx).
 """
 from __future__ import annotations
@@ -25,7 +24,6 @@ from typing import Optional
 
 NOTE_AUTHOR = "km0-mail autoagents"
 NOTES_DIR = "/root/redminenotes"
-REDMINE_ACTIVITY_ID = int(os.environ.get("REDMINE_ACTIVITY_ID", "10"))
 TASK_STAMP_RE = re.compile(
     r"^(?:CLOSED|NEW|FEAT|WIP|UNTESTED|TESTING)-\d+-(\d{8})-(\d{4})-",
     re.IGNORECASE,
@@ -85,52 +83,6 @@ def add_redmine_note(
         raise RedmineError(f"Redmine request failed: {exc.reason}") from exc
 
 
-def add_redmine_time_entry(
-    base_url: str,
-    api_key: str,
-    issue_id: int,
-    hours: float,
-    comments: str,
-    *,
-    activity_id: Optional[int] = None,
-    spent_on: Optional[str] = None,
-    timeout: float = 60.0,
-) -> None:
-    """POST /time_entries.json — official spent-time log."""
-    url = f"{base_url.rstrip('/')}/time_entries.json"
-    payload = {
-        "time_entry": {
-            "issue_id": issue_id,
-            "hours": round(float(hours), 2),
-            "comments": comments[:255],
-            "activity_id": activity_id if activity_id is not None else REDMINE_ACTIVITY_ID,
-            "spent_on": spent_on or datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-        }
-    }
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        method="POST",
-        headers={
-            "X-Redmine-API-Key": api_key,
-            "Content-Type": "application/json",
-        },
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            if resp.status >= 400:
-                raise RedmineError(f"Redmine POST time_entry failed: {resp.status}")
-    except urllib.error.HTTPError as exc:
-        body = exc.read().decode("utf-8", errors="replace")[:500]
-        if exc.code == 404:
-            raise IssueNotFound(f"Issue #{issue_id} not found for time_entry") from exc
-        raise RedmineError(
-            f"Redmine POST time_entry failed: {exc.code} {body}"
-        ) from exc
-    except urllib.error.URLError as exc:
-        raise RedmineError(f"Redmine time_entry request failed: {exc.reason}") from exc
-
-
 def parse_task_start_utc(basename: str) -> Optional[datetime]:
     """Start time from task filename stamp (UTC). Prefer WIP-refresh stamp."""
     m = TASK_STAMP_RE.match(basename)
@@ -181,23 +133,18 @@ def format_duration_label(delta: timedelta) -> str:
 
 def compute_task_duration(
     task_basename: str, summary_text: str
-) -> tuple[Optional[str], Optional[float], Optional[str]]:
+) -> Optional[str]:
     """
-    Return (label, hours, spent_on_yyyy_mm_dd) from filename stamp → Closed at.
+    Return a human duration label from filename stamp → Closed at.
 
     Never falls back to datetime.now() for the end time: a missing Closed at
-    means we skip time logging rather than inventing inflated hours.
+    means we omit Time taken rather than inventing inflated durations.
     """
     start = parse_task_start_utc(task_basename)
     end = parse_closed_at_utc(summary_text)
     if start is None or end is None or end < start:
-        return None, None, None
-    delta = end - start
-    label = format_duration_label(delta)
-    hours = round(max(delta.total_seconds(), 0) / 3600.0, 2)
-    if delta.total_seconds() > 0 and hours < 0.01:
-        hours = 0.01
-    return label, hours, end.strftime("%Y-%m-%d")
+        return None
+    return format_duration_label(end - start)
 
 
 def get_redmine_config() -> tuple[str, str, int] | None:
@@ -346,7 +293,7 @@ def notify_redmine(task_path: str) -> bool:
         task_text = f.read()
 
     summary = extract_closing_summary(task_text)
-    duration_label, hours, spent_on = compute_task_duration(bn, summary)
+    duration_label = compute_task_duration(bn, summary)
     formatted = format_closing_note_textile(
         task_basename=bn,
         github_issue_num=gh_num,
@@ -358,29 +305,13 @@ def notify_redmine(task_path: str) -> bool:
     copy_path = save_note_copy(bn, formatted)
     print(f"  Redmine: saved .red copy at {copy_path}")
 
-    note_ok = False
     try:
         add_redmine_note(base_url, api_key, issue_id, posted)
-        note_ok = True
     except IssueNotFound as exc:
         print(f"  error: {exc}", file=sys.stderr)
         return False
     except RedmineError as exc:
         print(f"  error: {exc}", file=sys.stderr)
-        # Note failed — still try time_entry directly.
-        if hours is not None and duration_label and spent_on:
-            try:
-                add_redmine_time_entry(
-                    base_url,
-                    api_key,
-                    issue_id,
-                    hours,
-                    f"autoagents: {bn} — {duration_label}",
-                    spent_on=spent_on,
-                )
-                print(f"  Redmine: logged time_entry after note failure ({bn})")
-            except (IssueNotFound, RedmineError) as te:
-                print(f"  error: time_entry also failed: {te}", file=sys.stderr)
         return False
 
     issue_url = f"{base_url.rstrip('/')}/issues/{issue_id}"
@@ -390,34 +321,7 @@ def notify_redmine(task_path: str) -> bool:
     else:
         print("  Redmine warn: could not compute task duration for note", file=sys.stderr)
 
-    if hours is not None and duration_label and spent_on:
-        comment = f"autoagents: {bn} — {duration_label}"
-        try:
-            add_redmine_time_entry(
-                base_url,
-                api_key,
-                issue_id,
-                hours,
-                comment,
-                spent_on=spent_on,
-            )
-            print(f"  Redmine: time_entry posted {hours:.2f} h ({duration_label})")
-        except (IssueNotFound, RedmineError) as exc:
-            print(f"  error: time_entry failed, retrying directly: {exc}", file=sys.stderr)
-            try:
-                add_redmine_time_entry(
-                    base_url,
-                    api_key,
-                    issue_id,
-                    hours,
-                    comment,
-                    spent_on=spent_on,
-                )
-                print(f"  Redmine: time_entry posted on retry {hours:.2f} h")
-            except (IssueNotFound, RedmineError) as te:
-                print(f"  error: time_entry retry failed: {te}", file=sys.stderr)
-
-    return note_ok
+    return True
 
 
 if __name__ == "__main__":
@@ -454,12 +358,12 @@ if __name__ == "__main__":
         sample_bn = f"CLOSED-0-{stamp}-redmine-sync-duration-test.md"
         summary_text = (
             "- **What happened:** Integration test for Redmine note + duration.\n"
-            "- **What was done:** Verified Time taken in note and time_entry.\n"
-            "- **What was tested:** PUT /issues/{id}.json and POST /time_entries.json.\n"
+            "- **What was done:** Verified Time taken appears in the note text only.\n"
+            "- **What was tested:** PUT /issues/{id}.json (no time_entry).\n"
             "- **Why closed:** Smoke test.\n"
             f"- **Closed at (UTC):** {closed_utc}"
         )
-        duration_label, hours, spent_on = compute_task_duration(sample_bn, summary_text)
+        duration_label = compute_task_duration(sample_bn, summary_text)
         sample = format_closing_note_textile(
             task_basename=sample_bn,
             github_issue_num=0,
@@ -477,32 +381,10 @@ if __name__ == "__main__":
             add_redmine_note(base_url, api_key, issue_id, posted)
         except (IssueNotFound, RedmineError) as exc:
             print(f"error: note failed: {exc}", file=sys.stderr)
-            if hours is not None and duration_label and spent_on:
-                try:
-                    add_redmine_time_entry(
-                        base_url,
-                        api_key,
-                        issue_id,
-                        hours,
-                        f"autoagents: {sample_bn} — {duration_label}",
-                        spent_on=spent_on,
-                    )
-                    print("Logged time_entry after note failure.")
-                except (IssueNotFound, RedmineError) as te:
-                    print(f"error: time_entry also failed: {te}", file=sys.stderr)
-                    sys.exit(1)
             sys.exit(1)
         print(f"Posted test note to {base_url}/issues/{issue_id}")
-        if hours is not None and duration_label and spent_on:
-            add_redmine_time_entry(
-                base_url,
-                api_key,
-                issue_id,
-                hours,
-                f"autoagents: {sample_bn} — {duration_label}",
-                spent_on=spent_on,
-            )
-            print(f"Posted time_entry {hours:.2f} h ({duration_label})")
+        if duration_label:
+            print(f"Note includes Time taken: {duration_label}")
         sys.exit(0)
 
     print("Unknown command", file=sys.stderr)
