@@ -1,0 +1,17 @@
+{
+    "name": "amvara/km0_verification_banner",
+    "type": "roundcube-plugin",
+    "description": "Show an inbox verification banner for pending KM0 Mail mailboxes.",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "AMVARA CONSULTING S.L.",
+            "role": "Lead"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0",
+        "roundcube/plugin-installer": ">=0.1.3"
+    }
+}

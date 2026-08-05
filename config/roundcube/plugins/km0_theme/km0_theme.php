@@ -9,6 +9,10 @@
  * - Rewrites the page-title separator from Roundcube's hardcoded " :: " to
  *   " - " (e.g. "KM0 Mail - Compose") via the send_page hook, plus a tiny
  *   client patch for titles updated later by JS.
+ *
+ * @version 1.0.0
+ * @license MIT
+ * @author AMVARA CONSULTING S.L.
  */
 class km0_theme extends rcube_plugin
 {
