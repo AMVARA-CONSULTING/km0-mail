@@ -93,7 +93,10 @@ services:
       - mailnet
 
   roundcube:
-    image: roundcube/roundcubemail:1.6.9-apache
+    # 1.6 LTS security current. Image DocumentRoot is /var/www/html/public_html
+    # with skins/plugins symlinks; km0 bind-mounts stay at /var/www/html/{skins,plugins}.
+    # Do not jump to 1.7.x without a dedicated public_html/static.php review.
+    image: roundcube/roundcubemail:1.6.18-apache
     restart: unless-stopped
     environment:
       ROUNDCUBEMAIL_DEFAULT_HOST: ssl://dovecot

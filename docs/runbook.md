@@ -16,7 +16,7 @@ Architecture reference: [`issue-mail-preplan.md`](issue-mail-preplan.md)
 | Postfix | `km0-mail-postfix-1` | 25, 587 | MX, submission, localhost relay |
 | Dovecot | `km0-mail-dovecot-1` | 993 | IMAPS, LMTP delivery, SASL for Postfix |
 | Rspamd | `km0-mail-rspamd-1` | internal | Anti-spam milter, DKIM signing |
-| Roundcube | `km0-mail-roundcube-1` | 127.0.0.1:8080 | Webmail (Nginx TLS on :443) |
+| Roundcube | `km0-mail-roundcube-1` | 127.0.0.1:8080 | Webmail 1.6.18 (`roundcube/roundcubemail:1.6.18-apache`; Nginx TLS on :443) |
 
 ---
 
@@ -348,6 +348,24 @@ Copy jail template to host:
 sudo cp config/fail2ban/jail.d/km0-mail.local /etc/fail2ban/jail.d/
 sudo fail2ban-client reload
 sudo fail2ban-client status
+```
+
+---
+
+## Roundcube upgrade (1.6 LTS)
+
+Pinned image: `roundcube/roundcubemail:1.6.18-apache` (PHP 8.4 in this tag). Stay on 1.6 LTS unless you plan a dedicated 1.7 cutover.
+
+The 1.6.18 Apache image already sets `DocumentRoot /var/www/html/public_html` (`public_html/skins` and `public_html/plugins` are symlinks). Host Nginx still proxies `/` to `127.0.0.1:8080` — do **not** point the host vhost at `public_html`. km0 bind-mounts remain `/var/www/html/skins/km0` and `/var/www/html/plugins/km0_*`.
+
+Upgrade only the webmail container (never `docker compose down -v`; never recreate postgres / `mail-data`):
+
+```bash
+cd /opt/km0-mail
+# backup first: pg_dump roundcube + mail, plus config/roundcube + skins/km0
+docker compose pull roundcube
+docker compose up -d --no-deps roundcube
+docker compose exec -T roundcube grep RCMAIL_VERSION /var/www/html/program/include/iniset.php
 ```
 
 ---
