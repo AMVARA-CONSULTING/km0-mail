@@ -10,6 +10,7 @@ Env (autoagents/.env):
 
 Records task duration in the note text only (no Redmine time_entry / spent hours).
 Uses stdlib urllib only (no httpx).
+Completion notes are wrapped in Redmine Textile {{collapse(tasks/<CLOSED-file>)}}.
 """
 from __future__ import annotations
 
@@ -259,8 +260,17 @@ def format_closing_note_textile(
     return "\n".join(lines)
 
 
-def _note_body_with_author(*, author_label: str, formatted: str) -> str:
-    return f"*Posted by:* {author_label}\n\n{formatted}"
+def wrap_redmine_collapse(body: str, collapse_title: str) -> str:
+    """Wrap note body in Redmine Textile collapse macro (whitespace-sensitive)."""
+    return f"{{{{collapse({collapse_title})\n{body.rstrip()}\n}}}}"
+
+
+def _note_body_with_author(
+    *, author_label: str, formatted: str, collapse_title: str
+) -> str:
+    """Posted-by stays outside; Autoagents body goes inside {{collapse(title)}}."""
+    collapsed = wrap_redmine_collapse(formatted, collapse_title)
+    return f"*Posted by:* {author_label}\n{collapsed}"
 
 
 def save_note_copy(basename: str, body: str) -> str:
@@ -300,9 +310,14 @@ def notify_redmine(task_path: str) -> bool:
         summary_text=summary,
         duration_label=duration_label,
     )
-    posted = _note_body_with_author(author_label=NOTE_AUTHOR, formatted=formatted)
+    collapse_title = f"tasks/{bn}"
+    posted = _note_body_with_author(
+        author_label=NOTE_AUTHOR,
+        formatted=formatted,
+        collapse_title=collapse_title,
+    )
 
-    copy_path = save_note_copy(bn, formatted)
+    copy_path = save_note_copy(bn, posted)
     print(f"  Redmine: saved .red copy at {copy_path}")
 
     try:
@@ -370,7 +385,11 @@ if __name__ == "__main__":
             summary_text=summary_text,
             duration_label=duration_label,
         )
-        posted = _note_body_with_author(author_label=NOTE_AUTHOR, formatted=sample)
+        posted = _note_body_with_author(
+            author_label=NOTE_AUTHOR,
+            formatted=sample,
+            collapse_title=f"tasks/{sample_bn}",
+        )
         print("--- formatted note ---")
         print(posted)
         print("--- end ---")
