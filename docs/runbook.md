@@ -16,7 +16,7 @@ Architecture reference: [`issue-mail-preplan.md`](issue-mail-preplan.md)
 | Postfix | `km0-mail-postfix-1` | 25, 587 | MX, submission, localhost relay |
 | Dovecot | `km0-mail-dovecot-1` | 993 | IMAPS, LMTP delivery, SASL for Postfix |
 | Rspamd | `km0-mail-rspamd-1` | internal | Anti-spam milter, DKIM signing (`rspamd/rspamd:4.1.5`) |
-| Roundcube | `km0-mail-roundcube-1` | 127.0.0.1:8080 | Webmail 1.6.18 (`roundcube/roundcubemail:1.6.18-apache`; Nginx TLS on :443) |
+| Roundcube | `km0-mail-roundcube-1` | 127.0.0.1:8080 | Webmail 1.7.3 (`roundcube/roundcubemail:1.7.3-apache`; Nginx TLS on :443) |
 
 ---
 
@@ -352,11 +352,11 @@ sudo fail2ban-client status
 
 ---
 
-## Roundcube upgrade (1.6 LTS)
+## Roundcube upgrade (1.7)
 
-Pinned image: `roundcube/roundcubemail:1.6.18-apache` (PHP 8.4 in this tag). Stay on 1.6 LTS unless you plan a dedicated 1.7 cutover.
+Pinned image: `roundcube/roundcubemail:1.7.3-apache` (PHP 8.4). DocumentRoot is `/var/www/html/public_html`; static skins/plugins are served via `public_html/static.php` (paths resolve under `/var/www/html/{skins,plugins}`). Host Nginx still proxies `/` to `127.0.0.1:8080` — do **not** point the host vhost at `public_html`. km0 bind-mounts remain `/var/www/html/skins/km0` and `/var/www/html/plugins/km0_*`.
 
-The 1.6.18 Apache image already sets `DocumentRoot /var/www/html/public_html` (`public_html/skins` and `public_html/plugins` are symlinks). Host Nginx still proxies `/` to `127.0.0.1:8080` — do **not** point the host vhost at `public_html`. km0 bind-mounts remain `/var/www/html/skins/km0` and `/var/www/html/plugins/km0_*`.
+Before upgrading Roundcube: dump the Roundcube DB (`pg_dump` of the `roundcube` database) and keep a maildir backup. The container recreate does not touch Postfix/Dovecot volumes.
 
 Upgrade only the webmail container (never `docker compose down -v`; never recreate postgres / `mail-data`):
 
