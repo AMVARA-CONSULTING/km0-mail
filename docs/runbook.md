@@ -15,7 +15,7 @@ Architecture reference: [`issue-mail-preplan.md`](issue-mail-preplan.md)
 | PostgreSQL | `km0-mail-postgres-1` | internal | Virtual users, aliases, Roundcube DB |
 | Postfix | `km0-mail-postfix-1` | 25, 587 | MX, submission, localhost relay |
 | Dovecot | `km0-mail-dovecot-1` | 993 | IMAPS, LMTP delivery, SASL for Postfix |
-| Rspamd | `km0-mail-rspamd-1` | internal | Anti-spam milter, DKIM signing |
+| Rspamd | `km0-mail-rspamd-1` | internal | Anti-spam milter, DKIM signing (`rspamd/rspamd:4.1.5`) |
 | Roundcube | `km0-mail-roundcube-1` | 127.0.0.1:8080 | Webmail 1.6.18 (`roundcube/roundcubemail:1.6.18-apache`; Nginx TLS on :443) |
 
 ---
