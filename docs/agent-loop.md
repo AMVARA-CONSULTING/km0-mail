@@ -72,7 +72,7 @@ Create labels in the repo if missing.
 
 Preflight digest: `autoagents/var/loop/001-latest-context.txt`
 
-**Version counter:** `autoagents/VERSION` (semver). Patch increments automatically on each agent prompt run and each FEAT task created; the committer must always commit and push it.
+**Version counter:** `autoagents/VERSION` (semver). Patch increments when a new FEAT task is created. Commit it only alongside real work — never VERSION or 001 reviewer stamp alone.
 
 ## Docker containers monitored (001 preflight)
 

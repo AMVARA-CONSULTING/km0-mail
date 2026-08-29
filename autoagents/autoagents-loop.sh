@@ -35,13 +35,6 @@ ensure_gh_auth() {
   return 1
 }
 
-bump_autoagents_version() {
-  local label="${1:-loop}"
-  if [[ -x "${SCRIPTDIR}/bump-version.sh" ]]; then
-    "${SCRIPTDIR}/bump-version.sh" "$label" >/dev/null
-  fi
-}
-
 cd "$SCRIPTDIR" || exit 1
 
 have_cursor_agent() {
@@ -277,7 +270,10 @@ committer_paths_all_local_stamp_allowlist() {
   ((had == 1))
 }
 
-committer_try_local_stamp_only() {
+# Stamp-only dirty trees (VERSION and/or 001 reviewer stamp) must never become
+# commits — that flooded main with chore bumps every loop cycle.
+# Returns 0 when handled (skip further committer); 1 when real changes remain.
+committer_skip_local_stamp_only() {
   [[ "${AGENT_COMMITTER_LOCAL:-1}" == "0" ]] && return 1
   local br
   br=$(cd "$REPO_ROOT" && git rev-parse --abbrev-ref HEAD 2>/dev/null) || return 1
@@ -288,31 +284,13 @@ committer_try_local_stamp_only() {
   if ! committer_paths_all_local_stamp_allowlist; then
     return 1
   fi
+  echo "----- committer (skip: stamp-only VERSION/reviewer changes — not committing)" >&2
   (
-    cd "$REPO_ROOT" || exit 1
-    git add -- autoagents/001-gh-reviewer/time-of-last-review.txt autoagents/VERSION
-    if git diff --staged --quiet; then
-      exit 1
-    fi
-    git commit -m "chore(autoagents): bump VERSION and 001 reviewer stamp"
-    set +e
-    git pull --rebase --autostash origin "$GIT_BRANCH"
-    local prc=$?
-    set -e
-    if ((prc != 0)); then
-      echo "----- committer (local: git pull --rebase failed)" >&2
-      exit 1
-    fi
-    set +e
-    git push origin "$GIT_BRANCH"
-    local psh=$?
-    set -e
-    if ((psh != 0)); then
-      echo "----- committer (local: git push failed)" >&2
-      exit 1
-    fi
-    exit 0
+    cd "$REPO_ROOT" || exit 0
+    # Drop noop VERSION noise so idle cycles can leave a clean tree.
+    git checkout -- autoagents/VERSION 2>/dev/null || true
   )
+  return 0
 }
 
 run_agent() {
@@ -327,7 +305,6 @@ run_agent() {
     return 0
   fi
   if eval "$cond" 2>/dev/null; then
-    bump_autoagents_version "prompt:${prompt}"
     echo "-----> $desc $(date "+%Y-%m-%d %H:%M:%S") <----"
     echo "starting cursor-agent with prompt: $prompt"
     echo "msg: $msg"
@@ -357,7 +334,6 @@ ${msg}"
 
 append_001_local_no_cursor_stamp() {
   local ctx="$1"
-  bump_autoagents_version "prompt:001-local"
   local iso line
   iso=$(date -u +%Y-%m-%dT%H:%M:%SZ)
   line="${iso} UTC | 001 local (no cursor-agent) | FEAT: 0 | NEW: 0 | G001_GH_OK=${G001_GH_OK} G001_UNTRACKED_ISSUES=${G001_UNTRACKED_ISSUES} G001_LOG_SIGNALS=${G001_LOG_SIGNALS} | digest: ${ctx}"
@@ -384,7 +360,6 @@ step_log_reviewer() {
   ensure_gh_auth || true
   if command -v python3 >/dev/null 2>&1 && [[ -f "${SCRIPTDIR}/issue_checker_agent.py" ]]; then
     echo "----- 001 issue_checker (FEAT + GitHub comment/label)"
-    bump_autoagents_version "prompt:001-issue_checker"
     set +e
     python3 "${SCRIPTDIR}/issue_checker_agent.py"
     set -e
@@ -502,8 +477,7 @@ step_committer() {
   fi
   echo "-----> committer <----"
 
-  if [[ "${AGENT_COMMITTER_LOCAL:-1}" != "0" ]] && committer_try_local_stamp_only; then
-    echo "----- committer (local: stamp-only commit pushed)"
+  if [[ "${AGENT_COMMITTER_LOCAL:-1}" != "0" ]] && committer_skip_local_stamp_only; then
     return 0
   fi
 
@@ -520,7 +494,7 @@ step_committer() {
   run_agent "committer" \
     "has_repo_uncommitted_changes" \
     "040-committer.md" \
-    "Check uncommitted changes on ${GIT_BRANCH}. Always stage and commit autoagents/VERSION when it changed. Update docs/CHANGELOG.md if present; commit and push origin ${GIT_BRANCH}. Do your job."
+    "Check uncommitted changes on ${GIT_BRANCH}. Never commit only autoagents/VERSION and/or time-of-last-review.txt. Include VERSION when already bumped alongside real work. Update docs/CHANGELOG.md if present; commit and push origin ${GIT_BRANCH}. Do your job."
 }
 
 run_full_cycle() {
