@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- autoagents: stop committing noop `VERSION` / 001 reviewer stamp every loop cycle; bump VERSION only when a new FEAT is created; stamp-only dirty trees are skipped (VERSION restored to HEAD).
+
 ### Changed
 
 - Roundcube image `1.6.18-apache` → `1.7.3-apache`. Dedicated cutover: DocumentRoot stays `public_html`; assets served via `public_html/static.php` (no `public_html/{skins,plugins}` symlinks). km0 bind-mounts remain `/var/www/html/skins/km0` and `/var/www/html/plugins/km0_*`. Schema auto-migrated (`2022100100`, `2025092300`). `km0_sso_provision` `oauth_login` hook still present (OAuth remains disabled). Maildir + mail DB untouched; Roundcube DB dumped under `/var/backups/km0-mail/roundcube-pre-1.7-*` before recreate.

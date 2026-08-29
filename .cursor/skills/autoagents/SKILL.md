@@ -28,7 +28,7 @@ FEAT/NEW → WIP → UNTESTED → TESTING → CLOSED → done/YYYY/MM/DD/
 | Path | Purpose |
 |------|---------|
 | `autoagents/autoagents-loop.sh` | Orchestrator |
-| `autoagents/VERSION` | Semver counter — patch +1 on every prompt/task (always commit) |
+| `autoagents/VERSION` | Semver counter — patch +1 on new FEAT only (never stamp-only commit) |
 | `autoagents/issue_checker_agent.py` | GH → FEAT helper |
 | `autoagents/gh_issue_sync.py` | GitHub comment/label/close on archive |
 | `autoagents/redmine_sync.py` | Redmine closing notes (issue #7605) |

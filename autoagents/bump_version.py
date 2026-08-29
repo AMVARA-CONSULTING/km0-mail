@@ -1,4 +1,4 @@
-"""Bump autoagents/VERSION patch (shared by loop shell and Python helpers)."""
+"""Bump autoagents/VERSION patch when a new FEAT task is created."""
 from __future__ import annotations
 
 import os

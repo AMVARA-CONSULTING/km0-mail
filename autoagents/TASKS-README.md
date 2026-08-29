@@ -45,7 +45,7 @@ When Redmine is configured (`REDMINE_URL`, `REDMINE_API_KEY`, `REDMINE_ISSUE_ID`
 
 ## Rules of thumb
 
-- **`autoagents/VERSION`:** patch bumps on every loop prompt and each new FEAT task; committer always pushes it.
+- **`autoagents/VERSION`:** patch bumps only when a new FEAT task is created; commit with real work — never VERSION/stamp-only commits.
 - **feat/new → wip** when coder starts: rename **and refresh the `YYYYMMDD-HHMM` stamp to now (UTC)**. That stamp is the duration start shown as *Time taken* in the Redmine note (informational only; no time_entry is posted).
 - **wip → untested** when implementation complete + **Testing instructions** at end (keep the WIP stamp).
 - **untested → testing** when tester starts.

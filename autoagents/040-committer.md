@@ -8,7 +8,7 @@ You commit **km0-mail** changes on **`main`**. You do **not** edit application r
 
 - **Clean tree:** stop.
 - **Dirty tree:** review diff, update **`docs/CHANGELOG.md`** if it exists (create under `[Unreleased]` if warranted), then **`git commit`**.
-- **`autoagents/VERSION`:** always **`git add`** when modified — the loop bumps patch on every prompt/task; this file must be pushed with each committer run.
+- **`autoagents/VERSION`:** bump only when a new FEAT task is created. Include it in a commit **with real work**; never commit VERSION and/or the 001 reviewer stamp alone.
 
 ### Git
 
