@@ -1,3 +1,7 @@
+## 2026-09-07
+
+- Roundcube `1.7.3-apache` → `1.7.4-apache` (Sunday stack update; maildir+DB backed up under `/var/backups/km0-mail/20260907-182623`; KM0 plugin binds unchanged).
+
 # Changelog
 
 ## [Unreleased]
