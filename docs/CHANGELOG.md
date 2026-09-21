@@ -127,3 +127,5 @@
 - DNS operator checklist: `docs/joker-dns-checklist.md`
 - Fail2ban jail template: `config/fail2ban/jail.d/km0-mail.local`
 - Secrets template: `.env.example`
+
+- 2026-09-21: bump rspamd 4.1.5 → 4.2.0 (Sunday catch-up; backup /var/backups/km0-mail/20260921-021717).
