@@ -1,3 +1,7 @@
+## 2026-10-04
+
+- Rspamd `4.2.0` → `4.2.1` (Sunday stack update; security/bugfix patch; backup `/var/backups/km0-mail/20261004-170046`). No config-syntax migration; `local.d` and `rspamd-data` kept.
+
 ## 2026-09-07
 
 - Roundcube `1.7.3-apache` → `1.7.4-apache` (Sunday stack update; maildir+DB backed up under `/var/backups/km0-mail/20260907-182623`; KM0 plugin binds unchanged).
@@ -12,6 +16,7 @@
 
 ### Changed
 
+- Rspamd image `4.2.0` → `4.2.1`. Recreated only the rspamd container; mail volumes untouched. Upstream 4.2.1 is security/HTTP/Redis/maps/DKIM fixes with no config-syntax migration.
 - Roundcube image `1.6.18-apache` → `1.7.3-apache`. Dedicated cutover: DocumentRoot stays `public_html`; assets served via `public_html/static.php` (no `public_html/{skins,plugins}` symlinks). km0 bind-mounts remain `/var/www/html/skins/km0` and `/var/www/html/plugins/km0_*`. Schema auto-migrated (`2022100100`, `2025092300`). `km0_sso_provision` `oauth_login` hook still present (OAuth remains disabled). Maildir + mail DB untouched; Roundcube DB dumped under `/var/backups/km0-mail/roundcube-pre-1.7-*` before recreate.
 - Rspamd image `3.8` → `4.1.5`. Mail volumes left running; only the rspamd container was recreated. KM0 `local.d` (milter proxy, DKIM, milter_headers) loaded without a config-syntax migration.
 - Clearer login errors: the km0 skin (`skins/km0/js/i18n.js`) now rewrites Roundcube's generic `"Login failed."` / `"Server Error!"` toast into a specific, localized (EN/ES/CA/DE) sticky message — "Incorrect email or password…" for auth failures vs. "The mail server is temporarily unavailable…" for connection/storage errors — so users know exactly what went wrong. Implemented by synchronously wrapping `rcmail.display_message` before Roundcube flushes its queued login message (no core changes)
