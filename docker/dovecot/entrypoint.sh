@@ -92,7 +92,14 @@ EOF
 mkdir -p /run/dovecot/ssl /var/mail/vhosts
 render_auth_local
 
-if [ ! -f /run/dovecot/ssl/dovecot.pem ] || [ ! -f /run/dovecot/ssl/dovecot.key ]; then
+# Prefer the host Let's Encrypt cert (live + archive are bind-mounted).
+# Fall back to a self-signed cert only when those files are absent (local dev).
+LE_CERT=/etc/letsencrypt/live/mail.km0digital.com/fullchain.pem
+LE_KEY=/etc/letsencrypt/live/mail.km0digital.com/privkey.pem
+if [ -f "$LE_CERT" ] && [ -f "$LE_KEY" ]; then
+    ln -sfn "$LE_CERT" /run/dovecot/ssl/dovecot.pem
+    ln -sfn "$LE_KEY" /run/dovecot/ssl/dovecot.key
+elif [ ! -f /run/dovecot/ssl/dovecot.pem ] || [ ! -f /run/dovecot/ssl/dovecot.key ]; then
     openssl req -new -x509 -days 3650 -nodes \
         -subj "/CN=${MAIL_DOMAIN}" \
         -keyout /run/dovecot/ssl/dovecot.key \

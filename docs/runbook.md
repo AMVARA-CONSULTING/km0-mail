@@ -98,12 +98,12 @@ curl -sI https://mail.km0digital.com/ | head
 
 Roundcube is **not** exposed on public HTTP; only `127.0.0.1:8080` for Nginx upstream.
 
-### 7. Optional: host LE certs for IMAPS
+### 7. Host Let's Encrypt certs for IMAPS and SMTP submission
 
-Uncomment the LetsEncrypt volume mounts in `docker-compose.yml` for Dovecot, then:
+Dovecot (:993) and Postfix (:587) mount `/etc/letsencrypt/live/mail.km0digital.com` and the matching `archive/` directory. The entrypoints use that full chain instead of a self-signed or snakeoil certificate. After `certbot renew`, `/etc/letsencrypt/renewal-hooks/deploy/km0-mail-tls-reload.sh` reloads both services. Do not remove the mail volume when recreating these containers.
 
 ```bash
-docker compose up -d dovecot
+docker compose up -d --no-deps dovecot postfix
 ```
 
 ### 8. Smoke test

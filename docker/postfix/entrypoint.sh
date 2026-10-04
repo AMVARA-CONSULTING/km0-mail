@@ -60,8 +60,18 @@ postconf -e "smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authentic
 postconf -e "smtpd_recipient_restrictions = permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination"
 postconf -e "smtpd_tls_security_level = may"
 postconf -e "smtp_tls_security_level = may"
-postconf -e "smtpd_tls_cert_file = /etc/ssl/certs/ssl-cert-snakeoil.pem"
-postconf -e "smtpd_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key"
+# Host Let's Encrypt when live+archive are mounted; snakeoil only as fallback.
+LE_CERT=/etc/letsencrypt/live/mail.km0digital.com/fullchain.pem
+LE_KEY=/etc/letsencrypt/live/mail.km0digital.com/privkey.pem
+if [ -f "$LE_CERT" ] && [ -f "$LE_KEY" ]; then
+    postconf -e "smtpd_tls_cert_file = ${LE_CERT}"
+    postconf -e "smtpd_tls_key_file = ${LE_KEY}"
+else
+    postconf -e "smtpd_tls_cert_file = /etc/ssl/certs/ssl-cert-snakeoil.pem"
+    postconf -e "smtpd_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key"
+fi
+postconf -e "smtpd_tls_protocols = >=TLSv1.2"
+postconf -e "smtp_tls_protocols = >=TLSv1.2"
 postconf -e "mynetworks = 127.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, [::1]/128"
 postconf -e "smtpd_sender_restrictions = check_sender_access pgsql:/etc/postfix/sql/sender-verification.cf"
 

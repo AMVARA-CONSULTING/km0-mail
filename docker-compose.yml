@@ -53,9 +53,10 @@ services:
       - mail-data:/var/mail/vhosts
       - ./config/dovecot/dovecot.conf:/etc/dovecot/dovecot.conf:ro
       - ./config/dovecot/dovecot-oauth2.conf.ext.template:/etc/dovecot/dovecot-oauth2.conf.ext.template:ro
-      # Optional: mount host LE certs for IMAPS (see docs/runbook.md)
-      # - /etc/letsencrypt/live/mail.km0digital.com/fullchain.pem:/run/dovecot/ssl/dovecot.pem:ro
-      # - /etc/letsencrypt/live/mail.km0digital.com/privkey.pem:/run/dovecot/ssl/dovecot.key:ro
+      # Let's Encrypt for IMAPS. Mount live + archive so certbot symlink updates stay visible.
+      - /etc/letsencrypt/live/mail.km0digital.com:/etc/letsencrypt/live/mail.km0digital.com:ro
+      - /etc/letsencrypt/archive/mail.km0digital.com:/etc/letsencrypt/archive/mail.km0digital.com:ro
+      - ./docker/dovecot/entrypoint.sh:/entrypoint.sh:ro
     depends_on:
       postgres:
         condition: service_healthy
@@ -82,6 +83,9 @@ services:
       - ./config/postfix/master.cf:/etc/postfix/master.cf:ro
       - ./config/postfix/sql-templates:/etc/postfix/sql-templates:ro
       - postfix-spool:/var/spool/postfix
+      - /etc/letsencrypt/live/mail.km0digital.com:/etc/letsencrypt/live/mail.km0digital.com:ro
+      - /etc/letsencrypt/archive/mail.km0digital.com:/etc/letsencrypt/archive/mail.km0digital.com:ro
+      - ./docker/postfix/entrypoint.sh:/entrypoint.sh:ro
     depends_on:
       postgres:
         condition: service_healthy
