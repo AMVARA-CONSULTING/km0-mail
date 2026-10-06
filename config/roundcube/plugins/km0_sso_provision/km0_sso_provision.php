@@ -34,6 +34,15 @@ class km0_sso_provision extends rcube_plugin
             return $args;
         }
 
+        $roles = $args['identity']['realm_access']['roles'] ?? [];
+        if (is_string($roles)) {
+            $roles = [$roles];
+        }
+        if (!in_array('km0MailUser', $roles, true)) {
+            $this->oauth_error('This account does not have mail access.');
+            return $args;
+        }
+
         $domain = substr($email, strrpos($email, '@') + 1);
         if (in_array($domain, self::$freemailDomains, true)) {
             $this->oauth_error(

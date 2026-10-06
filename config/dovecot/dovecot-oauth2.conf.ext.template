@@ -1,9 +1,11 @@
-# Keycloak token introspection (RFC 7662) — rendered into auth-local.conf at start
+# Keycloak requires the client secret on introspection. This Dovecot build
+# posts only the token, so the local proxy adds the secret.
 oauth2 {
   introspection_mode = post
-  introspection_url = @DEX_INTROSPECTION_URL@
+  introspection_url = http://127.0.0.1:8765/introspect
   client_id = @DOVECOT_OAUTH_CLIENT_ID@
   client_secret = @DOVECOT_OAUTH_CLIENT_SECRET@
   username_attribute = email
-  ssl_client_ca_dir = /etc/ssl/certs
+  active_attribute = active
+  active_value = true
 }

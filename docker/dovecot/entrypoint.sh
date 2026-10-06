@@ -99,6 +99,7 @@ mkdir -p /run/dovecot/ssl /var/mail/vhosts
 umask 077
 cat > /run/dovecot/kc-pam.env << EOF
 TOKEN_URL=${KEYCLOAK_TOKEN_URL}
+INTROSPECT_URL=https://sso.km0digital.com/realms/km0digital/protocol/openid-connect/token/introspect
 CLIENT_ID=${DOVECOT_OAUTH_CLIENT_ID}
 CLIENT_SECRET=${DOVECOT_OAUTH_CLIENT_SECRET}
 EOF
@@ -109,20 +110,75 @@ set -a
 set +a
 read -r PASS || true
 [ -n "$PASS" ] || exit 1
-code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 \
+body=$(curl -sS --max-time 15 -w '\n%{http_code}' \
   -X POST "$TOKEN_URL" \
   --data-urlencode "grant_type=password" \
   --data-urlencode "client_id=$CLIENT_ID" \
   --data-urlencode "client_secret=$CLIENT_SECRET" \
+  --data-urlencode "scope=openid profile roles" \
   --data-urlencode "username=$PAM_USER" \
   --data-urlencode "password=$PASS") || exit 1
-[ "$code" = "200" ]
+code=$(printf '%s\n' "$body" | tail -n 1)
+[ "$code" = "200" ] || exit 1
+payload=$(printf '%s\n' "$body" | sed '$d' | sed -n 's/.*"access_token":"\([^"]*\)".*/\1/p' | cut -d. -f2)
+case $((${#payload} % 4)) in
+  2) payload="${payload}==" ;;
+  3) payload="${payload}=" ;;
+esac
+printf '%s' "$payload" | tr '_-' '/+' | base64 -d 2>/dev/null | grep -q '"km0MailUser"'
 EOF
 chmod 700 /run/dovecot/kc-pam.env /run/dovecot/kc-pam-auth.sh
 cat > /etc/pam.d/km0-keycloak << 'EOF'
 auth required pam_exec.so quiet expose_authtok /run/dovecot/kc-pam-auth.sh
 account required pam_permit.so
 EOF
+
+cat > /run/dovecot/kc-introspect.pl << 'EOF'
+use strict;
+use IO::Socket::INET;
+my $id = $ENV{CLIENT_ID} or die "CLIENT_ID missing\n";
+my $secret = $ENV{CLIENT_SECRET} or die "CLIENT_SECRET missing\n";
+my $url = $ENV{INTROSPECT_URL} or die "INTROSPECT_URL missing\n";
+my $srv = IO::Socket::INET->new(
+    LocalAddr => "127.0.0.1",
+    LocalPort => 8765,
+    Proto => "tcp",
+    Listen => 20,
+    Reuse => 1,
+) or die "listen: $!\n";
+print STDERR "dovecot: Keycloak introspection proxy ready\n";
+while (my $client = $srv->accept()) {
+    $client->autoflush(1);
+    my $buf = "";
+    while ($buf !~ /\r\n\r\n/ && length($buf) < 65536) {
+        my $n = sysread($client, my $chunk, 4096);
+        last if !$n;
+        $buf .= $chunk;
+    }
+    my ($hdr, $body) = split(/\r\n\r\n/, $buf, 2);
+    $body = "" unless defined $body;
+    my $len = ($hdr =~ /Content-Length:\s*(\d+)/i) ? $1 : 0;
+    while (length($body) < $len && length($body) < 65536) {
+        my $n = sysread($client, my $chunk, $len - length($body));
+        last if !$n;
+        $body .= $chunk;
+    }
+    my $tmp = "/run/dovecot/intro-body.$$";
+    open my $fh, ">", $tmp or die "tmp: $!\n";
+    print $fh $body;
+    close $fh;
+    my $out = `curl -sS --max-time 10 -u '$id:$secret' -H 'Content-Type: application/x-www-form-urlencoded' --data-binary \@$tmp '$url'`;
+    unlink $tmp;
+    my $status = $? == 0 && length($out) ? "200 OK" : "502 Bad Gateway";
+    print $client "HTTP/1.0 $status\r\nContent-Type: application/json\r\nContent-Length: " . length($out) . "\r\nConnection: close\r\n\r\n$out";
+    close $client;
+}
+EOF
+chmod 700 /run/dovecot/kc-introspect.pl
+set -a
+. /run/dovecot/kc-pam.env
+set +a
+perl /run/dovecot/kc-introspect.pl &
 
 render_auth_local
 
