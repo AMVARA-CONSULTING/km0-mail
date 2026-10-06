@@ -44,8 +44,8 @@ services:
       MAIL_DB_USER: ${MAIL_DB_USER:-mail}
       MAIL_DB_PASSWORD: ${MAIL_DB_PASSWORD:?MAIL_DB_PASSWORD required}
       MAIL_DOMAIN: ${MAIL_DOMAIN:-km0digital.com}
-      DEX_INTROSPECTION_URL: ${DEX_INTROSPECTION_URL:-https://cloud.km0digital.com/dex/token/introspect}
-      DOVECOT_OAUTH_CLIENT_ID: ${DOVECOT_OAUTH_CLIENT_ID:-km0-mail-dovecot}
+      DEX_INTROSPECTION_URL: ${DEX_INTROSPECTION_URL:-https://sso.km0digital.com/realms/km0digital/protocol/openid-connect/token/introspect}
+      DOVECOT_OAUTH_CLIENT_ID: ${DOVECOT_OAUTH_CLIENT_ID:-km0-mail-web}
       DOVECOT_OAUTH_CLIENT_SECRET: ${DOVECOT_OAUTH_CLIENT_SECRET:-}
     ports:
       - "993:993"

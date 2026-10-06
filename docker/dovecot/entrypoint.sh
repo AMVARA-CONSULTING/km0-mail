@@ -6,9 +6,10 @@ set -eu
 : "${MAIL_DB_PASSWORD:?MAIL_DB_PASSWORD required}"
 : "${POSTGRES_DB:=mail}"
 : "${MAIL_DOMAIN:=km0digital.com}"
-: "${DEX_INTROSPECTION_URL:=https://cloud.km0digital.com/dex/token/introspect}"
-: "${DOVECOT_OAUTH_CLIENT_ID:=km0-mail-dovecot}"
+: "${DEX_INTROSPECTION_URL:=https://sso.km0digital.com/realms/km0digital/protocol/openid-connect/token/introspect}"
+: "${DOVECOT_OAUTH_CLIENT_ID:=km0-mail-web}"
 : "${DOVECOT_OAUTH_CLIENT_SECRET:=}"
+: "${KEYCLOAK_TOKEN_URL:=https://sso.km0digital.com/realms/km0digital/protocol/openid-connect/token}"
 
 # CE 2.4+ ships oauth2 in-core; do not call doveconf here (auth-local.conf
 # is not written yet and !include would fail). Older images may ship .so.
@@ -37,7 +38,7 @@ render_auth_local() {
 
     {
         if [ "$use_oauth2" -eq 1 ]; then
-            echo "dovecot: OAuth2/XOAUTH2 enabled (Dex LDAP SSO)" >&2
+            echo "dovecot: OAuth2/XOAUTH2 enabled (Keycloak)" >&2
             cat <<'EOF'
 auth_mechanisms {
   plain = yes
@@ -73,13 +74,14 @@ pgsql ${POSTGRES_HOST} {
   }
 }
 
-passdb sql {
+passdb pam {
   mechanisms_filter {
     plain = yes
     login = yes
   }
-  default_password_scheme = BLF-CRYPT
-  query = SELECT email AS user, password_hash AS password FROM mail_accounts WHERE email='%{user}' AND active=TRUE
+  service_name = km0-keycloak
+  session = no
+  setcred = no
 }
 
 userdb sql {
@@ -90,6 +92,38 @@ EOF
 }
 
 mkdir -p /run/dovecot/ssl /var/mail/vhosts
+
+# Password check for IMAP/SMTP. The script reads the secret from a root-only
+# file so it is not stored in the mail database. Mailbox hashes stay in SQL
+# unused, for rollback.
+umask 077
+cat > /run/dovecot/kc-pam.env << EOF
+TOKEN_URL=${KEYCLOAK_TOKEN_URL}
+CLIENT_ID=${DOVECOT_OAUTH_CLIENT_ID}
+CLIENT_SECRET=${DOVECOT_OAUTH_CLIENT_SECRET}
+EOF
+cat > /run/dovecot/kc-pam-auth.sh << 'EOF'
+#!/bin/sh
+set -a
+. /run/dovecot/kc-pam.env
+set +a
+read -r PASS || true
+[ -n "$PASS" ] || exit 1
+code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 \
+  -X POST "$TOKEN_URL" \
+  --data-urlencode "grant_type=password" \
+  --data-urlencode "client_id=$CLIENT_ID" \
+  --data-urlencode "client_secret=$CLIENT_SECRET" \
+  --data-urlencode "username=$PAM_USER" \
+  --data-urlencode "password=$PASS") || exit 1
+[ "$code" = "200" ]
+EOF
+chmod 700 /run/dovecot/kc-pam.env /run/dovecot/kc-pam-auth.sh
+cat > /etc/pam.d/km0-keycloak << 'EOF'
+auth required pam_exec.so quiet expose_authtok /run/dovecot/kc-pam-auth.sh
+account required pam_permit.so
+EOF
+
 render_auth_local
 
 # Prefer the host Let's Encrypt cert (live + archive are bind-mounted).

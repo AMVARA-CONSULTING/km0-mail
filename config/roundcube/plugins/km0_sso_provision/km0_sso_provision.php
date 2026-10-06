@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Silent mailbox auto-provision after Dex LDAP OAuth login.
- * Supports @km0digital.com and verified custom domains; blocks freemail OIDC emails.
+ * Silent mailbox auto-provision after Keycloak login.
+ * An existing mailbox is left untouched. New @km0digital.com and verified
+ * custom-domain addresses are created. Freemail OIDC emails are blocked.
  *
  * @version 1.0.0
  * @license MIT
@@ -41,6 +42,18 @@ class km0_sso_provision extends rcube_plugin
             return $args;
         }
 
+        // Existing mailbox: do not call /provision. That call generates a new
+        // password hash and would also reject a Keycloak user id that differs
+        // from the stored cloud id.
+        $exists = $this->mailbox_exists($email);
+        if ($exists === true) {
+            return $args;
+        }
+        if ($exists === null) {
+            $this->oauth_error('Could not check the mailbox. Try again in a moment.');
+            return $args;
+        }
+
         if ($domain !== $km0Domain && !$this->is_verified_custom_domain($domain)) {
             $this->oauth_error(
                 'Your OIDC email domain is not registered with KM0 Mail. Complete registration first.'
@@ -58,6 +71,35 @@ class km0_sso_provision extends rcube_plugin
         }
 
         return $args;
+    }
+
+    /**
+     * @return bool|null true if the mailbox row exists, false if it does not, null if the check failed
+     */
+    private function mailbox_exists(string $email): ?bool
+    {
+        $rcmail = rcmail::get_instance();
+        $url = rtrim($rcmail->config->get('km0_provision_api_url', ''), '/');
+        if ($url === '') {
+            return null;
+        }
+
+        $ch = curl_init($url . '/account/' . rawurlencode($email) . '/status');
+        if ($ch === false) {
+            return null;
+        }
+        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 10]);
+        curl_exec($ch);
+        $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($status === 200) {
+            return true;
+        }
+        if ($status === 404) {
+            return false;
+        }
+        return null;
     }
 
     private function is_verified_custom_domain(string $domain): bool
