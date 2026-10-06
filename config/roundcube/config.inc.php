@@ -67,6 +67,7 @@ $config['oauth_login_redirect'] = true;
 
 // Branded entry at /login.html; silent mailbox auto-provision via plugin
 $config['km0_mail_domain'] = getenv('MAIL_DOMAIN') ?: 'km0digital.com';
+$config['km0_cloud_url'] = getenv('KM0_CLOUD_URL') ?: 'https://cloud.km0digital.com/';
 $config['km0_provision_api_url'] = getenv('KM0_PROVISION_API_URL') ?: 'http://mail-provision-api:8092';
 $config['km0_provision_api_token'] = getenv('MAIL_PROVISION_API_TOKEN') ?: '';
 $config['km0_domain_verify_api_url'] = getenv('KM0_DOMAIN_VERIFY_API_URL') ?: 'http://domain-verify-api:8093';

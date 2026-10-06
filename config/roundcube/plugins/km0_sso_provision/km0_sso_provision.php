@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Silent mailbox auto-provision after Keycloak login.
- * An existing mailbox is left untouched. New @km0digital.com and verified
- * custom-domain addresses are created. Freemail OIDC emails are blocked.
+ * Mail login after Keycloak.
+ * Only domains this mail server accepts may open a mailbox. Any other
+ * domain is sent to the cloud and is not given mail access.
  *
  * @version 1.0.0
  * @license MIT
@@ -26,12 +26,25 @@ class km0_sso_provision extends rcube_plugin
     public function oauth_login(array $args): array
     {
         $rcmail = rcmail::get_instance();
-        $km0Domain = $rcmail->config->get('km0_mail_domain', 'km0digital.com');
+        $km0Domain = strtolower($rcmail->config->get('km0_mail_domain', 'km0digital.com'));
         $email = strtolower(trim($args['identity']['email'] ?? ''));
+        $domain = '';
+        if ($email !== '' && str_contains($email, '@')) {
+            $domain = substr($email, strrpos($email, '@') + 1);
+        }
 
-        if ($email === '') {
-            $this->oauth_error('Missing email in OIDC identity.');
+        $exists = ($email !== '') ? $this->mailbox_exists($email) : false;
+        if ($exists === null) {
+            $this->oauth_error('Could not check the mailbox. Try again in a moment.');
             return $args;
+        }
+
+        // Gmail, Outlook, and any domain this server does not accept go to
+        // the cloud. An address that already has a mailbox stays on mail,
+        // including a domain row that is still pending.
+        $accepted = $domain !== '' && $this->domain_is_accepted($domain, $km0Domain);
+        if ($exists !== true && !$accepted) {
+            $this->send_to_cloud();
         }
 
         $roles = $args['identity']['realm_access']['roles'] ?? [];
@@ -43,30 +56,10 @@ class km0_sso_provision extends rcube_plugin
             return $args;
         }
 
-        $domain = substr($email, strrpos($email, '@') + 1);
-        if (in_array($domain, self::$freemailDomains, true)) {
-            $this->oauth_error(
-                'Freemail addresses cannot be used for KM0 Mail. Register with @' . $km0Domain . ' or your own domain.'
-            );
-            return $args;
-        }
-
         // Existing mailbox: do not call /provision. That call generates a new
         // password hash and would also reject a Keycloak user id that differs
         // from the stored cloud id.
-        $exists = $this->mailbox_exists($email);
         if ($exists === true) {
-            return $args;
-        }
-        if ($exists === null) {
-            $this->oauth_error('Could not check the mailbox. Try again in a moment.');
-            return $args;
-        }
-
-        if ($domain !== $km0Domain && !$this->is_verified_custom_domain($domain)) {
-            $this->oauth_error(
-                'Your OIDC email domain is not registered with KM0 Mail. Complete registration first.'
-            );
             return $args;
         }
 
@@ -109,6 +102,25 @@ class km0_sso_provision extends rcube_plugin
             return false;
         }
         return null;
+    }
+
+    private function domain_is_accepted(string $domain, string $km0Domain): bool
+    {
+        if (in_array($domain, self::$freemailDomains, true)) {
+            return false;
+        }
+        if ($domain === $km0Domain) {
+            return true;
+        }
+        return $this->is_verified_custom_domain($domain);
+    }
+
+    private function send_to_cloud(): void
+    {
+        $rcmail = rcmail::get_instance();
+        $url = $rcmail->config->get('km0_cloud_url', 'https://cloud.km0digital.com/');
+        header('Location: ' . $url, true, 302);
+        exit;
     }
 
     private function is_verified_custom_domain(string $domain): bool
