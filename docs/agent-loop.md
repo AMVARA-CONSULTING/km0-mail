@@ -83,3 +83,14 @@ When the stack is deployed (`COMPOSE_PROJECT_NAME=km0-mail`):
 - `km0-mail-rspamd-1`
 - `km0-mail-roundcube-1`
 - `km0-mail-postgres-1`
+
+## Cursor token / usage alerts
+
+When `cursor-agent` exits non-zero and the log matches usage/token exhaustion (same signals as Maestro `token_alert`), the loop calls host helper:
+
+`/opt/amvara/scripts/cursor-token-alert.sh`
+
+- Discord webhook (same family as disk/econs alerts) with `@everyone`
+- Host-wide cooldown default **1800s** (`/etc/amvara/cursor-token-alert.env`)
+- Smoke: `cursor-token-alert.sh --smoke --project <id>`
+

@@ -33,7 +33,14 @@ class km0_sso_provision extends rcube_plugin
             $domain = substr($email, strrpos($email, '@') + 1);
         }
 
-        $exists = ($email !== '') ? $this->mailbox_exists($email) : false;
+        // This request already came from webmail. An empty address must not
+        // send the browser to the cloud, or the mail login is forgotten.
+        if ($email === '') {
+            $this->oauth_error('Sign-in did not include an email address. Start again from this site.');
+            return $args;
+        }
+
+        $exists = $this->mailbox_exists($email);
         if ($exists === null) {
             $this->oauth_error('Could not check the mailbox. Try again in a moment.');
             return $args;

@@ -22,7 +22,7 @@ CREATE TABLE mail_accounts (
 CREATE TABLE mail_aliases (
     id              SERIAL PRIMARY KEY,
     alias_address   VARCHAR(255) NOT NULL UNIQUE,
-    target_email    VARCHAR(255) NOT NULL REFERENCES mail_accounts(email) ON DELETE CASCADE,
+    target_email    VARCHAR(255) NOT NULL,
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 

@@ -22,7 +22,7 @@ Usage: $0 <command> [args]
 
 Commands:
   create-mailbox <user@km0digital.com> [password]
-  create-alias <alias@km0digital.com> <target@km0digital.com>
+  create-alias <alias@hosted-domain> <target-email>
   list-mailboxes
   list-aliases
   set-password <user@km0digital.com> [password]
@@ -35,6 +35,26 @@ require_email() {
     local email="$1"
     if [[ ! "$email" =~ @${MAIL_DOMAIN}$ ]]; then
         echo "error: address must end with @${MAIL_DOMAIN}" >&2
+        exit 1
+    fi
+}
+
+require_any_email() {
+    local email="$1"
+    if [[ ! "$email" =~ ^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$ ]]; then
+        echo "error: invalid email: ${email}" >&2
+        exit 1
+    fi
+}
+
+require_hosted_alias() {
+    local email="$1"
+    local domain="${email#*@}"
+    require_any_email "$email"
+    local found
+    found="$(psql_exec -At -c "SELECT 1 FROM mail_domains WHERE name='${domain}' AND active=TRUE LIMIT 1;" | tr -d '\r')"
+    if [[ "$found" != "1" ]]; then
+        echo "error: alias domain is not an active hosted domain: ${domain}" >&2
         exit 1
     fi
 }
@@ -101,8 +121,8 @@ cmd_set_password() {
 cmd_create_alias() {
     local alias="$1"
     local target="$2"
-    require_email "$alias"
-    require_email "$target"
+    require_hosted_alias "$alias"
+    require_any_email "$target"
 
     psql_exec -c \
         "INSERT INTO mail_aliases (alias_address, target_email) VALUES ('${alias}', '${target}')
