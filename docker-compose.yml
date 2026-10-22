@@ -100,7 +100,7 @@ services:
     # 1.7.x: DocumentRoot /var/www/html/public_html; assets via public_html/static.php
     # (no public_html/{skins,plugins} symlinks). km0 bind-mounts stay at
     # /var/www/html/{skins,plugins} — static.php serves them from INSTALL_PATH.
-    image: roundcube/roundcubemail:1.7.4-apache
+    image: km0-mail-roundcube:1.7.4-php8.4.27
     restart: unless-stopped
     environment:
       ROUNDCUBEMAIL_DEFAULT_HOST: ssl://dovecot
