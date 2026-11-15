@@ -25,7 +25,7 @@ services:
       - mailnet
 
   rspamd:
-    image: rspamd/rspamd:4.2.3
+    image: rspamd/rspamd:4.3.0
     restart: unless-stopped
     volumes:
       - ./config/rspamd/local.d:/etc/rspamd/local.d:ro
