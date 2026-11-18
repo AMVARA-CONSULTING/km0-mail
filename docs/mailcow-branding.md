@@ -26,8 +26,8 @@ See `config/mailcow-branding/README.md` for file map and SSO caveats.
 
 ## FAIL criteria (tester / Sentinel)
 
-* Folder **icons** ( /  in left sidenav) must compute to light ink (e.g. ), **not** .
-* Folder **labels** (Bandeja / Borradores / Enviados / …) must be light on dark.
+* Folder icons (`md-icon` / `.material-icons` in left sidenav) must compute to light ink (e.g. `#E6E9ED`), **not** `rgba(0,0,0,*)`.
+* Folder labels (Bandeja / Borradores / Enviados / …) must be light on dark.
 * Do **not** CLOSE on selected-folder-only readability.
 * Browser PNG of full sidebar required; curl greps are not enough.
 
