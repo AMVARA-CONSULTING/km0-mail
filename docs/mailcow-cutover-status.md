@@ -31,4 +31,4 @@ Phase 4 items (when resumed):
 
 ## Branding
 
-Roundcube `km0_theme` is legacy. Mailcow/SOGo KM0 look → autoagents FEAT task (this repo).
+Roundcube `km0_theme` is legacy. Mailcow/SOGo KM0 look: pack in `config/mailcow-branding/`, apply with `scripts/apply-mailcow-branding.sh` (re-run after Mailcow `./update.sh`). See `docs/mailcow-branding.md`.

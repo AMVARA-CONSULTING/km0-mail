@@ -1,0 +1,25 @@
+/* KM0 Mail — always-on Mailcow overrides (loaded via css/build/)
+ * Theme folder (km0) carries the main palette; this file only polishes chrome
+ * that theme selection alone does not cover.
+ */
+
+:root {
+  --km0-theme-color: #0F766E;
+}
+
+meta[name="theme-color"] {
+  content: #0F766E;
+}
+
+/* Prefer IBM Plex when the selected theme has not yet loaded fonts */
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* Login logo breathing room */
+.mailcow-logo {
+  margin-bottom: 1.25rem !important;
+}
+.mailcow-logo img {
+  max-height: 48px;
+}

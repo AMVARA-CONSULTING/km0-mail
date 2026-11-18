@@ -1,0 +1,246 @@
+/**
+ * KM0 Digital — Mailcow UI theme (dark)
+ * Civic Paper / Snow / Mist / Ink / Signal — matches Roundcube km0 skin.
+ */
+
+:root {
+  --km0-paper: #0B1220;
+  --km0-snow: #141B28;
+  --km0-mist: #2A3344;
+  --km0-ink: #E6E9ED;
+  --km0-ink-muted: rgba(230, 233, 237, 0.65);
+  --km0-signal: #2DD4BF;
+  --km0-signal-hover: #5EEAD4;
+  --km0-signal-soft: rgba(45, 212, 191, 0.18);
+  --km0-signal-tint: rgba(45, 212, 191, 0.08);
+  --km0-danger: #ff8a8a;
+  --km0-warning: #fbbf24;
+  --km0-plaque: #0F766E;
+
+  --bs-body-color: var(--km0-ink);
+  --bs-body-bg: var(--km0-paper);
+  --bs-primary: var(--km0-signal);
+  --bs-link-color: var(--km0-signal);
+  --bs-link-hover-color: var(--km0-signal-hover);
+
+  /* mailcow dark token bridge */
+  --mc-body-bg: var(--km0-paper);
+  --mc-body-color: var(--km0-ink);
+  --mc-surface: var(--km0-snow);
+  --mc-surface-alt: var(--km0-mist);
+  --mc-text: var(--km0-ink);
+  --mc-text-soft: var(--km0-ink);
+  --mc-muted: var(--km0-ink-muted);
+  --mc-border: var(--km0-mist);
+  --mc-tab-border: var(--km0-mist);
+  --mc-link: var(--km0-signal);
+  --mc-link-hover: var(--km0-signal-hover);
+  --mc-btn-bg: var(--km0-snow);
+  --mc-btn-border: var(--km0-mist);
+  --mc-input-bg: var(--km0-paper);
+  --mc-input-color: var(--km0-ink);
+  --mc-input-border: var(--km0-mist);
+  --mc-dropdown-bg: var(--km0-snow);
+  --mc-table-bg: transparent;
+  --mc-table-stripe: rgba(255, 255, 255, 0.025);
+  --mc-table-hover: var(--km0-signal-tint);
+  --mc-table-border: var(--km0-mist);
+  --mc-progress-bg: var(--km0-mist);
+  --mc-placeholder: var(--km0-ink-muted);
+  --mc-hr: var(--km0-mist);
+}
+
+body {
+  background-color: var(--km0-paper) !important;
+  color: var(--km0-ink);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navbar */
+.navbar.bg-light {
+  background-color: var(--km0-snow) !important;
+  border-bottom: 1px solid var(--km0-mist);
+}
+.navbar-light .navbar-nav .nav-link {
+  color: var(--km0-ink-muted) !important;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: var(--km0-signal) !important;
+}
+
+/* Login */
+.login-card {
+  background: var(--km0-snow) !important;
+  border: 1px solid var(--km0-mist) !important;
+  border-radius: 12px;
+  box-shadow: none !important;
+}
+.login-card .card-header {
+  background: transparent !important;
+  border-bottom-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+  font-weight: 600;
+}
+.mailcow-logo .main-logo,
+.mailcow-logo .main-logo-dark {
+  max-height: 48px;
+  width: auto;
+}
+
+/* Cards / modals */
+.card {
+  background-color: var(--km0-snow) !important;
+  border-color: var(--km0-mist) !important;
+}
+.card-header {
+  color: var(--km0-ink);
+  background-color: rgba(42, 51, 68, 0.45) !important;
+  border-color: var(--km0-mist) !important;
+}
+.modal-content {
+  background-color: var(--km0-snow);
+}
+.modal-header {
+  border-color: var(--km0-mist);
+}
+.dropdown-menu {
+  background-color: var(--km0-snow);
+  border-color: var(--km0-mist);
+}
+.dropdown-item {
+  color: var(--km0-ink);
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: var(--km0-signal) !important;
+  background-color: var(--km0-signal-tint);
+}
+
+/* Forms */
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: var(--km0-paper) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--km0-signal) !important;
+  box-shadow: 0 0 0 0.2rem var(--km0-signal-soft) !important;
+}
+.form-check-input:checked {
+  background-color: var(--km0-signal);
+  border-color: var(--km0-signal);
+}
+.form-check-input:not(:checked) {
+  background-color: var(--km0-paper);
+  border-color: var(--km0-mist);
+}
+
+/* Buttons */
+.btn-success,
+.btn-primary {
+  background-color: var(--km0-plaque) !important;
+  border-color: var(--km0-plaque) !important;
+  color: #EEF0F2 !important;
+}
+.btn-success:hover,
+.btn-primary:hover {
+  background-color: #0D9488 !important;
+  border-color: #0D9488 !important;
+}
+.btn-secondary,
+.btn-light,
+.page-link {
+  background-color: var(--km0-snow) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+.btn-secondary:hover,
+.btn-light:hover,
+.page-link:hover {
+  color: var(--km0-signal) !important;
+  background-color: var(--km0-signal-tint) !important;
+  border-color: var(--km0-signal) !important;
+}
+.btn-check:checked + .btn-secondary,
+.btn-secondary.active,
+.page-item.active .page-link {
+  color: #0B1220 !important;
+  background-color: var(--km0-signal) !important;
+  border-color: var(--km0-signal) !important;
+}
+
+/* Tabs */
+.nav-tabs .nav-link {
+  color: var(--km0-ink-muted) !important;
+}
+.nav-tabs .nav-link:not(.disabled):hover,
+.nav-tabs .nav-link.active {
+  color: var(--km0-signal) !important;
+  border-bottom-color: var(--km0-signal) !important;
+}
+
+/* Tables */
+.table {
+  color: var(--km0-ink);
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(255, 255, 255, 0.025);
+  --bs-table-hover-bg: var(--km0-signal-tint);
+  border-color: var(--km0-mist);
+}
+
+/* Semantic */
+a,
+.text-success,
+.text-primary {
+  color: var(--km0-signal) !important;
+}
+a:hover {
+  color: var(--km0-signal-hover) !important;
+}
+.text-danger {
+  color: var(--km0-danger) !important;
+}
+.text-warning {
+  color: var(--km0-warning) !important;
+}
+.text-muted {
+  color: var(--km0-ink-muted) !important;
+}
+
+.alert-success {
+  color: #cdeea0;
+  background-color: #1a2e24;
+  border-color: #0F766E;
+}
+.alert-info {
+  color: #cfe9f6;
+  background-color: #1a2433;
+  border-color: #2A3344;
+}
+.alert-danger {
+  color: #ffb3b3;
+  background-color: #2e1a1a;
+  border-color: #5c2a2a;
+}
+
+.progress {
+  background-color: var(--km0-mist);
+}
+.progress-bar {
+  background-color: var(--km0-signal);
+}
+
+/* Prefer dark logo when dark theme active */
+.main-logo {
+  display: none !important;
+}
+.main-logo-dark {
+  display: inline-block !important;
+}

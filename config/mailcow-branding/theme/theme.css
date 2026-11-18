@@ -1,0 +1,162 @@
+/**
+ * KM0 Digital — Mailcow UI theme (light)
+ * Tokens aligned with Roundcube skins/km0 and km0-web brand guide.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --km0-paper: #F4F6F8;
+  --km0-snow: #FFFFFF;
+  --km0-mist: #D5DBE3;
+  --km0-ink: #0B1220;
+  --km0-ink-muted: rgba(11, 18, 32, 0.65);
+  --km0-signal: #0F766E;
+  --km0-signal-hover: #0D9488;
+  --km0-signal-soft: rgba(15, 118, 110, 0.14);
+  --km0-signal-tint: rgba(15, 118, 110, 0.08);
+  --km0-danger: #C43C3C;
+  --km0-warning: #B45309;
+
+  --bs-body-color: var(--km0-ink);
+  --bs-body-bg: var(--km0-paper);
+  --bs-primary: var(--km0-signal);
+  --bs-link-color: var(--km0-signal);
+  --bs-link-hover-color: var(--km0-signal-hover);
+}
+
+body,
+.btn,
+.form-control,
+.nav-link,
+.dropdown-menu,
+.card,
+.modal,
+.table {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--km0-paper);
+  color: var(--km0-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navbar */
+.navbar.bg-light {
+  background-color: var(--km0-snow) !important;
+  border-bottom: 1px solid var(--km0-mist);
+}
+.navbar-light .navbar-nav .nav-link {
+  color: var(--km0-ink-muted) !important;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: var(--km0-signal) !important;
+}
+
+/* Brand logo sizing */
+.mailcow-logo .main-logo,
+.mailcow-logo .main-logo-dark,
+.navbar .main-logo,
+.navbar .main-logo-dark {
+  max-height: 42px;
+  width: auto;
+}
+
+/* Login */
+.login-card {
+  background: var(--km0-snow);
+  border: 1px solid var(--km0-mist);
+  border-radius: 12px;
+  box-shadow: none;
+}
+.login-card .card-header {
+  background: transparent;
+  border-bottom-color: var(--km0-mist);
+  color: var(--km0-ink);
+  font-weight: 600;
+}
+
+/* Cards / surfaces */
+.card {
+  background-color: var(--km0-snow);
+  border-color: var(--km0-mist);
+}
+.card-header {
+  background-color: var(--km0-paper);
+  border-color: var(--km0-mist);
+  color: var(--km0-ink);
+}
+
+/* Links & primary actions */
+a {
+  color: var(--km0-signal);
+}
+a:hover {
+  color: var(--km0-signal-hover);
+}
+.btn-success,
+.btn-primary {
+  background-color: var(--km0-signal) !important;
+  border-color: var(--km0-signal) !important;
+  color: #fff !important;
+}
+.btn-success:hover,
+.btn-primary:hover,
+.btn-success:focus,
+.btn-primary:focus {
+  background-color: var(--km0-signal-hover) !important;
+  border-color: var(--km0-signal-hover) !important;
+}
+.btn-secondary,
+.btn-light {
+  background-color: var(--km0-paper) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+.btn-secondary:hover,
+.btn-light:hover {
+  background-color: var(--km0-signal-tint) !important;
+  border-color: var(--km0-signal) !important;
+  color: var(--km0-signal) !important;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+  border-color: var(--km0-mist);
+  background-color: var(--km0-snow);
+  color: var(--km0-ink);
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--km0-signal);
+  box-shadow: 0 0 0 0.2rem var(--km0-signal-soft);
+}
+.form-check-input:checked {
+  background-color: var(--km0-signal);
+  border-color: var(--km0-signal);
+}
+
+/* Tabs */
+.nav-tabs .nav-link.active {
+  color: var(--km0-signal) !important;
+  border-bottom-color: var(--km0-signal) !important;
+}
+
+/* Theme color meta / accents */
+.text-success {
+  color: var(--km0-signal) !important;
+}
+.progress-bar {
+  background-color: var(--km0-signal);
+}
+
+/* Footer */
+.footer,
+footer {
+  color: var(--km0-ink-muted);
+}

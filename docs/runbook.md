@@ -370,9 +370,20 @@ docker compose exec -T roundcube grep RCMAIL_VERSION /var/www/html/program/inclu
 
 ---
 
-## Roundcube branding (KM0 skin)
+## Mailcow / SOGo branding (current)
 
-Webmail login uses a custom **`km0`** skin (extends Elastic) mounted from `skins/km0/`. Inbox UI remains standard Elastic; only the login page is KM0-branded.
+Live UI is Mailcow + SOGo at `/opt/mailcow-dockerized`. Brand pack lives in this repo:
+
+```bash
+cd /opt/km0-mail
+./scripts/apply-mailcow-branding.sh   # re-run after Mailcow ./update.sh
+```
+
+Details: `docs/mailcow-branding.md`, `config/mailcow-branding/README.md`.
+
+## Roundcube branding (KM0 skin) — legacy
+
+Legacy Roundcube stack (stopped). Skin was a custom **`km0`** theme (extends Elastic) mounted from `skins/km0/`. Inbox UI remained standard Elastic; only the login page was KM0-branded.
 
 After changing skin assets or `config/roundcube/config.inc.php`:
 

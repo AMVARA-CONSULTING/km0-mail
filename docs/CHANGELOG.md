@@ -1,3 +1,7 @@
+## 2026-11-18
+
+- Mailcow UI + SOGo KM0 branding: theme `km0` (Paper/Snow/Mist/Ink/Signal), Redis UI texts/logos, SOGo `custom-theme.js` + logos; pack in `config/mailcow-branding/`; re-apply via `scripts/apply-mailcow-branding.sh` after Mailcow `./update.sh` (`docs/mailcow-branding.md`). SSO `/sogo-auth` unchanged.
+
 ## 2026-10-25
 
 - Roundcube local image `1.7.4-php8.4.27` → `1.7.5-php8.4.27` (Sunday stack update; security release; rebuild via `docker/roundcube-php8427`; backup `/var/backups/km0-mail/20261025-170430` + Roundcube DB dump). KM0 plugin/skin binds unchanged.
