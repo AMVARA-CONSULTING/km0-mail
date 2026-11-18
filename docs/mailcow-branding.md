@@ -31,6 +31,15 @@ See `config/mailcow-branding/README.md` for file map and SSO caveats.
 * Do **not** CLOSE on selected-folder-only readability.
 * Browser PNG of full sidebar required; curl greps are not enough.
 
+### Login page (light + dark)
+
+* Dark toggle / `prefers-color-scheme: dark`: login **card** is a dark surface (Snow `#141B28` or Paper), not a white island on dark body.
+* Inputs: light ink on dark field (or dark ink on light field in light theme) — readable placeholders.
+* `#fido2-login` / FIDO2 button: text + icon contrast OK in **both** themes (no dark-on-dark).
+* “Forgot password”, “Log in as admin”, domain-admin links readable (Signal teal OK).
+* `.text-secondary` chrome (lang / moon row) must not stay Bootstrap `#555` on dark card.
+* PNG proof for light + dark required; **FAIL on dark-on-dark**.
+
 ## Smoke checks
 
 ```bash

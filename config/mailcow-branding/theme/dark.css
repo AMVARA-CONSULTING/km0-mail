@@ -72,18 +72,87 @@ body {
   color: var(--km0-signal) !important;
 }
 
-/* Login */
-.login-card {
+/* Login — coherent dark surfaces (no light card island, no dark-on-dark controls) */
+.login-card,
+.login-card.card,
+.card.login-user,
+.card.login-admin,
+.card.login-domainadmin {
   background: var(--km0-snow) !important;
+  background-color: var(--km0-snow) !important;
   border: 1px solid var(--km0-mist) !important;
   border-radius: 12px;
   box-shadow: none !important;
+  color: var(--km0-ink) !important;
+  --bs-card-bg: var(--km0-snow);
+  --bs-card-color: var(--km0-ink);
+  --bs-body-color: var(--km0-ink);
+  --bs-secondary-color: var(--km0-ink-muted);
+  --bs-secondary-rgb: 230, 233, 237;
+}
+.login-card .card-header,
+.login-card .card-body {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--km0-ink) !important;
+  border-bottom-color: var(--km0-mist) !important;
 }
 .login-card .card-header {
-  background: transparent !important;
-  border-bottom-color: var(--km0-mist) !important;
-  color: var(--km0-ink) !important;
   font-weight: 600;
+}
+.login-card .text-muted,
+.login-card .text-secondary,
+.login-card .form-check-label,
+.login-card .bi-moon-fill {
+  color: var(--km0-ink-muted) !important;
+}
+.login-card a:not(.btn) {
+  color: var(--km0-signal) !important;
+}
+.login-card a:not(.btn):hover {
+  color: var(--km0-signal-hover) !important;
+}
+/* FIDO2 / secondary actions: mist surface + light ink (never dark-on-dark) */
+.login-card .btn-secondary,
+.login-card .btn-light,
+.login-card a.btn-secondary,
+#fido2-login {
+  background-color: var(--km0-mist) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+.login-card .btn-secondary:hover,
+.login-card .btn-light:hover,
+.login-card a.btn-secondary:hover,
+#fido2-login:hover {
+  background-color: var(--km0-signal-tint) !important;
+  border-color: var(--km0-signal) !important;
+  color: var(--km0-signal) !important;
+}
+.login-card .btn-secondary i,
+.login-card a.btn-secondary i,
+#fido2-login i,
+#fido2-login i::before {
+  color: inherit !important;
+}
+.login-card .form-control,
+.login-card .input-group-text {
+  background-color: var(--km0-paper) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+.login-card .form-control::placeholder {
+  color: var(--km0-ink-muted) !important;
+  opacity: 1;
+}
+/* Helper / admin links under the card */
+p.text-muted a[href="/admin"],
+p.text-muted a[href="/domainadmin"],
+a[href="/reset-password"] {
+  color: var(--km0-signal) !important;
+}
+.text-secondary {
+  color: var(--km0-ink-muted) !important;
 }
 .mailcow-logo .main-logo,
 .mailcow-logo .main-logo-dark {

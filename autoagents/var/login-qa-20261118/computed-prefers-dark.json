@@ -1,0 +1,79 @@
+{
+  "darkLink": true,
+  "theme": null,
+  "darkHref": "https://mail.km0digital.com/cache/0242228aca45a54c18c66d339ba4996d1a8f1514-d9e3e11a77037b6fe227c8eb0eebcce8843989a0.css",
+  "loginCard": {
+    "sel": ".login-card",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(20, 27, 40)",
+    "text": "User Login\n \nKM0 Mail\nUsername\nPassword\n",
+    "bsCardBg": "#0B1220",
+    "km0Snow": "#141B28",
+    "km0Ink": "#E6E9ED",
+    "mcSurface": "#141B28"
+  },
+  "fido": {
+    "sel": "#fido2-login",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(20, 27, 40)",
+    "text": " FIDO2/WebAuthn Login",
+    "bsCardBg": "#0B1220",
+    "km0Snow": "#141B28",
+    "km0Ink": "#E6E9ED",
+    "mcSurface": "#141B28"
+  },
+  "fidoIcon": {
+    "color": "rgb(230, 233, 237)",
+    "fill": "rgb(0, 0, 0)"
+  },
+  "body": {
+    "sel": "body",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(11, 18, 32)",
+    "text": "User Login\n \nKM0 Mail\nUsername\nPassword\n",
+    "bsCardBg": "",
+    "km0Snow": "#141B28",
+    "km0Ink": "#E6E9ED",
+    "mcSurface": "#141B28"
+  },
+  "forgot": {
+    "sel": "a[href=\"/reset-password\"]",
+    "color": "rgb(45, 212, 191)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "text": "> Forgot Password?",
+    "bsCardBg": "#0B1220",
+    "km0Snow": "#141B28",
+    "km0Ink": "#E6E9ED",
+    "mcSurface": "#141B28"
+  },
+  "admin": {
+    "sel": "a[href=\"/admin\"]",
+    "color": "rgb(45, 212, 191)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "text": "Log in as admin",
+    "bsCardBg": "",
+    "km0Snow": "#141B28",
+    "km0Ink": "#E6E9ED",
+    "mcSurface": "#141B28"
+  },
+  "langBtn": {
+    "sel": ".login-card .text-secondary.btn",
+    "color": "rgb(85, 85, 85)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "text": " ",
+    "bsCardBg": "#0B1220",
+    "km0Snow": "#141B28",
+    "km0Ink": "#E6E9ED",
+    "mcSurface": "#141B28"
+  },
+  "moonIcon": {
+    "sel": ".login-card .bi-moon-fill",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "text": "",
+    "bsCardBg": "#0B1220",
+    "km0Snow": "#141B28",
+    "km0Ink": "#E6E9ED",
+    "mcSurface": "#141B28"
+  }
+}

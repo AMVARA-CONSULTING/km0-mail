@@ -23,3 +23,78 @@ body {
 .mailcow-logo img {
   max-height: 48px;
 }
+
+/*
+ * Login dark-mode safety net (html:has(#dark-mode-theme)).
+ * Mailcow injects #dark-mode-theme when dark is on; theme/dark.css is the
+ * primary fix — these rules catch half-applied km0 / stock dark leftovers
+ * (light card island, dark-on-dark FIDO / text-secondary).
+ */
+html:has(#dark-mode-theme) {
+  --km0-paper: #0B1220;
+  --km0-snow: #141B28;
+  --km0-mist: #2A3344;
+  --km0-ink: #E6E9ED;
+  --km0-ink-muted: rgba(230, 233, 237, 0.65);
+  --km0-signal: #2DD4BF;
+  --km0-signal-hover: #5EEAD4;
+  --km0-signal-tint: rgba(45, 212, 191, 0.08);
+  --bs-secondary-color: rgba(230, 233, 237, 0.65);
+  --bs-secondary-rgb: 230, 233, 237;
+}
+
+html:has(#dark-mode-theme) body {
+  background-color: var(--km0-paper) !important;
+  color: var(--km0-ink) !important;
+}
+
+html:has(#dark-mode-theme) .login-card,
+html:has(#dark-mode-theme) .card.login-user,
+html:has(#dark-mode-theme) .card.login-admin,
+html:has(#dark-mode-theme) .card.login-domainadmin {
+  background: var(--km0-snow) !important;
+  background-color: var(--km0-snow) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+  --bs-card-bg: var(--km0-snow);
+  --bs-card-color: var(--km0-ink);
+}
+
+html:has(#dark-mode-theme) .login-card .card-header,
+html:has(#dark-mode-theme) .login-card .card-body {
+  background: transparent !important;
+  color: var(--km0-ink) !important;
+}
+
+html:has(#dark-mode-theme) .login-card .text-muted,
+html:has(#dark-mode-theme) .login-card .text-secondary,
+html:has(#dark-mode-theme) .text-secondary {
+  color: var(--km0-ink-muted) !important;
+}
+
+html:has(#dark-mode-theme) .login-card a:not(.btn),
+html:has(#dark-mode-theme) a[href="/reset-password"],
+html:has(#dark-mode-theme) a[href="/admin"],
+html:has(#dark-mode-theme) a[href="/domainadmin"] {
+  color: var(--km0-signal) !important;
+}
+
+html:has(#dark-mode-theme) .login-card .form-control,
+html:has(#dark-mode-theme) .login-card .input-group-text {
+  background-color: var(--km0-paper) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+
+html:has(#dark-mode-theme) .login-card .btn-secondary,
+html:has(#dark-mode-theme) .login-card a.btn-secondary,
+html:has(#dark-mode-theme) #fido2-login {
+  background-color: var(--km0-mist) !important;
+  border-color: var(--km0-mist) !important;
+  color: var(--km0-ink) !important;
+}
+
+html:has(#dark-mode-theme) #fido2-login i,
+html:has(#dark-mode-theme) #fido2-login i::before {
+  color: inherit !important;
+}

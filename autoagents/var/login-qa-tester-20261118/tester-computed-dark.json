@@ -1,0 +1,104 @@
+{
+  "darkLink": true,
+  "theme": "dark",
+  "body": {
+    "sel": "body",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(11, 18, 32)",
+    "effectiveBg": "rgb(11, 18, 32)",
+    "contrast": 15.37,
+    "text": "User Login\n \nKM0 Mail\nUsername\nPassword\n> Forgot Password?\nL",
+    "tag": "BODY",
+    "className": ""
+  },
+  "loginCard": {
+    "sel": ".login-card",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(20, 27, 40)",
+    "effectiveBg": "rgb(20, 27, 40)",
+    "contrast": 14.17,
+    "text": "User Login\n \nKM0 Mail\nUsername\nPassword\n> Forgot Password?\nL",
+    "tag": "DIV",
+    "className": "card login-card login-user"
+  },
+  "inputUser": {
+    "sel": "#login_user",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(11, 18, 32)",
+    "effectiveBg": "rgb(11, 18, 32)",
+    "contrast": 15.37,
+    "text": "Email address",
+    "tag": "INPUT",
+    "className": "form-control"
+  },
+  "fido": {
+    "sel": "#fido2-login",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(42, 51, 68)",
+    "effectiveBg": "rgb(42, 51, 68)",
+    "contrast": 10.42,
+    "text": " FIDO2/WebAuthn Login",
+    "tag": "A",
+    "className": "btn btn-xs-lg btn-secondary w-100 mt-2"
+  },
+  "fidoIcon": {
+    "sel": "#fido2-login i",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(42, 51, 68)",
+    "contrast": 10.42,
+    "text": "",
+    "tag": "I",
+    "className": "bi bi-shield-fill-check"
+  },
+  "textSecondary": {
+    "sel": ".login-card .text-secondary, .login-card .bi-moon-fill",
+    "color": "rgba(230, 233, 237, 0.65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(20, 27, 40)",
+    "contrast": 14.17,
+    "text": "",
+    "tag": "I",
+    "className": "bi bi-moon-fill"
+  },
+  "langSelect": {
+    "sel": "#mailcow-lang, .login-card select, .login-card .text-secondary",
+    "color": "rgba(230, 233, 237, 0.65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(20, 27, 40)",
+    "contrast": 14.17,
+    "text": " ",
+    "tag": "BUTTON",
+    "className": "text-secondary btn p-0 border-0 bg-transparent ms-auto dropdown-toggle"
+  },
+  "forgot": {
+    "sel": "a[href=\"/reset-password\"]",
+    "color": "rgb(45, 212, 191)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(20, 27, 40)",
+    "contrast": 9.27,
+    "text": "> Forgot Password?",
+    "tag": "A",
+    "className": ""
+  },
+  "adminLink": {
+    "sel": "a[href=\"/admin\"]",
+    "color": "rgb(45, 212, 191)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(11, 18, 32)",
+    "contrast": 10.06,
+    "text": "Log in as admin",
+    "tag": "A",
+    "className": ""
+  },
+  "domainAdmin": {
+    "sel": "a[href=\"/domainadmin\"]",
+    "color": "rgb(45, 212, 191)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(11, 18, 32)",
+    "contrast": 10.06,
+    "text": "Log in as domain admin",
+    "tag": "A",
+    "className": ""
+  }
+}

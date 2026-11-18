@@ -1,0 +1,134 @@
+{
+  "darkLink": true,
+  "theme": "dark",
+  "body": {
+    "sel": "body",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(11, 18, 32)",
+    "effectiveBg": "rgb(11, 18, 32)",
+    "contrast": 15.37,
+    "text": "User Login\n \nKM0 Mail\nUsername\nPassword\n> Forgot Password?\nL",
+    "tag": "BODY",
+    "className": ""
+  },
+  "loginCard": {
+    "sel": ".login-card",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(20, 27, 40)",
+    "effectiveBg": "rgb(20, 27, 40)",
+    "contrast": 14.17,
+    "text": "User Login\n \nKM0 Mail\nUsername\nPassword\n> Forgot Password?\nL",
+    "tag": "DIV",
+    "className": "card login-card login-user"
+  },
+  "cardHeader": {
+    "sel": ".login-card .card-header",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(20, 27, 40)",
+    "contrast": 14.17,
+    "text": "User Login\n ",
+    "tag": "DIV",
+    "className": "card-header d-flex align-items-center text-break"
+  },
+  "cardBody": {
+    "sel": ".login-card .card-body",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(20, 27, 40)",
+    "contrast": 14.17,
+    "text": "KM0 Mail\nUsername\nPassword\n> Forgot Password?\nLogin\nor login",
+    "tag": "DIV",
+    "className": "card-body"
+  },
+  "inputUser": {
+    "sel": "#login_user",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(11, 18, 32)",
+    "effectiveBg": "rgb(11, 18, 32)",
+    "contrast": 15.37,
+    "text": "Email address",
+    "tag": "INPUT",
+    "className": "form-control"
+  },
+  "inputPass": {
+    "sel": "#pass_user",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(11, 18, 32)",
+    "effectiveBg": "rgb(11, 18, 32)",
+    "contrast": 15.37,
+    "text": "Password",
+    "tag": "INPUT",
+    "className": "form-control"
+  },
+  "loginBtn": {
+    "sel": "button.btn-success[type=\"submit\"]",
+    "color": "rgb(238, 240, 242)",
+    "backgroundColor": "rgb(15, 118, 110)",
+    "effectiveBg": "rgb(15, 118, 110)",
+    "contrast": 4.79,
+    "text": "Login",
+    "tag": "BUTTON",
+    "className": "btn btn-xs-lg btn-success w-100 mt-2 mx-auto"
+  },
+  "fido": {
+    "sel": "#fido2-login",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(42, 51, 68)",
+    "effectiveBg": "rgb(42, 51, 68)",
+    "contrast": 10.42,
+    "text": " FIDO2/WebAuthn Login",
+    "tag": "A",
+    "className": "btn btn-xs-lg btn-secondary w-100 mt-2"
+  },
+  "forgot": {
+    "sel": "a[href=\"/reset-password\"]",
+    "color": "rgb(45, 212, 191)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgba(0, 0, 0, 0)",
+    "contrast": 11.28,
+    "text": "> Forgot Password?",
+    "tag": "A",
+    "className": ""
+  },
+  "adminLink": {
+    "sel": "a[href=\"/admin\"]",
+    "color": "rgb(45, 212, 191)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgba(0, 0, 0, 0)",
+    "contrast": 11.28,
+    "text": "Log in as admin",
+    "tag": "A",
+    "className": ""
+  },
+  "domainAdmin": {
+    "sel": "a[href=\"/domainadmin\"]",
+    "color": "rgb(45, 212, 191)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgba(0, 0, 0, 0)",
+    "contrast": 11.28,
+    "text": "Log in as domain admin",
+    "tag": "A",
+    "className": ""
+  },
+  "mutedWrap": {
+    "sel": ".login-card .text-muted, p.text-muted",
+    "color": "rgba(230, 233, 237, 0.65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgba(0, 0, 0, 0)",
+    "contrast": 17.24,
+    "text": "> Forgot Password?",
+    "tag": "DIV",
+    "className": "mt-2 text-muted"
+  },
+  "footer": {
+    "sel": ".container.footer, .footer",
+    "color": "rgba(230, 233, 237, 0.65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "effectiveBg": "rgb(11, 18, 32)",
+    "contrast": 15.37,
+    "text": "KM0 Digital · mail.km0digital.com",
+    "tag": "DIV",
+    "className": "container footer"
+  }
+}
