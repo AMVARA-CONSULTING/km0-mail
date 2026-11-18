@@ -11,8 +11,8 @@ Brand tokens match Roundcube `skins/km0` and km0-web: Paper / Snow / Mist / Ink 
 | `theme/` | `/opt/mailcow-dockerized/data/web/css/themes/km0/` |
 | `0081-custom-mailcow.css` | `…/data/web/css/build/0081-custom-mailcow.css` |
 | `assets/logo*.svg` | Redis `MAIN_LOGO` / `MAIN_LOGO_DARK` + SOGo logo mounts |
-| `sogo/custom-theme.js` | SOGo Material palette |
-| `sogo/custom-sogo.js` | **Must keep** Mailcow SSO login redirect + `mc_logout` |
+| `sogo/custom-theme.js` | SOGo Material dark palette (ink on 500/600/700; surfaces on 200/300/A400) |
+| `sogo/custom-sogo.js` | **Must keep** Mailcow SSO login redirect + `mc_logout`; also injects `#km0-sogo-contrast` CSS |
 
 ## Apply / re-apply
 

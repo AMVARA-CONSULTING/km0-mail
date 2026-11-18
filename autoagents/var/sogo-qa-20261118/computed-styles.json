@@ -1,0 +1,35 @@
+{
+  "sidenav": {
+    "sel": "md-sidenav.md-sidenav-left",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(11, 18, 32)",
+    "text": "luipy\n\nluipy@ldeluipy.es\n\nsettings\nluipy@ldeluipy.es\nmore_vert\n0.47% de 3072 MB "
+  },
+  "folderItem": {
+    "sel": "md-sidenav .sg-mailbox-list-item, md-sidenav md-list-item",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "text": "luipy@ldeluipy.es\nmore_vert"
+  },
+  "folderName": {
+    "sel": "md-sidenav .sg-item-name, md-sidenav .sg-no-wrap",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "text": "luipy"
+  },
+  "messagesList": {
+    "sel": "#messagesList, .view-list",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgb(20, 27, 40)",
+    "text": "search\nEnviados\nfilter_list\nsort\nrefresh\n3 mensajes\nsort Orden recibida\nyoelberj"
+  },
+  "emptyTitle": {
+    "sel": "md-content .sg-md-title, .sg-md-title",
+    "color": "rgb(230, 233, 237)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "text": "luipy"
+  },
+  "contrastStyle": true,
+  "url": "https://mail.km0digital.com/SOGo/so/luipy@ldeluipy.es/Mail/view#!/Mail/0/Sent",
+  "title": "Enviados | Correo | SOGo Groupware"
+}

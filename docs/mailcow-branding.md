@@ -31,6 +31,17 @@ curl -sI https://mail.km0digital.com/ | head
 curl -s https://mail.km0digital.com/ | grep -E 'KM0 Mail|theme-color|main-logo'
 curl -sI https://mail.km0digital.com/SOGo/ | head
 curl -sI https://mail.km0digital.com/sogo-auth | head
+# SOGo theme tokens present after apply (not sufficient alone — see FAIL criteria)
+curl -s https://mail.km0digital.com/SOGo/js/theme.js | grep -E 'km0-paper|E6E9ED|contrastDarkColors'
+curl -s https://mail.km0digital.com/SOGo/js/custom-sogo.js | grep -E 'km0-sogo-contrast|0B1220'
 ```
 
 Confirm in browser: login shows K0 mark + “KM0 Mail”; dark mode uses Signal teal; SOGo chrome uses teal primary; unauthenticated SOGo still redirects to Mailcow `/user`.
+
+### SOGo Mail contrast (required for CLOSE)
+
+Hard-refresh SOGo Mail (Ctrl+Shift+R). Capture a full-window PNG (sidebar + list + preview).
+
+**PASS:** Folder names, profile email, and empty state (“No message selected” / locale equiv) use light ink on dark surfaces; message list is dark (no white island); selected folder / unread badges still visible (Signal teal OK).
+
+**FAIL:** Any primary UI text is dark-on-dark, or the message list is a bright white pane against dark chrome. Curl greps alone must not CLOSE this.

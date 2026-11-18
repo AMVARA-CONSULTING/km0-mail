@@ -1,5 +1,6 @@
 ## 2026-11-18
 
+- SOGo KM0 dark theme contrast: rebuild `custom-theme.js` so SOGo `md-colors` ink shades (500/600/700) stay light on dark surfaces, darken list toolbar accent, and inject contrast CSS via `custom-sogo.js`; re-apply with `scripts/apply-mailcow-branding.sh` (`docs/mailcow-branding.md`).
 - Mailcow UI + SOGo KM0 branding: theme `km0` (Paper/Snow/Mist/Ink/Signal), Redis UI texts/logos, SOGo `custom-theme.js` + logos; pack in `config/mailcow-branding/`; re-apply via `scripts/apply-mailcow-branding.sh` after Mailcow `./update.sh` (`docs/mailcow-branding.md`). SSO `/sogo-auth` unchanged.
 
 ## 2026-10-25
