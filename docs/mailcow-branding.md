@@ -24,6 +24,26 @@ cd /opt/km0-mail && ./scripts/apply-mailcow-branding.sh
 
 See `config/mailcow-branding/README.md` for file map and SSO caveats.
 
+## Update safety (Mailcow `./update.sh`)
+
+| Asset | Lives in | Survives update alone? | Restored by |
+|-------|----------|------------------------|-------------|
+| SOGo `custom-sogo.js` / `custom-theme.js` / logos | `mailcow/data/conf/sogo/` (bind-mounted) | **No** — tracked by Mailcow git; `update.sh` merge + `git checkout .` can reset | `scripts/apply-mailcow-branding.sh` |
+| Theme `data/web/css/themes/km0/` | Mailcow `data/web` | **Yes** (gitignored `themes/*/`) | apply script (idempotent) |
+| `0081-custom-mailcow.css` | Mailcow `data/web/css/build/` | **Yes** (gitignored) | apply script |
+| Redis `UI_THEME` / logos / titles | redis volume | **Yes** | apply script |
+| Host nginx `mail` vhost | `/etc/nginx` (outside Mailcow) | **Yes** vs Mailcow update | `scripts/mailcow-post-update.sh` from repo copy |
+| `mailcow.conf` ports / hostname | Mailcow root | Usually kept | manual review |
+
+**Mandatory after every Mailcow update:**
+
+```bash
+cd /opt/mailcow-dockerized && ./update.sh
+cd /opt/km0-mail && ./scripts/mailcow-post-update.sh
+```
+
+Do **not** fork Mailcow PHP/SOGo image layers for branding. Pack source of truth: `config/mailcow-branding/` in this repo.
+
 ## FAIL criteria (tester / Sentinel)
 
 * Folder icons (`md-icon` / `.material-icons` in left sidenav) must compute to light ink (e.g. `#E6E9ED`), **not** `rgba(0,0,0,*)`.

@@ -32,3 +32,14 @@ Phase 4 items (when resumed):
 ## Branding
 
 Roundcube `km0_theme` is legacy. Mailcow/SOGo KM0 look: pack in `config/mailcow-branding/`, apply with `scripts/apply-mailcow-branding.sh` (re-run after Mailcow `./update.sh`). See `docs/mailcow-branding.md`.
+
+## After Mailcow updates
+
+Mailcow `update.sh` can reset tracked `data/conf/sogo/custom-*`. Always:
+
+```bash
+cd /opt/km0-mail && ./scripts/mailcow-post-update.sh
+```
+
+Details: `docs/mailcow-branding.md` → Update safety.
+

@@ -1,20 +1,8 @@
-# KM0 Mail — webmail + auth pages (TLS on host Nginx)
-# Hostname: mail.km0digital.com
-#
-# Deploy auth static files:
-#   sudo rsync -a host-www/mail-auth/ /var/www/mail-auth/
-#   sudo cp nginx/sites-available/mail /etc/nginx/sites-available/mail
-#   sudo nginx -t && sudo systemctl reload nginx
-#
-# Roundcube upstream: 127.0.0.1:8080
-# mail-provision-api: 127.0.0.1:8092 (public /register + provisioning)
-# domain-verify-api: 127.0.0.1:8093
-# NOTE: km0-opencloud register-api (:8091) is no longer used for the KM0 signup
-#       happy path; /api/register now targets the self-contained :8092 endpoint.
+# KM0 Mail — Mailcow (fixed SOGo proxy 2026-11-18)
+# HAProxy → 127.0.0.1:8443 → Mailcow nginx 127.0.0.1:8880
 
 server {
-    listen 80;
-    listen [::]:80;
+    listen 127.0.0.1:8088;
     server_name mail.km0digital.com;
 
     location /.well-known/acme-challenge/ {
@@ -29,10 +17,8 @@ server {
 }
 
 server {
-    listen 443 ssl;
-    listen [::]:443 ssl;
+    listen 127.0.0.1:8443 ssl;
     http2 on;
-
     server_name mail.km0digital.com;
 
     ssl_certificate     /etc/letsencrypt/live/mail.km0digital.com/fullchain.pem;
@@ -40,119 +26,35 @@ server {
     ssl_protocols       TLSv1.2 TLSv1.3;
     ssl_prefer_server_ciphers off;
 
-    client_max_body_size 25M;
+    client_max_body_size 0;
 
-    # Single login surface: the native Roundcube form is served directly at `/`
-    # by the catch-all proxy below (Roundcube shows the login form when logged out
-    # and the inbox when authenticated). No static landing, no redirect — a 302
-    # here would break the login POST (Roundcube posts the form to `/?_task=login`).
-
-    # Legacy static landing retired — redirect any old link to the Roundcube login.
-    location = /login.html {
-        return 302 $scheme://$host/index.php?_task=login;
-    }
-
-    # Self-service registration page (posts to /api/register -> mail-provision-api).
-    location = /register {
-        alias /var/www/mail-auth/register.html;
-        default_type text/html;
-    }
-
-    location = /register.html {
-        return 301 /register$is_args$args;
-    }
-
-    location = /domain.html {
-        alias /var/www/mail-auth/domain.html;
-        default_type text/html;
-    }
-
-    location = /verify {
-        alias /var/www/mail-auth/verify.html;
-        default_type text/html;
-    }
-
-    location = /km0-auth.css {
-        alias /var/www/mail-auth/km0-auth.css;
-        default_type text/css;
-        expires 1h;
-    }
-
-    location = /km0-auth-i18n.js {
-        alias /var/www/mail-auth/km0-auth-i18n.js;
-        default_type application/javascript;
-        expires 1h;
-    }
-
-    location = /dex-auth.js {
-        alias /var/www/mail-auth/dex-auth.js;
-        default_type application/javascript;
-        expires 1h;
-    }
-
-    location = /logo.svg {
-        alias /var/www/mail-auth/logo.svg;
-        default_type image/svg+xml;
-        expires 7d;
-        access_log off;
-    }
-
-    location = /favicon.svg {
-        alias /var/www/mail-auth/favicon.svg;
-        default_type image/svg+xml;
-        expires 7d;
-        access_log off;
-    }
-
-    # Dex i18n for LDAP login button labels
-    location = /dex/theme/i18n.js {
-        proxy_pass https://cloud.km0digital.com/dex/theme/i18n.js;
-        proxy_ssl_server_name on;
-        expires 1h;
-    }
-
-    # Self-registration (same-origin proxy avoids CORS). Self-contained on the
-    # mail host: mail-provision-api :8092 public /register (no cross-repo :8091).
-    # X-Real-IP / X-Forwarded-For are required for the API's per-IP rate limit.
-    location = /api/register {
-        proxy_pass http://127.0.0.1:8092/register;
-        proxy_http_version 1.1;
-        proxy_set_header Host $host;
+    location /Microsoft-Server-ActiveSync {
+        proxy_pass http://127.0.0.1:8880/Microsoft-Server-ActiveSync;
+        proxy_set_header Host $http_host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header X-Forwarded-Host $host;
+        proxy_connect_timeout 75;
+        proxy_send_timeout 3650;
+        proxy_read_timeout 3650;
+        proxy_buffers 64 512k;
+        client_body_buffer_size 512k;
+        client_max_body_size 0;
     }
 
-    location /api/mail/ {
-        proxy_pass http://127.0.0.1:8092/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-
-    location /api/mail/domain/ {
-        proxy_pass http://127.0.0.1:8093/domain/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-
-    # Roundcube webmail (native login at /index.php?_task=login, OAuth at /index.php/login/oauth)
     location / {
-        proxy_pass http://127.0.0.1:8080;
-        proxy_http_version 1.1;
-        proxy_set_header Host              $host;
-        proxy_set_header X-Real-IP         $remote_addr;
-        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8880/;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_read_timeout 300s;
+        client_max_body_size 0;
+        # Required for SOGo login after 2022-04
+        proxy_buffer_size 128k;
+        proxy_buffers 64 512k;
+        proxy_busy_buffers_size 512k;
     }
 
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-    add_header X-Content-Type-Options    "nosniff" always;
-    add_header X-Frame-Options           "SAMEORIGIN" always;
-    add_header Referrer-Policy           "strict-origin-when-cross-origin" always;
+    add_header X-Content-Type-Options "nosniff" always;
 }
